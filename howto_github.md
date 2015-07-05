@@ -19,7 +19,7 @@ switch to new branch and make edits
 push new commits
 
      >> git add.
-     >> git commit =m "test commit plz ignore"
+     >> git commit -m "test commit plz ignore"
      >> git push
 
 got to github and make a pull request
