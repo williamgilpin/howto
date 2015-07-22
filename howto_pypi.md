@@ -6,6 +6,8 @@ Explicitly put your password in both the pypi rc file and the pypi test rc file,
 
 ## Updating a PyPi package
 
+This is really only necessary when the actual package changes, you can mess with the demos and README on GitHub all you want because that's not stored on PyPI
+
 + Update the code
 + Update setup.py and increment the version number
 + Push to Github
