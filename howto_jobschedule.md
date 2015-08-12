@@ -1,12 +1,18 @@
 Here is a useful [tutorial for TORQUE and Maui](https://kb.iu.edu/d/avmy)
 
-Can literally just write a function wrapper.sh that has a set of commands
+Can parallelize using the python library joblib. For parallel computations with joblib, the TORQUE script parameter ppn (processors per node) is the really handy parameter because it allows you to parallelize on a single node using joblib, instead of parallelize across nodes using mpi
 
-	$ source activate py3env
-	$ cd my_stuff
-	$ python3 < my_program.py
+### Move files back and forth
 
-can parallelize using the python library joblib
+From local host to remote (currently in local):
+
+    scp my_files.txt john@yale.edu:some/remote/directory
+
+From remote host to remote (currently in local):
+
+    scp john@yale.edu:some/remote/directory/my_files.txt /some/local/directory
+
+Standard regular expressions (like *) can be used to send groups of files back and forth
 
 ### Example workflow
 
@@ -30,3 +36,15 @@ The actual file submitted as a job, my_job.sh
     source ./venv/bin/activate
     cd all_my_python_files
     bash wrapper.sh
+
+## Submitting the job
+
+    qsub job.sh
+    qstat
+    qdel 
+
+## Retrieving output files
+
+On the local host (sends all files ending in "results.txt")
+
+    scp your_username@remotehost.edu:my_output_fils/*results.txt /some/local/directory
