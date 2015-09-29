@@ -1,5 +1,6 @@
 # Checklist
 
++ Remove temporary copies of main file from ipynb directory
 + Export HTML file of all notebooks and put in the right directories
 + Update all documentation:
 
