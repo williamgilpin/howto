@@ -6,16 +6,28 @@ We are not currently paying for priority access to Sherlock, and so we will get 
 
 If you need to keep track of the values of a bunch of variables, try writing the entire execution state of your program to disk every time the loop is called. So if you're doing a massing serial numerical integration, at the end of each timestep write the timestep number and the current values of all of your independent and dependent variables to disk. You have 15GB quota (40 TB if you choose to use the big data nodes), so write everything that you can to disk as often as you can and regret nothing.
 
-## Getting started
+## Getting started on Sherlock
 
 Authenticate your computer using Kerberos. You might have to use a VPN if you are off-campus
 
 	$ kinit username@stanford.edu
 	$ ssh username@sherlock.stanford.edu
 
-## Make a job script
+To return to your home directory
 
-   	$ emacs my_wonderful_cluster_submission.
+	$ cd $HOME
+
+Check your disk usage (for home directory, 15 GB max)
+
+	$ df -h $HOME
+
+If needed, switch to the file system for large amounts of data (40 TB per user)
+
+	$ cd $SCRATCH
+
+Check your SCRATCH usage
+
+	$ lfs quota -u $(id -un) /scratch
 
 ## MATLAB jobs
 
