@@ -23,6 +23,15 @@ Activate conda env
 	> activate py3env
 
 
+## Using git bash (current preferred method)
+
+Try the instructions here:
+
+https://scotch.io/tutorials/get-a-functional-and-sleek-console-in-windows
+
+Issues: anaconda environments really don't seem to want to work. The only fix is to manually put the environment on the path:
+https://groups.google.com/a/continuum.io/forum/#!topic/anaconda/VxL6QmcKgv4
+
 ## Using Cygwin
 
 Download and install the full Cygwin suite
