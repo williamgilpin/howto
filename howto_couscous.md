@@ -43,3 +43,12 @@ Make sure that the directory holding the `.couscous` file is a functional GitHub
 which sends the site to [http://your-username.github.io/your-project/](http://your-username.github.io/your-project/.)
 
 Now customize using a `couscous.yml` file in root directory
+
+## Change URL if hosting through Google Sites
+
+Register the GitHub domain as a redirect from your purchased Google Sites URL
+For specific subpages that you want to have a special link, for now the best option is to individually redirect a subdomain.
+
+	flowtrace.org ---> http://www.williamgilpin.github.io/flowtrace_docs/
+	gallery.flowtrace.org ---> http://www.williamgilpin.github.io/flowtrace_docs/gallery
+

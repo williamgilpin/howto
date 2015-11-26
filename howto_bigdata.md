@@ -8,10 +8,16 @@ Windows Backup solution does not work for large drives, it gets confused and cla
 
 WD drives come with Acronis True Image, which is usually shareware but which appears to be free for the purpose of disk cloning. This is probably the best option for just cloning a drive, particular if you have multiple drives with separate backups.
 
-### Run a disk clone backup
+### Run an Acronis disk clone backup
 
+You must buy the Acronis full software for $30 if you want to run scheduled cloning
+
++ In the Acronis Software, select "Clone Disk" and then the "automatic wizard" choice. 
++ Select GPT-style for the backup type (not bootable, but better for large amounts of data)
 
 
 ### Verify the backup
 
 After the first backup (and every so often afterwards), it is a good idea to check the backup to make sure that it is happening correctly. To do this, 
+
+*try some sort of stochastic checksum tool?**
