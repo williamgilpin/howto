@@ -3,7 +3,7 @@
 Attempted on a mid-2014 Macbook Pro running OSX Yosemite.
 
 
-## Installation and running
+## Installation
 
 	curl -OS http://couscous.io/couscous.phar
 
@@ -21,7 +21,9 @@ found the file in `/etc/`. I added to it the line
 	
 	date.timezone = "America/Los_Angeles"
 
-I was then able to run the following command:
+## Running couscous
+
+Navigate to local copy of a GitHub repo containing `.md` files and run the following command:
 
 	couscous preview
 

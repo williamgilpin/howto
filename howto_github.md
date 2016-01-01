@@ -37,3 +37,18 @@ A text editor will pop up. Replace "pick" with "squash" for the commits that you
 If you've already commited, you have to force the update:
   
   $  git push origin master --force
+
+# Examine and merge a pull request
+
+After recieving a pull request, make sure your local copy of the repository is up to date with `master` and that you've committed all changes
+
+	git checkout -b otherusersname-master master
+	git pull https://github.com/otherusersname/pypdb.git master
+
+Now run tests, make sure everything appears to be working. Once you are satisfied (and if there are no conflicts), merge this branch:
+
+	git checkout master
+	git merge --no-ff otherusersname-master
+	git push origin master
+
+

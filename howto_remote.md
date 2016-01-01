@@ -11,3 +11,6 @@ Enable Remote Desktop
 + Check "Allow connections from computers running any..."
 
 
+# Enable Remote Desktop from outside of Stanford Network
+
+*I'm working on this*

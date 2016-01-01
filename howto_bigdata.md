@@ -21,3 +21,16 @@ You must buy the Acronis full software for $30 if you want to run scheduled clon
 After the first backup (and every so often afterwards), it is a good idea to check the backup to make sure that it is happening correctly. To do this, 
 
 *try some sort of stochastic checksum tool?**
+
+## Set up CrashPlan
+
+You should be able to use your Stanford Credentials to access [https://su-backup.stanford.edu](https://su-backup.stanford.edu) using the "Single Sign-On" option
+
+Your username is the "XXX" in XXX@stanford.edu, your password should be the same as your Stanford password
+
+The "backup server" address is also `https://su-backup.stanford.edu`
+
+## Set up Backblaze
+
++ Exclude local backup drives in the settings
++ Set the "temporary data drive" to one of the externals

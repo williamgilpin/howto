@@ -11,6 +11,16 @@ http://stackoverflow.com/questions/7006939/how-to-change-view-ephemeral-port-ran
 
 https://support.microsoft.com/en-us/kb/196271
 
+## Conda throws `SSL: CERTIFICATE_VERIFY_FAILED`
+
+Try [temporarily disabling SSL](https://github.com/conda/conda/issues/1166)
+
+	conda config --set ssl_verify false
+	conda update --all
+	conda config --set ssl_verify true
+
+
+
 ## Mounting a mapped network windows drive from a OSX
 
 1. Enable sharing of the drive from within Windows
