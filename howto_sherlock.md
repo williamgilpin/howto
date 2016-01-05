@@ -29,6 +29,12 @@ Check your SCRATCH usage
 
 	$ lfs quota -u $(id -un) /scratch
 
+### Useful shortcuts
+
+Copy a file from local over to $HOME
+
+	$ scp cfgen.py wgilpin@sherlock.stanford.edu:home
+
 ## MATLAB jobs
 
 Write as much as you can in a MATLAB script "matlabtest.m" that can just be run directly without further user input.
@@ -96,9 +102,17 @@ Now submit your job
 
 Check on your job
 
-	squeue
+	squeue -u <netid>
 
 Output should be written to tinytest.out, and any warnings thrown by the compiler should go to tinytest.err
+
+Cancel your job
+	
+	scancel <jobid>
+
+Cancel all jobs
+
+	scancel -u <netid>
 
 ### Notes
 
@@ -109,9 +123,46 @@ Output should be written to tinytest.out, and any warnings thrown by the compile
 
 ## Python jobs
 
+Put your entire Python script into a single file
+
+	integrator.py
+
+Load the correct Python version, enter a virtualenv and install all of the necessary packages
+
+    module load python/2.7.5
+    source py2/bin/activate
+
+Now write a batch script that enters the virtualenv and then runs the script. We'll use the terminal-based text editor emacs
+
+	$ emacs my_batch_script.sh
+
+You're in the emacs editor window, here's an example script
+
+	#!/bin/bash 
+	source venv2/bin/activate                                                                                                
+	python < integrator.py
+
+Now make some sort of sbatch file like the one above that ends with
+
+	...
+	bash my_batch_script.sh
+
 ### Sandboxing (recommended)
 
 +For Python 3, use the built-in pyenv scripts
 +For Python 2.7, use the package virtualenv
+
+# Advanced use and tricks
+
+If large amounts of data will be generated, in `wrapper.sh` add the line 
+
+	cd $SCRATCH
+
+This will run the job on a 40TB scratch disk (not backed up). To access the output of your job, switch to this disk and follow the same relative paths as before.
+
+Another option is  `$PI_HOME` and `PI_SCRATCH`. For data that doesn't need to exist longer than the life of the job, use the node's own hard disk: `$LOCAL_SCRATCH` (only ~80 GB)
+
+
+
 
 
