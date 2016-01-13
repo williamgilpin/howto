@@ -2,13 +2,13 @@
 
 Download Cisco Anyconnect from Stanford
 
-Enter su-vpn.stanford.edu using your personal login credentials. This need to be running in order to find boa and mamba
+Enter `su-vpn.stanford.edu` using your personal login credentials. This need to be running in order to find boa and mamba
 
 Select "Map Network Drive"
 
 Check the box for "different credentials"
 
-Choose the Location //mambda/DATA
+Choose the Location `//mamba/DATA` or `//boa/ps`
 
 Enter the lab's collective username and our standard password
 
