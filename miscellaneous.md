@@ -27,3 +27,15 @@ To rename files with sequential numbers, run a similar script:
 	done
 
 Can drop the part in quotes in the first line if you just want to rename without selecting any data
+
+# Run multiple Mathematica notebooks at once
+
+The goal here is to have two notebooks open that don't interact with eachother---separate kernels and namespaces
+
+`Evaluation > Kernel Configuration`
+
+Add a new kernel with a cool name, set "Launch on" to "Local Machine"
+
+Open new notebook, go to `Evaluation > Notebook's Kernel >` Select the cool kernel name you just made
+
+[See this article](http://support.wolfram.com/kb/12425)

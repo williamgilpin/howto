@@ -2,7 +2,6 @@
 
 A running list of bugs and catches I've encountered with OSX Yosemite
 
-
 ## MATLAB looks fuzzy on a Retina computer
 
 You need to update your Java Runtime Environment.
