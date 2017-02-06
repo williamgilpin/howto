@@ -38,19 +38,14 @@ Test the site appearance
 
 Any file named `README.md` gets converted to `index.html`. Sub-pages of the documentation are any other `.md` files in the directory, they can be found at [http://localhost:8000/myproject/otherMDfile.html](http://localhost:8000/myproject/otherMDfile.html)
 
-Make sure that the directory holding the `.couscous` file is a functional GitHub repository. For a project with a single algorithm in multiple languages, I made a separate repository for documentaion. Now run
+Make sure that the directory holding the `.couscous` file is a functional GitHub repository. For a project with a single algorithm in multiple languages, I made a separate repository for documentaion. 
+
+Now run
 
 	couscous deploy
 
 which sends the site to [http://your-username.github.io/your-project/](http://your-username.github.io/your-project/.)
 
+Depending on your website hosting structure, you may need to update the 'main' branch as well using a standard commit in the terminal.
+
 Now customize using a `couscous.yml` file in root directory
-
-## Change URL if hosting through Google Sites
-
-Register the GitHub domain as a redirect from your purchased Google Sites URL
-For specific subpages that you want to have a special link, for now the best option is to individually redirect a subdomain.
-
-	flowtrace.org ---> http://www.williamgilpin.github.io/flowtrace_docs/
-	gallery.flowtrace.org ---> http://www.williamgilpin.github.io/flowtrace_docs/gallery
-

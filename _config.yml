@@ -1,0 +1,17 @@
+theme: minima
+
+name: howtos
+
+title: howtos
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "page"
+      date: "2017-02-23T10:20:00Z" # This field cannot be empty
+
+# Base URL of the published website
+# baseurl: http://williamgilpin.github.io/flowtrace_docs
+# url: flowtrace.org

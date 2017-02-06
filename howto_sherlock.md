@@ -4,7 +4,7 @@ The basis of scheduling jobs using the Sherlock cluster (these instructions prob
 
 We are not currently paying for priority access to Sherlock, and so we will get booted from nodes if paying members opt to use their nodes. For this reason, please try to make your jobs persistent: they continously write their output to disk, and can also re-start if stopped. So if you have a giant 'for' loop of image processing, try to write each processed image to disk when you're done with it. 
 
-If you need to keep track of the values of a bunch of variables, try writing the entire execution state of your program to disk every time the loop is called (as long as this is relatively inexpensive compared to the time it takes to produce the new state in each step of the loop). So if you're doing a massing serial numerical integration, at the end of each timestep consider writing the timestep number and the current values of all of your independent and dependent variables to disk. You have 15GB quota (40 TB if you remember to change directories to `$SCRATCH`), so write everything that you can to disk as often as you can and regret nothing.
+If you need to keep track of the values of a bunch of variables, try writing the entire execution state of your program to disk every time the loop is called (as long as this is relatively inexpensive compared to the time it takes to produce the new state in each step of the loop). So if you're doing a massing serial numerical integration, at the end of each timestep consider writing the timestep number and the current values of all of your independent and dependent variables to disk. You have 15GB quota (40 TB if you remember to change directories to `$SCRATCH`), so write everything that you can to disk as often as you can without affecting performance.
 
 ## Getting started on Sherlock
 
@@ -96,6 +96,8 @@ Now use emacs to write a batch script "tinytest.sbatch" that allocates resources
 	#now call your bash file
 	bash my_batch_script.sh
 
+If `my_batch_script.sh` is particularly simple you can just put the contents of it directly into the `.sbatch` file, in order to reduce the number of files and dependencies floating around.
+
 Now submit your job
 
 	sbatch tinytest.sbatch
@@ -105,6 +107,7 @@ Output should be written to tinytest.out, and any warnings thrown by the compile
 Check on your job
 
 	squeue -u <netid>
+
 
 
 ### Notes
@@ -142,10 +145,12 @@ Now make some sort of sbatch file like the one above that ends with
 	...
 	bash my_batch_script.sh
 
+As before, if `my_batch_script.sh` is particularly simple you can just put the contents of it directly into the `.sbatch` file, in order to reduce the number of files and dependencies floating around.
+
 ### Sandboxing (recommended)
 
-+For Python 3, use the built-in pyenv scripts
-+For Python 2.7, use the package virtualenv
++ For Python 3, use the built-in pyenv scripts
++ For Python 2.7, use the package virtualenv
 
 ## Advanced use, shortcuts, and tricks
 
@@ -163,6 +168,10 @@ This will run the job on a 40TB scratch disk (not backed up). To access the outp
 
 Look up information about a currently running job
 
+	scontrol show job <jobid>
+
+For a little more detail,
+
 	scontrol show jobid -dd <jobid>
 
 Cancel your job
@@ -173,7 +182,15 @@ Cancel all your jobs
 
 	scancel -u <netid>
 
+Look at your FairShare usage
 
+	sshare -l
+
+Generally you will have trouble scheduling jobs if your score falls below a 0.5. It recovers and increases over time.
+
+# Useful links
+
+http://www.brightcomputing.com/Blog/bid/174099/Slurm-101-Basic-Slurm-Usage-for-Linux-Clusters
 
 
 

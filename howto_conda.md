@@ -1,3 +1,5 @@
+## Installing Miniconda
+
 Use miniconda to avoid installing tons of packages you won't use
 Download the installer for whichever python distro you want as default; you can always make an environemnt with a different flavor of python (I used python 2.7 since that's the OSX default)
 
@@ -12,6 +14,7 @@ Can install packages accessible to every conda environment
 	
 	$ conda install numpy
 
+### Making and using virtual environments
 
 Now try making a new virtual environment via conda
 
@@ -38,3 +41,17 @@ Duplicating an environment
 Removing and environment
 
 	 $ conda remove -n myenv --all
+
+
+### Broken conda installation
+
+During an update after several months without use, conda stopped working. To recover the installation without deleting all the environments follow the guide [here](http://conda.pydata.org/docs/troubleshooting.html)
+
+Download the same installer as your original install (mine was Python 2.7) and then run it with the -f option:
+
+	bash Miniconda3-latest-MacOSX-x86_64.sh -f
+
+Make sure you install to the same location as your previous installation. You will have a chance to pick your path; I had to purposely change mine to the location of the previous install:
+
+	/Users/william/miniconda
+

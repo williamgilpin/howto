@@ -4,10 +4,18 @@ Details of my installed programs and applications, as well as any special hacks,
 
 KeepingYouAwake -- useful utility for preventing computer from sleeping.
 
-
 Backblaze -- My preferred option for hard drive backup, although Crashplan is an alternative. In the future, I'll use whichever one has more flexible options for external hard drives that I anticipate needing to backup only once every few months
 
+Miniconda
 
+XCode + Command Line Utilities
+
+Prey
+
+#### command line utilities:
+homebrew
+ffmpeg
+imagemagick
 
 
 ### Chrome

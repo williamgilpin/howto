@@ -40,15 +40,17 @@ If you've already commited, you have to force the update:
 
 # Examine and merge a pull request
 
-After recieving a pull request, make sure your local copy of the repository is up to date with `master` and that you've committed all changes
+After recieving a pull request, make sure your local copy of the repository is up to date with `master` and that you've committed all changes. Now,
 
 	git checkout -b otherusersname-master master
 	git pull https://github.com/otherusersname/pypdb.git master
 
-Now run tests, make sure everything appears to be working. Once you are satisfied (and if there are no conflicts), merge this branch:
+Now run tests, make sure everything appears to be working. You can also make any edits to the documentation, etc on this branch. Once you are satisfied (and if there are no conflicts), merge this branch:
 
 	git checkout master
 	git merge --no-ff otherusersname-master
 	git push origin master
 
-
+If you get an error when switching branches, you might need to discard some local changes to master (do this carefully). In this case, use the force flag
+  
+  git checkout -f master

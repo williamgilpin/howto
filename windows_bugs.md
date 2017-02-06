@@ -20,7 +20,6 @@ Try [temporarily disabling SSL](https://github.com/conda/conda/issues/1166)
 	conda config --set ssl_verify true
 
 
-
 ## Mounting a mapped network windows drive from a OSX
 
 1. Enable sharing of the drive from within Windows
@@ -37,6 +36,11 @@ Try [temporarily disabling SSL](https://github.com/conda/conda/issues/1166)
 + If the origin of the glut appears to be cab_xxxx files, try deleting all of the files from Windows > Logs > CBS
 + + If you hit any admin errors or failed deletes, just skip those files
 + Empty the recycling bin
+
+# Cannot eject external hard drive
+
++ Make sure literally nothing is accessing the drive, including open explorer windows
++ Log out of your user account, then log back in. Or try putting hte computer to sleep, and then waking it
 
 ## KeyServer and CMGM program fails
 
@@ -64,6 +68,11 @@ Try playing with Windows Firewall, and check for other applications (like anti-v
 
 If you reset your firewall settings, make sure you re-enable [Remote Access in the Windows Firewall settings](howto_remote.md)
 
+# Forced automatic restarts
+
+Windows insists on restarting the computer at night, even when scripts (and even sensitive data transfers) are running. In addition to corrupting data, we have had a few cases where interrupting certain tasks actually corrupted the entire operating system.
+
+For Windows Ultimate and Enterprise, this can be disabled by changing one of the group policy settings as described [here](http://www.makeuseof.com/tag/disable-forced-restarts-windows-update/)
 
 # CrashPlan doesn't do anything
 
@@ -78,8 +87,17 @@ Make sure you have at least 1 GB of RAM allocated for each TB that will get back
 If you can't even start the app, you have to do a clean reinstall (this is insane.)
 
 
+# Getting HCImage Live working and capable of performing Batch Export
 
++ Install HCImageLive with all of the default settings
 
++ When asked to repair C++, agree to do so
+
++ When asked to install DCAM, agree to do so
+
++ Our setup uses Active Silicon firebird, so select this option in the popup menu and then proceed with the installation using all of the defaults.
+
++ Exit the DCAM installer interface
 
 
 
