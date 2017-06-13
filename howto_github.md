@@ -34,6 +34,8 @@ To alter or combine the last four commits, run
 
 A text editor will pop up. Replace "pick" with "squash" for the commits that you want to merge together. It will then prompt you to come up with a new commit message for all of the commits that you just squashed.
 
+Save and close using standard emacs commands
+
 If you've already commited, you have to force the update:
   
   $  git push origin master --force
@@ -54,3 +56,16 @@ Now run tests, make sure everything appears to be working. You can also make any
 If you get an error when switching branches, you might need to discard some local changes to master (do this carefully). In this case, use the force flag
   
   git checkout -f master
+
+## Permission issues
+
+`error: insufficient permission for adding an object to repository database .git/objects`
+
+Somehow the ownership got messed up for some files. From project base directory, try running
+
+    cd .git/objects
+    ls -al
+    sudo chown -R yourname:yourgroup *
+
+yourname and yourgroup can be figured out by seeing what the majority of of the ls -al usernames and groups are. My "group" appeared to be staff for some reason. This answer is taken from [StackExchange](http://stackoverflow.com/questions/6448242/git-push-error-insufficient-permission-for-adding-an-object-to-repository-datab)
+

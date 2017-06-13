@@ -73,3 +73,6 @@ Add a new kernel with a cool name, set "Launch on" to "Local Machine"
 Open new notebook, go to `Evaluation > Notebook's Kernel >` Select the cool kernel name you just made
 
 [See this article](http://support.wolfram.com/kb/12425)
+
+
+

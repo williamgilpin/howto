@@ -1,4 +1,4 @@
-In the home (~) directory, paste the following lines into a file .inputrc
+In the home (~) directory, paste the following lines into a file named `.inputrc`
 
 	'''
 	set completion-ignore-case on

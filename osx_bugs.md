@@ -12,6 +12,14 @@ Take screenshots and do whatever you can to save your work. If you try closing t
 
 All of you movie links will break for no reason. You need to manually re-import using Inspector, because right-clicking and choosing "replace" will only work for media that you've copied into Photos, which you don't use because it's 2016. If replace keeps failing, try copying your slides manually into a new document.
 
+## Deleted Evernote app still trying to use locatin services
+
+This is the same bug as described [here](https://discussions.apple.com/thread/4618820?start=0&tstart=0)
+
+I tried removing location services access for the app. However, the only known full solution is [this one](https://superuser.com/questions/429344/remove-application-from-location-services-in-security-privacy-on-mac-os-x-10-7)
+But Sierra would not let me CD into that folder
+
+
 ## Volume suddenly jumps to the right
 
 This seems to happen sometimes when using Flash on Chrome, for some reason the system volume preferences change mysteriously. It can be fixed in System Settings > Sound by dragging the slider back to the middle
@@ -73,3 +81,69 @@ You should get output that lists all the drives connected the computer. My disk 
 If you don't see your hard drive then this won't work. To mount "Pawhuska" above:
 
 	diskutil mount /dev/disk2s2
+
+
+## Completely delete a program and its remnants from your computer
+
+Use the application's onw uninstaller if at all possible
+
+Delete it from /Users/william/Applications
+Delete it from /Users/william/ApplicationData
+Delete the plist files from LaunchAgents and LaunchDaements (Important! see below)
+
+Here is an example for uninstalling KeyAccess (from [UT Austin](https://www.uta.edu/oit/cs/software/sassafras/keyaccess-62-mac/uninstall.php))
+
+	Login with a local administrator account
+	Open /Applications/Utilities/Activity Monitor.app
+	Select the process with the Process Name of KeyAccess and click the Quit Process icon in the tool bar and select Force Quit
+	Delete /Library/KeyAccess
+	Delete /Library/StartupItems/KeyAccess
+	Delete /Library/LaunchAgents/com.sassafras.KeyAccess.plist
+	Delete /Library/LaunchDaemons/com.sassafras.KeyAccess.plist
+	Delete /Library/PreferencePanes/KeyAccessPref.prefPane
+	Delete /Library/Preferences/KeyAccess/
+
+## Junk appearing at startup that does not appear under login items
+
+
+### Check Launch Agents and Launch Daemons
+
+Look for any Adobe or Skype stuff in LaunchAgents
+
+	ls ~/Library/LaunchAgents/com.adobe*
+	ls ~/Library/LaunchAgents/com.adobe*
+	ls ~/Library/LaunchAgents/com.skype*
+
+Unload anything you find. For example,
+
+	launchctl unload -w ~/Library/LaunchAgents/com.adobe.AAM.Updater-1.0.plist 
+
+If this breaks anything, you can re-enable it
+
+	launchctl load -w ~/Library/LaunchAgents/com.adobe.AAM.Updater-1.0.plist 
+
+Also worthwhile to disable notifications from Creative Cloud app
+
+Now do the same for the sister folder, LaunchDaemons
+
+Delete any plists for old programs
+
+For a general search,
+
+	sudo launchctl list
+
+For any processes that really do not need to run,
+
+	launchctl remove com.sassafras.KeyAccess.kass.1668
+
+Directions from [here](http://apple.stackexchange.com/questions/74779/launchtl-any-way-to-disable-a-daemon-after-removing-the-plist-file)
+
+
+### Check startup items folder
+
+	ls -a /Volumes/Library/StartupItems
+
+For example, remove the old KeyAccess software by killing the process, torching its folder in the StartupItems,
+
+### Delete all remnants of other programs, as needed
+

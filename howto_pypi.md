@@ -19,3 +19,4 @@ This is really only necessary when the actual package changes, you can mess with
 + Now update the PyPI listing with the newest version:
 
     $ python setup.py sdist upload -r pypi
+
