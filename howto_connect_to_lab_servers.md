@@ -1,3 +1,34 @@
+
+## Connect to Lab NAS server on OSX
+
+In Finder:
+Go > connect to server
+
+Enter path: `smb://soe-nas/prakash-lab`”
+
+It will prompt you for login credentials, which are:
+
+Username: win\SUNet_ID
+Password : your SUNet password
+
+Please keep regular usage below 500 GB, there's not a lot of space.
+
+## Connect to LAB NAS server on Windows
+
+In Explorer:
+"Map network drive"
+
+Enter the path `\\soe-nas\prakash-lab`
++ Check “Connect using different credentials"
+
+It will prompt you for login credentials, which are:
+
+Username: win\SUNet_ID
+Password : your SUNet password
+
+Please keep regular usage below 500 GB, there's not a lot of space.
+
+
 ## Connect to boa and mamba on a Windows computer
 
 Download Cisco Anyconnect from Stanford

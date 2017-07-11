@@ -74,5 +74,24 @@ Open new notebook, go to `Evaluation > Notebook's Kernel >` Select the cool kern
 
 [See this article](http://support.wolfram.com/kb/12425)
 
+# Shrink PDF files with minimal loss of quality
 
+Install ghostscript if you don't have it
 
+	brew install ghostscript
+
+Compress the PDF file using the command
+
+	gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/default -dCompatibilityLevel=1.4 -sOutputFile=output.pdf input.pdf
+
+For different quality, try these flags:
+
+Use the following ghostscript command:
+
+	-dPDFSETTINGS=/screen lower quality, smaller size.
+	-dPDFSETTINGS=/ebook for better quality, but slightly larger pdfs.
+	-dPDFSETTINGS=/prepress output similar to Acrobat Distiller "Prepress Optimized" setting
+	-dPDFSETTINGS=/printer selects output similar to the Acrobat Distiller "Print Optimized" setting
+	-dPDFSETTINGS=/default selects output intended to be useful across a wide variety of uses, possibly at the expense of a larger output file
+
+More information on [StackExchange](https://askubuntu.com/questions/113544/how-can-i-reduce-the-file-size-of-a-scanned-pdf-file)
