@@ -7,9 +7,8 @@ Go > connect to server
 Enter path: `smb://soe-nas/prakash-lab`”
 
 It will prompt you for login credentials, which are:
-
-Username: win\SUNet_ID
-Password : your SUNet password
++ Username: win\SUNet_ID
++ Password : your SUNet password
 
 Please keep regular usage below 500 GB, there's not a lot of space.
 
@@ -18,15 +17,24 @@ Please keep regular usage below 500 GB, there's not a lot of space.
 In Explorer:
 "Map network drive"
 
-Enter the path `\\soe-nas\prakash-lab`
+Enter path: `\\soe-nas\prakash-lab`
 + Check “Connect using different credentials"
 
 It will prompt you for login credentials, which are:
-
-Username: win\SUNet_ID
-Password : your SUNet password
++ Username: win\SUNet_ID
++ Password : your SUNet password
 
 Please keep regular usage below 500 GB, there's not a lot of space.
+
+## Add and remove people from server access
+
+Make sure that you have admin access to the server (request it from SOE IT)
+
+Go to workgroups.stanford.edu
+
+Click "add member"
+
+Enter their Stanford username (ie, for johnsmith@stanford.edu, enter "johnsmith")
 
 
 ## Connect to boa and mamba on a Windows computer
