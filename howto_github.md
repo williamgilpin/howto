@@ -1,4 +1,6 @@
-fork repo online
+### Initialize git on new machine
+
+### fork repo online
 
 clone forked repo locally
 
@@ -26,7 +28,7 @@ go to github and make a pull request
 
 
 
-# Editing commit history
+### Editing commit history
 
 To alter or combine the last four commits, run
 
@@ -40,7 +42,7 @@ If you've already commited, you have to force the update:
   
   $  git push origin master --force
 
-# Examine and merge a pull request
+### Examine and merge a pull request
 
 After recieving a pull request, make sure your local copy of the repository is up to date with `master` and that you've committed all changes. Now,
 

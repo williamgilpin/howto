@@ -48,3 +48,4 @@ The actual file submitted as a job, my_job.sh
 On the local host (sends all files ending in "results.txt")
 
     scp your_username@remotehost.edu:my_output_fils/*results.txt /some/local/directory
+

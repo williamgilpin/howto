@@ -18,6 +18,13 @@ Follow [the instructions here](http://ksloan.net/watermarking-videos-from-the-co
 
 Places watermark in bottom right corner
 
+
+# Extract audio from video using FFMPEG
+
+For an MP4 file this is easy
+
+	ffmpeg -i input.mp4 output.mp3
+
 # Remove columns from a space delimited txt file
 
 Keep only the first four columns from the file `lol.txt`
@@ -95,3 +102,10 @@ Use the following ghostscript command:
 	-dPDFSETTINGS=/default selects output intended to be useful across a wide variety of uses, possibly at the expense of a larger output file
 
 More information on [StackExchange](https://askubuntu.com/questions/113544/how-can-i-reduce-the-file-size-of-a-scanned-pdf-file)
+
+# Format videos for Twitter
+
+Use FFMPEG, for mp4 the file shape has to be even in both dimensions; can omit the -filter crop below if this is already true
+
+	ffmpeg -i video2_small.mp4 -filter:v "crop=3008:3000:0:0" -vcodec libx264 -acodec aac output.mp4
+

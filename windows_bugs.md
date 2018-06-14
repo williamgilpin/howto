@@ -100,6 +100,11 @@ If you can't even start the app, you have to do a clean reinstall (this is insan
 + Exit the DCAM installer interface
 
 
+# Mathematica ParallelTable[] fails inexplicably due to symbols having garbled contexts
+
+If, at any point in your code, you import a package or module (either internal or external), you need to put that import in the body of the function being Tabled. I do not really understand why this works.
+
+
 
 
 

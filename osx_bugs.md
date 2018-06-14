@@ -1,6 +1,6 @@
 # OSX bugs
 
-A running list of bugs and catches I've encountered with OSX Yosemite
+A running list of bugs and catches I've encountered with OSX
 
 ## MATLAB looks fuzzy on a Retina computer
 
@@ -12,7 +12,7 @@ Take screenshots and do whatever you can to save your work. If you try closing t
 
 All of you movie links will break for no reason. You need to manually re-import using Inspector, because right-clicking and choosing "replace" will only work for media that you've copied into Photos, which you don't use because it's 2016. If replace keeps failing, try copying your slides manually into a new document.
 
-## Deleted Evernote app still trying to use locatin services
+## Deleted Evernote app still trying to use location services
 
 This is the same bug as described [here](https://discussions.apple.com/thread/4618820?start=0&tstart=0)
 
@@ -30,13 +30,36 @@ In the terminal, type `kilall Dock` to restart the Dock
 
 Answer found on [Stackexchange](http://apple.stackexchange.com/questions/170488/osx-yosemite-mission-control-stopped-working)
 
-## System PReferences says No IP address, but I appear to be connected to the internet
+## System Preferences says No IP address, but I appear to be connected to the internet
 
 This tends to happen after altering your internal IP address using a command-line tool like ipconfig. The Wifi menu bar icon will show "loading" or error, but you can browse the web normally.
 
 In System Preferences, choose Network > Wifi > Assist Me > Diagnostic
 
 Go through the wizard and it should be able to figure out what's going on.
+
+## MATLAB MEX files won't compile
+
++ Append the MATLAB.app/bin to the FRONT of your path, then retry the install. The issue is that TeXLive has a Polish language command with the same name, which should should not recieve preference
+
++ Check to see where within XCode the current MACOSX10.?.sdk file resides. On my system this was located at:
+
+	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk
+
++ There's a hard-coded path inside MATLAB's mexopts clang files that might not include recent macOS releases. These need to be manually edited (seriously) to include recent releases
+
+	/Applications/MATLAB_R2014a.app/bin/maci64/mexopts/clang_maci64.xml
+	/Applications/MATLAB_R2014a.app/bin/maci64/mexopts/clang++_maci64.xml
+
+In each file, there are two instances that need to be edited. Each one looks like
+
+	<dirExists name="$$/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk" /> 
+
+and
+
+    <cmdReturns name="find $$ -name MacOSX10.13.sdk" />
+                       
+Oddly, the operating system version you are using is not equivalent to the name of the SDK file. I am using macOS 10.12.6, but the SDK file was named `MacOSX10.13.sdk`
 
 ## External hard drive not ejected properly, and now it won't mount
 
@@ -138,6 +161,17 @@ For any processes that really do not need to run,
 
 Directions from [here](http://apple.stackexchange.com/questions/74779/launchtl-any-way-to-disable-a-daemon-after-removing-the-plist-file)
 
+For Adobe products, use:
+
+Follow the advice [here](https://apple.stackexchange.com/questions/138941/how-do-i-stop-the-adobe-creative-cloud-app-from-auto-launching-on-login)
+
+	launchctl unload -w /Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist
+
+### Disable Adobe CoreSync and other background processes Adobe runs for its apps
+
+Follow the incredible instructions [here](https://apple.stackexchange.com/questions/236577/how-to-disable-adobe-core-sync-app-on-os-x-from-being-launched-automatically)
+
+Can also just kill off Creative Cloud using the instructions [here](https://apple.stackexchange.com/questions/218681/how-do-i-programatically-kill-the-cclibrary-process-by-pid)
 
 ### Check startup items folder
 
@@ -146,4 +180,14 @@ Directions from [here](http://apple.stackexchange.com/questions/74779/launchtl-a
 For example, remove the old KeyAccess software by killing the process, torching its folder in the StartupItems,
 
 ### Delete all remnants of other programs, as needed
+
+
+### Python problems (especially matplotlib)
+
+	 python setup.py build_ext --inplace
+
+### Permission denied errors in bash
+
+	chmod u+x my_script.sh
+
 

@@ -35,6 +35,10 @@ Copy a file from local over to $HOME
 
 	$ scp cfgen.py wgilpin@sherlock.stanford.edu:home
 
+Copy a file over to local
+
+    scp your_username@remotehost.edu:my_output_fils/*results.txt /some/local/directory
+
 ## Example: A MATLAB job
 
 Write as much as you can in a MATLAB script "matlabtest.m" that can just be run directly without further user input.
