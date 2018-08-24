@@ -42,6 +42,7 @@ If you've already commited, you have to force the update:
   
   $  git push origin master --force
 
+
 ### Examine and merge a pull request
 
 After recieving a pull request, make sure your local copy of the repository is up to date with `master` and that you've committed all changes. Now,
@@ -58,6 +59,29 @@ Now run tests, make sure everything appears to be working. You can also make any
 If you get an error when switching branches, you might need to discard some local changes to master (do this carefully). In this case, use the force flag
   
   git checkout -f master
+
+
+### Fork a repository
+
+Detailed instructions [here](https://help.github.com/articles/fork-a-repo/)
+
+You can fork a repository and make basic changes from the online GitHub GUI. After forking and making any changes online, you can get a local copy by running
+
+  git clone https://github.com/username/repo_name
+
+
+
+
+# Errors
+
+### Cannot stage changes
+
+Sometimes instead of `git add .` you need to use `git add --all`
+This can be fixed by stashing and then immediately un-stashing:
+
+    git stash
+    git stash apply
+
 
 ## Permission issues
 

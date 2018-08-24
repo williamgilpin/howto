@@ -1,3 +1,15 @@
+### Setting up a VM instance on Google Cloud
+
+Reserve an IP Address
+
+
+### Moving files off of VM
+
+From local machine, copy a file from the machine `cs231-vm`
+
+	gcloud compute scp --recurse cs231-vm:/path/to/remote /path/to/local
+
+The `--recurse` flag ensures allows one to copy directories and their contents
 
 ### Entering/Exiting the VM from local terminal
 

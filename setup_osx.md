@@ -47,6 +47,7 @@ Install the google cloud SDK
 homebrew
 ffmpeg
 imagemagick
+[istats comman line gem](http://chris911.github.io/iStats/)
 
 
 

@@ -127,8 +127,6 @@ Here is an example for uninstalling KeyAccess (from [UT Austin](https://www.uta.
 	Delete /Library/Preferences/KeyAccess/
 
 ## Junk appearing at startup that does not appear under login items
-
-
 ### Check Launch Agents and Launch Daemons
 
 Look for any Adobe or Skype stuff in LaunchAgents
@@ -155,7 +153,7 @@ For a general search,
 
 	sudo launchctl list
 
-For any processes that really do not need to run,
+For any processes that really do not need to run. For example `KeyAccess` is a software license key monitor that I installed four years ago and promptly uninstalled. However, even after uninstallation a daemon remained, which was removed using
 
 	launchctl remove com.sassafras.KeyAccess.kass.1668
 
@@ -190,4 +188,16 @@ For example, remove the old KeyAccess software by killing the process, torching 
 
 	chmod u+x my_script.sh
 
+### Can't tell if a bug is causing true reboot or just logout
+
+	last reboot
+
+in the Terminal will show all reboots that have occurred
+
+
+### Computer running hot
+
+I noticed that my 2016 Macbook Pro (15 inch with touchbar) was running really hot for even simple tasks. It cooled down significantly when I went into the energy settings and disabled the option "Put Hard Disks to Sleep When Possible"
+
+Can also get temps by using the istats ruby gem (can install using homebrew), and then running `istats` in the Terminal
 
