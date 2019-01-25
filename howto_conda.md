@@ -39,12 +39,26 @@ Duplicating an environment
 
 	 $ conda create -n newname --clone oldname
 
-Removing and environment
+Removing an environment
 
 	 $ conda remove -n myenv --all
 
 
+
 ### Broken conda installation
+
+
+#### Revert your environment
+
+Some packages install a mess of dependencies, which can break parts of your code. To revert, enter your environment and then view your environment's revision history
+
+	conda list --revisions
+
+Pick which revision you want to go back to. For revision N, run
+
+	conda install --revision N
+
+Found this tip [here](http://blog.rtwilson.com/conda-revisions-letting-you-rollback-to-a-previous-version-of-your-environment/)
 
 #### Attempt a partial re-installation
 

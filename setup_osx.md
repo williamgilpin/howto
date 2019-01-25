@@ -35,6 +35,10 @@ Fiji / ImageJ
 
 Vox music player
 + Put the ".prefPane" file under `/Users/william/Library/PreferencePanes/VOX Preferences.prefPane` in order to use the media keys
++ Recent versions of this have ads and other weird stuff going on
+
+Unarchiver
++ Nice general-purpose GUI utility for opening files
 
 Backup and Sync (Google)
 + Have the online Google drive program sync with a local folder (for offline backups)
@@ -47,7 +51,9 @@ Install the google cloud SDK
 homebrew
 ffmpeg
 imagemagick
-[istats comman line gem](http://chris911.github.io/iStats/)
+[istats command line gem](http://chris911.github.io/iStats/)
+unrar (opens rar files)
+sox (working with audio files, making spectrograms)
 
 
 

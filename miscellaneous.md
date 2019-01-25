@@ -51,7 +51,7 @@ To rename files with sequential numbers, run a similar script:
 	    echo $file
 	done
 
-Can drop the part in quotes in the first line if you just want to rename without selecting any data
+Can 
 
 # Sublime Text customization of settings
 
@@ -67,7 +67,13 @@ Open preferences from the menus and put your preferences in a single pair of cur
 		]
 	}
 
+# Put parentheses around all citations in LaTeX
 
+This is useful for switching a document over to NatBib
+
+	\renewcommand{\cite}[1]{(\citenum{#1})} % parentheses around citations
+
+This can go anywhere in the preamble
 
 # Run multiple Mathematica notebooks at once
 
@@ -103,9 +109,84 @@ Use the following ghostscript command:
 
 More information on [StackExchange](https://askubuntu.com/questions/113544/how-can-i-reduce-the-file-size-of-a-scanned-pdf-file)
 
+# Open tar gz file
+
 # Format videos for Twitter
 
 Use FFMPEG, for mp4 the file shape has to be even in both dimensions; can omit the -filter crop below if this is already true
 
 	ffmpeg -i video2_small.mp4 -filter:v "crop=3008:3000:0:0" -vcodec libx264 -acodec aac output.mp4
 
+
+# Deshake a video
+
+	ffmpeg -i input.mp4 -vf deshake="rx=64:ry=64"  -an output.mov
+
+The flags `-rx`  and `-ry` are optional flags taken from this list [here](https://ffmpeg.org/ffmpeg-filters.html#deshake)
+
+# Convert a directory of FLAC to ALAC for iTunes
+
+Using ffmpeg
+
+	for i in *.flac ; do
+	    ffmpeg -i "$i" -acodec alac "$(basename "${i/.flac}").m4a"
+	    sleep 2
+	    # may need to adjust sleep time for processor speed                               
+	done
+
+I saved this as a bash script, so just cd into the directory containing the FLAC files and then run
+
+	bash ~/codebits/utility_scripts/flac2alac.sh
+
+# Make spectrograms to check quality of audio files
+
+Using sox
+
+	sox audiofile.flac -n spectrogram
+
+A good FLAC file should have features at 22 kHz. A transcode low quality will have a plateau around 19 kHz (with some spikes). Great info [here](https://dsp.stackexchange.com/questions/20563/how-to-know-if-a-audio-file-is-real-lossless-using-its-spectrogram)
+
+# Fix focusing issue on Sublime text OSX
+
+Add the following plugin "Tools > Developer > New Plugin" and save with a descriptive name.
+Copied from [this GitHub thread](https://github.com/SublimeTextIssues/Core/issues/448)
+
+	import sublime
+	import sublime_plugin
+	import os
+
+	cmd = '''
+	tell application \\"System Events\\"
+	    tell application process \\"Sublime Text\\"
+	        set frontmost to true
+	    end tell
+	end tell
+	'''
+
+	class FocusOnLoad (sublime_plugin.EventListener):
+	    def on_load(self, view):
+	        os.system('osascript -e "{0}"'.format(cmd))
+
+# Merge three videos in xy as a mosiac using FFMPEG
+
+The height and widht parameters have to be calculated very carefully---any extra space will be filled with black thanks to the "color" option below
+
+Crop mosaic length to the shortest video length
+
+	ffmpeg -i 1.mov -i 2.mov -i 3.mov -filter_complex "color=s=4912x1502:c=black [base];[0:v] setpts=PTS-STARTPTS, scale=1504x1502 [left];[1:v] setpts=PTS-STARTPTS, scale=1504x1502 [middle];[2:v] setpts=PTS-STARTPTS, scale=1504x1502 [right];[base][left] overlay=shortest=1 [tmp1];[tmp1][middle] overlay=shortest=1:x=1704 [tmp2];[tmp2][right] overlay=shortest=1:x=3408" -c:v libx264 output_merge.mov
+
+Remove the `shortest` flag to set the mosaic length to length of longest video (pad with ending frames of other videos)
+1520x1507
+
+	ffmpeg -i inv1.mov -i inv3.mov -filter_complex "color=s=3340x1508:c=black [base];[0:v] setpts=PTS-STARTPTS, scale=1520x1508 [left];[1:v] setpts=PTS-STARTPTS, scale=1520x1508 [right];[base][left] overlay=shortest=1 [tmp1];[tmp1][right] overlay=shortest=1:x=1820" -c:v libx264 output_merge2.mov
+
+
+
+Note that this throws an error if the video heights or widths are not even numbers of pixels
+
+
+Sources
+
+
+https://stackoverflow.com/questions/33330279/ffmpeg-selects-shortest-movie-but-leaves-full-length-audio
+https://trac.ffmpeg.org/wiki/Create%20a%20mosaic%20out%20of%20several%20input%20videos

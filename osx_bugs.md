@@ -26,7 +26,7 @@ This seems to happen sometimes when using Flash on Chrome, for some reason the s
 
 ## Mission Control / Spaces / hotkeys stop working
 
-In the terminal, type `kilall Dock` to restart the Dock
+In the terminal, type `killall Dock` to restart the Dock
 
 Answer found on [Stackexchange](http://apple.stackexchange.com/questions/170488/osx-yosemite-mission-control-stopped-working)
 
@@ -188,6 +188,10 @@ For example, remove the old KeyAccess software by killing the process, torching 
 
 	chmod u+x my_script.sh
 
+or, if that doesn't work, try
+
+	sudo chmod +r my_script.sh
+
 ### Can't tell if a bug is causing true reboot or just logout
 
 	last reboot
@@ -198,6 +202,16 @@ in the Terminal will show all reboots that have occurred
 ### Computer running hot
 
 I noticed that my 2016 Macbook Pro (15 inch with touchbar) was running really hot for even simple tasks. It cooled down significantly when I went into the energy settings and disabled the option "Put Hard Disks to Sleep When Possible"
++ Advice from [this thread](https://discussions.apple.com/thread/7853145)
++ Good general advice [here](https://apple.stackexchange.com/questions/269377/macbook-pro-15-touch-bar-running-hot)
++ SMC Reset (but not PRAM) also seemed to help a lot
++ This shouldn't affect anything unless external spinning hard drives are connected. Keeping this enabled might improve battery life in rare cases where spinning hard drives are connected for long periods while the computer is on battery power.
 
 Can also get temps by using the istats ruby gem (can install using homebrew), and then running `istats` in the Terminal
++ Measured CPU Temp: 35.81°C normal
 
+Curiously, this setting appears to have gotten re-checked after reboot. I am not sure why.
+
+### Computer warm after sleeping
+
+Go into "Energy Saver" and disable "Wake for WiFi access"
