@@ -54,6 +54,7 @@ Brew puts the boost library under `/usr/local/Cellar/boost/1.68.0_1` instead of 
 ## Some notes on learning C++
 
 
+
 C++ has three variable types: pointers, values, and references
 
 Pointers take up their own memory address; can be used to put things in and out of that address
