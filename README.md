@@ -8,5 +8,13 @@ date: "2017-02-23T10:20:00Z"
 
 A collection of searchable files I use to keep track of how to do various tricky things
 
-William Gilpin, 2014
+by [William Gilpin](http://www.wgilpin.com/)
+
+
+## Computer pages
+
+
+
+
+## Project pages
 

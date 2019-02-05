@@ -12,6 +12,15 @@ defaults:
       layout: "page"
       date: "2029-02-23T10:20:00Z" # This field cannot be empty
 
+minima:
+  date_format: "%b %-d, %Y"
+
+  # generate social links in footer
+  social_links:
+    twitter: wgilpin0
+    github:  williamgilpin
+
+
 # Empty header pages
 header_pages:
   -
