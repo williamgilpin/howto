@@ -10,7 +10,7 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "page"
-      date: "2018-02-23T10:20:00Z" # This field cannot be empty
+      date: "2029-02-23T10:20:00Z" # This field cannot be empty
 
 # Base URL of the published website
 # baseurl: http://www.wgilpin.com/howto/howto_conda.html
