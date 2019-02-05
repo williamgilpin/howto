@@ -4,7 +4,7 @@ date: "2017-02-23T10:20:00Z"
 ---
  -->
 
-My guides and tutorials for various things that I've figured out over the years.
+My guides and tutorials for various computer-related things.
 
 by [William Gilpin](http://www.wgilpin.com/)
 
