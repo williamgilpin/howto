@@ -23,7 +23,7 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 [Maintain documentation for a project using sphinx](howto_sphinx.md)
 
-[Install and run Sundials](howto sundials python.md)
+[Install and run Sundials](howto_sundials_python.md)
 
 [Getting started with C++](howto_cpp.md)
 
