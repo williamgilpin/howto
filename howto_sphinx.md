@@ -1,4 +1,4 @@
-# Alternative to ReadTheDocs (direct hosting of local output on GitHub)
+# Hosting project documentation using GitHub pages
 
 Make a sister directory to the project repo so that it doesn't get commited to your main GitHub repo
 
@@ -12,7 +12,25 @@ Now create a gh-pages branch and push the changes to that branch as well:
 	git add .
 	git push origin gh-pages
 
-This is a less optimal solution because you have to re-copy the entire folder of documentation each time a change is made
+This is a less optimal solution because you have to re-copy the entire folder of documentation each time a change is made. I'm still working on a smoother fix.
+
+For example, for my project [pypdb] I go through the following checklist when committing new documentation to the main branch:
+
++ Remove temporary copies of main file from ipynb directory
++ Export HTML file of all notebooks and put in the right directories
++ Update all documentation:
+
+	+ Compile sphinx
+	+ Retrieve HTML folder from output
+	+ Put this HTML folder in the Documentation GitHub repository
+	+ push to master
+	+ push to gh-pages branch
+
++ Update version number in setup.py
++ push to GitHub
++ Update Github tags
++ Update PyPI
++ Test pip install in a clean environment
 
 # Using Sphinx
 

@@ -11,9 +11,11 @@ However, as of December 2016 GitHub will by default render Markdown using Jekyll
 
 ## Initializing the page
 
-Enable jekyll in the project's online settings. Either put this on the gh-pages or master branch.
+Enable jekyll in the project's online settings. Either put this on the gh-pages or master branch. In practice, I find that the "Minima" theme works the best.
 
-Modify `_config.yml` to change the settings of the repo
+Modify `_config.yml` to change the settings of the repo. For example, to get rid of the header
+
+By default, `README.md` will become the site's `index.html`. Internal links to other markdown pages will be automatically converted to links to the rendered pages
 
 ## Changing the theme
 

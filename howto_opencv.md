@@ -4,6 +4,7 @@ Follow the instructions [here](http://blogs.wcode.org/2014/10/howto-install-buil
 [These](http://shiffman.net/2011/01/23/how-to-build-opencv-static-libraries-mac-os-x/) are also great instructions
 
 ## Instructions
+
 Unzip it and add the folders SharedLibs and StaticLibs within the repository
 
 Download opencv from the source website
