@@ -12,6 +12,12 @@ defaults:
       layout: "page"
       date: "2029-02-23T10:20:00Z" # This field cannot be empty
 
+# Empty header pages
+header_pages:
+  -
+
+
+
 # Base URL of the published website
 # baseurl: http://www.wgilpin.com/howto/howto_conda.html
 # url: http://www.wgilpin.com

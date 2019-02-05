@@ -8,6 +8,13 @@ Previously, the easiest options have been either to either:
 
 However, as of December 2016 GitHub will by default render Markdown using Jekyll when this feature is enabled in a GitHub repository ([instructions here](https://github.com/blog/2289-publishing-with-github-pages-now-as-easy-as-1-2-3)). You can specify the branch in the online repo settings; for documentation-only repos, it is probably easiest to just use the master branch.
 
+
+## Initializing the page
+
+Enable jekyll in the project's online settings. Either put this on the gh-pages or master branch.
+
+Modify `_config.yml` to change the settings of the repo
+
 ## Changing the theme
 
 If you change the Markdown theme using the GitHub web editor, you will need to synchronize your local copy with the theme template used in the remote. The safest way to do this is:
