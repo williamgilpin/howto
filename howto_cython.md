@@ -92,3 +92,15 @@ Your project structure needs to look like this:
 
 + Now, compile the .pyx file using `python setup.py build_ext --inplace`
 + Now you are ready to use the function. In your python script `my_script.py` add an import statement `from multiply_runner import multiply` and use multiply as a normal function. The name of the function is its name in the .pyx file, regardless of its name in the original cpp and h files
+
+
+## Optimizing Cython code
+
+You can see when Python is getting instead of C called by running
+
+	cython -a oscillator_funcs.pyx
+
+And viewing the resulting HTML file.
+
+Good tips on optimizing Cython code in the document [Using Cython to Speed up Numerical Python Programs](https://www.simula.no/file/simulasc578pdf/download)
+

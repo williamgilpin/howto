@@ -71,8 +71,9 @@ by [William Gilpin](http://www.wgilpin.com/)
 [Use Stanford's Sherlock HPP Cluster](howto_sherlock.md)
 
 
-## Science project pages
+## Other projects
 
+[Roasting coffee](other/roasting_coffee_beans.md)
 
 <!-- [] -->
 

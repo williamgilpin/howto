@@ -33,7 +33,7 @@ Updating conda
 Duplicating an environment
 
 	 $ conda list --export > exported-packages.txt
-	 $conda create -n py3clone --file exported-packages.txt
+	 $ conda create -n py3clone --file exported-packages.txt
 
 -OR-
 
