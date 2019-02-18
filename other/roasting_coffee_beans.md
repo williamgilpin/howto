@@ -18,4 +18,4 @@ Items
 
 Roasting setup          |  Roasted beans
 :-------------------------:|:-------------------------:
-![](/resources/roasting_popper.jpg)  |  ![](/resources/roasted_beans.jpg)
+![](./resources/roasting_popper.jpg)  |  ![](./resources/roasted_beans.jpg)
