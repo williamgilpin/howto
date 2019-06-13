@@ -71,6 +71,12 @@ by [William Gilpin](http://www.wgilpin.com/)
 [Use Stanford's Sherlock HPP Cluster](howto_sherlock.md)
 
 
+## General professional
+
+[Graduate fellowships and funding](other/graduate_fellowships.md)
+
+[Postdoc fellowships](other/postdoc_fellowships.md)
+
 ## Other projects
 
 [Roasting coffee](other/roasting_coffee_beans.md)

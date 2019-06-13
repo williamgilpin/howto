@@ -21,6 +21,9 @@ Now SSH into the virtual machine
 
 	gcloud compute ssh --zone=us-west1-b cs231-vm
 
+
+You can now start Python, run Jupyter. The interface should be local, but computations will occur on the cloud
+
 Log out of the virtual machine
 
 	logout

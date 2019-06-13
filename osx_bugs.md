@@ -199,6 +199,17 @@ or, if that doesn't work, try
 in the Terminal will show all reboots that have occurred
 
 
+### Spotlight not finding text in .py files
+
+Go into the Spotlight preferences under System Settings, and check the box for "Developer"
+This seems to get disabled by default every few update cycles.
+
+# Hardware problems
+
+### Intermittent "click" or "pop" noise from the laptop
+
+This appears to be a known design flaw with 2016 MacBook Pros. See, for example, [here](https://discussions.apple.com/thread/7825434?page=51)
+
 ### Computer running hot
 
 I noticed that my 2016 Macbook Pro (15 inch with touchbar) was running really hot for even simple tasks. It cooled down significantly when I went into the energy settings and disabled the option "Put Hard Disks to Sleep When Possible"

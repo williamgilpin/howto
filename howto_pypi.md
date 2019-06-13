@@ -57,3 +57,21 @@ This is really only necessary when the actual package changes, you can mess with
 
     $ python setup.py sdist upload -r pypi
 
+
+# Troubleshooting
+
+
+### Issues authenticating when uploading to PyPI from Terminal
+
+You might need to make a file at `~/.pypirc` containing
+
+	[distutils]
+	index-servers =
+	    pypi
+
+	[pypi]
+	repository: https://pypi.python.org/pypi
+	username: <username>
+	password: <pass>
+
+This will help avoid having to login elsewhere

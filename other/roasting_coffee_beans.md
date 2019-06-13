@@ -3,7 +3,7 @@
 Items
 + An air popcorn popper. Ideally, use a model that agitates the kernels as it blows hot air through them
 + Oven mitts
-+ A co
++ A slotted spoon and metal bowl
 
 1. Put into the popper an equal amount of coffee beans as popcorn kernels
 2. Attach the full butter dish/popcorn chute to the popper, and direct the output into a large bowl filled with water

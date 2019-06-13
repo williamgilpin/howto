@@ -146,6 +146,30 @@ Using sox
 
 A good FLAC file should have features at 22 kHz. A transcode low quality will have a plateau around 19 kHz (with some spikes). Great info [here](https://dsp.stackexchange.com/questions/20563/how-to-know-if-a-audio-file-is-real-lossless-using-its-spectrogram)
 
+
+# Update packages in MacTeX
+
+There is an actual package manager called `tlmgr` installed by default on TeX Live and MacTeX
+
+First, update it
+
+	tlmgr update --self
+
+Can install a package like this
+
+	tlmgr install revtex
+
+Can view all installed packages like this
+
+	tlmgr update --list
+
+Can update everything with this
+
+	tlmgr update --all
+
+Note: I had to sudo all of these, since I installed MacTeX like a standard application on macOS
+
+
 # Fix focusing issue on Sublime text OSX
 
 Add the following plugin "Tools > Developer > New Plugin" and save with a descriptive name.

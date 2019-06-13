@@ -19,11 +19,12 @@ Can install packages accessible to every conda environment
 Now try making a new virtual environment via conda
 
 	 $ conda create -n cenv python=2.7
-	(cenv) $ source activate cenv
+	(cenv) $ conda activate cenv
 	(cenv) $ echo "local environment install only:"
 	(cenv) $ conda install django
-	(cenv) $ source deactivate
+	(cenv) $ conda deactivate
 
+*Note: before 2018, `source activate` and `source deactivate` were used instead of `conda activate`*
 
 Updating conda
 
@@ -43,9 +44,54 @@ Removing an environment
 
 	 $ conda remove -n myenv --all
 
+## Distributing a package on Anaconda cloud
+
+Create an online Anaconda cloud account [here](https://anaconda.org/)
+
+You need to install two additional command line utilities
+
+	conda install anaconda-client conda-build
+
+Now login locally from the terminal, entering your username and password when prompted
+
+	anaconda login
+
+### Upload the package to Anaconda cloud
+
+Disable automatic uploading and then build
+
+	conda config --set anaconda_upload no
+	conda build .
+
+Now find out where the build was stored
+
+	conda build . --output
+
+This directory will be somewhere weird on your system, depending on where Miniconda is installed. Now that you know the path, run
+
+	anaconda upload /path/to/file/somename.tar.bz2
+
+Now you can distribute and install the package using 
+
+	conda install -c username my_package
+
+### Updating a package on Anaconda cloud
+
+I have not found a more efficient way to do this besides literally deleting my package and re-uploading. There is probably a way to have versions, but it is not clearly outlined in the Anaconda Cloud documentation
+
+### For a package that is already being distributed using PyPI
+
+Note: this should only be done if direct uploading to Anaconda cloud isn't working---otherwise, this conflicts.
+Create a tarball for the package
+
+	python setup.py sdist
+
+Upload the package to Anaconda Cloud
+
+	anaconda upload dist/*.tar.gz
 
 
-### Broken conda installation
+## Broken conda installation
 
 
 #### Revert your environment
@@ -92,6 +138,23 @@ You can export a list of the dependencies using
 	ls -d */ > ~/example_env_dependencies.txt
 
 
+#### Packages install through conda, but don't show up correctly in iPython
 
+For example, conda successfully runs
+
+	$ conda install matplotlib
+
+However, in a jupyter notebook (or iPython terminal), the following returns a `ModuleNotFound` exception
+
+	$ import matplotlib
+
+Try checking in a bare python terminal
+
+	$ python
+	>>> import matplotlib
+
+If this works, then you don't have jupyter correctly installed in your environment, so just run
+
+	$ conda install jupyter
 
 
