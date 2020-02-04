@@ -226,3 +226,5 @@ Curiously, this setting appears to have gotten re-checked after reboot. I am not
 ### Computer warm after sleeping
 
 Go into "Energy Saver" and disable "Wake for WiFi access"
++ consider disabling power nap
+

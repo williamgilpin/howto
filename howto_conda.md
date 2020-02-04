@@ -1,27 +1,21 @@
-## Installing Miniconda
+ ## Installing Miniconda
 
-Use miniconda to avoid installing tons of packages you won't use
-Download the installer for whichever python distro you want as default; you can always make an environment with a different flavor of python (I initially used python 2.7 since that's the OSX default, but when I had to reinstall I switch to Python 3)
+I generally use miniconda to avoid installing tons of packages that I don't need. It's important to download the installer for whichever python distro you want as default; you can always make an environment with a different flavor of python. As of 2020, it probably makes sense to install with the Python 3 binary, and then make environments for using Python 2. 
 
-
-	 $ bash ./[long file name].sh
+Currently, you can install Anaconda or Miniconda simply by downloading and running a bash script from the project website
 
 
---can also just use the default GUI installer for Anaconda (I used miniconda because anaconda isntalled in a weird place)
+	 $ bash ./[some long file name].sh
 
 
-Can install packages accessible to every conda environment
-	
-	$ conda install numpy
+You can also a GUI installer for Anaconda, but I found the bash script easier to use.
 
-### Making and using virtual environments
+## Making and using virtual environments
 
 Now try making a new virtual environment via conda
 
-	 $ conda create -n cenv python=2.7
+	$ conda create -n cenv python=2.7
 	(cenv) $ conda activate cenv
-	(cenv) $ echo "local environment install only:"
-	(cenv) $ conda install django
 	(cenv) $ conda deactivate
 
 *Note: before 2018, `source activate` and `source deactivate` were used instead of `conda activate`*
@@ -43,6 +37,10 @@ Duplicating an environment
 Removing an environment
 
 	 $ conda remove -n myenv --all
+
+## Installing packages
+	
+	$ conda install numpy
 
 ## Distributing a package on Anaconda cloud
 
@@ -93,6 +91,7 @@ Upload the package to Anaconda Cloud
 
 ## Broken conda installation
 
+Here are some fixes I've used when my conda installation stops working.
 
 #### Revert your environment
 
@@ -124,13 +123,13 @@ You may need to edit your bash settings to help get the paths correct
 
 #### Completely re-installing
 
-Occasionally conda on OSX will irreversibly and permanently fail with no meaningful way of recovering. Based on the GitHub reports, the developers appear to find these issues too difficult to troubleshoot on a case-by-case basis, and so they instead favor doing a clean re-installation.
+Occasionally, I've found that conda on OSX will break with no meaningful way of recovering. These issues can be too difficult to troubleshoot on a case-by-case basis, and the easiest solution is a clean re-installation.
 
-The question is whether it is at all possible to recover one's existing environments. I am under the impression that this is very difficult to do because of the way that internal links to moved filed are built into conda. Instead I opted for a clean re-install, which unfortunately meant that I had to re-install various packages piecemeal as I required them
+The question is whether it is at all possible to recover one's existing environments. I am under the impression that this is very difficult to do because of the way that internal links to moved filed are built into conda. Instead I opted for a clean re-install, which unfortunately meant that I had to re-install various packages piecemeal as I required them.
 
-If you still have access to your old, broken conda installation, a list of what was installed can be found in
+If you still have access to your old, broken conda installation, a list of what was installed can be found in a path that looks something like
 
-	/Users/william/miniconda/envs/example_env/lib/python3.4/site-packages
+	/Users/username/miniconda/envs/example_env/lib/python3.4/site-packages
 
 You can export a list of the dependencies using
 

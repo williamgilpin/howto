@@ -1,11 +1,4 @@
-How to deal with large quantities (> 2 TB) of experimental data
-
-## Windows version
-
-In my efforts, Crashplan stuggled with large backups. Instead I am using Backblaze, which seems to work a little better under the hood.
-
-Windows Backup solution does not work for large drives, it gets confused and claims that the target drive is full when it is not. This might have to do with extremely inefficient version control. For this amount of data, you have to give up on version control.
-
+Our 2017 protocol for maintaining large quantities (> 10 TB) of experimental data
 
 ## Set up Backblaze
 
@@ -17,16 +10,22 @@ Make sure each drive you want backed up has a ".bzvol" file somewhere in its top
 To speed up the initial upload
 
 + From the Backblaze control panel, go into "Settings" > "Performance" and slide the "Manual Throttle" all the way to the right. 
-+ If you have multiple cores, consider enabling multiple backup threads. A good set of criteria for when this should be helpful is gen [here](https://www.backblaze.com/blog/backblaze-online-backup-4/)
-+ A good sanity check is to see whether the "Latest File Upload Speed" reported in the Performance panel is consistent with your internet upload speed, as reported by a web speed tester
++ If you have multiple cores, consider enabling multiple backup threads. A good set of criteria for when this should be helpful is given [here](https://www.backblaze.com/blog/backblaze-online-backup-4/)
++ A good sanity check is to see whether the "Latest File Upload Speed" reported in the Performance panel is consistent with your internet upload speed (we just estimated this using online services)
 + If you need to use your computer for any intensive computations during this time, consider automatic throttling and removing multithreading while you are running your task.
-+ Backblaze won't back up files if the hard drive has less than 1.1x the size of the largest file that needs to backed up. You can get around this by setting up a "Temporary Data Drive" that BackBlaze uses for scratch instead of hte targest hard drive.
++ Backblaze currently won't back up files if the hard drive has less than 1.1x the size of the largest file that needs to backed up. You can get around this by setting up a "Temporary Data Drive" that BackBlaze uses for scratch instead of the target hard drive.
 
 ### Leaving a drive disconnected
 
 If a computer needs to be disconnected for more than a month, try "Pausing" Backblaze using [the instructions given here.](https://help.backblaze.com/entries/21809372-What-happens-to-my-backups-when-I-m-away-or-on-vacation-)
 
-If the computer is unreachable for greater than 6 months, Backblaze will delete your data and there's nothing you can do about that.
+If the computer is unreachable for greater than 6 months, Backblaze will delete your data. I hope that they will reconsider this policy in the future, especially if they launch an "Enterprise" version of their service.
+
+## Local Windows desktop computer
+
+In our efforts, Crashplan stuggled with large backups. Instead we ended up using Backblaze, which seemed to work a little better with continuous uploading.
+
+For local storage, in our experience, Windows Backup solution did not work for large drives---it got confused and claimed that the target drive was full when it was not. This might have to do with the version control system; for this amount of data, we were unable to find a storage solution with reliable version control.
 
 ### Copying data on Windows
 
@@ -51,13 +50,13 @@ To make a hard drive clone without re-copying old files
 /log:C:\William\Desktop\robolog.txt will export the terminal status updates to a text file on your desktop instead of printing them
 Note: MIR can't tell if a file was renamed, sometimes it will just re-copy the entire directory.
 
-**Watch which directory you list as the source and the destination, if you mess this up then terrible things will happen**
+**Watch which directory you list as the source and the destination, if you mess this up then problems will occur**
 
 *Note: if you run a copy and there are files in the source which were moved to the Recycle Bin, for some reason these files will get copied over as well. Empty the Recycling Bin before initiating a transfer in order to prevent this from happening.*
 
 ### Verify the backup
 
-After the first backup (and every so often afterwards), it is a good idea to check the backup to make sure that it is happening correctly. Right now I just spot-check files, but a much smarter method would involve selecting random files (or even entire directories) and comparing their md5 hashes. I do not yet have a batch script that will do this step.
+After the first backup (and every so often afterwards), it is a good idea to check the backup to make sure that it is happening correctly. Right now I just spot-check files, but a much smarter method would involve selecting random files (or even entire directories) and comparing their md5 hashes. We have a buggy script that does this step, but it's not reliable enough to share yet.
 
 ## My current SOP for data backup
 
@@ -68,7 +67,7 @@ Make a two raw data copies on separate hard drives immediately after doing exper
 
 Things I find helpful to have recorded somewhere, but which I am not currently using
 
-## Set up CrashPlan
+## Set up CrashPlan as a Stanford user
 
 You should be able to use your Stanford Credentials to access [https://su-backup.stanford.edu](https://su-backup.stanford.edu) using the "Single Sign-On" option
 
@@ -102,9 +101,9 @@ To run this on every image in a sub directory, you need to use bash language
 
 For Unix you might need to use %%f, I haven't tested this though
 
-**IT looks like LZW is pretty worthless on 16 bit tiffs, it might be easier to either use 8 bit tiffs or ZIP (although ZIP doesn't appear to reduce file size by a meaningful amount)
+**IT looks like LZW is not always effective on 16 bit tiffs, it might be easier to either use 8 bit tiffs or ZIP (although I did not find that ZIP reduced file size by a meaningful amount)
 
-Convert 16-bit tiff to 8-bit tiff
+Convert 16-bit tiff to 8-bit tiff with imagemagick:
 
 	convert name_of_16bit.tif -depth 8 name_of_8bit.tif
 
@@ -115,5 +114,5 @@ To extract metadata from an image (in order to check whether microscope metadata
 
 ## Other backup services
 
-We looked into Google Drive and Amazon Cloud Drive Unlimited. Both services cause trouble when your storage exceeds 1 TB. EC2 and Backblaze are both designed for/encourage large amounts of data, so it seems unlikely that either will pull the plug.
+We looked into Google Drive and Amazon Cloud Drive Unlimited. As of writing, both services were not time or cost efficient for our data storage needs.
 

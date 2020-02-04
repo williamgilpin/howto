@@ -29,7 +29,7 @@ For an MP4 file this is easy
 
 Keep only the first four columns from the file `lol.txt`
 
-	>awk '{print $1" "$2" "$3" "$4}' lol.txt > lol2.txt
+	> awk '{print $1" "$2" "$3" "$4}' lol.txt > lol2.txt
 
 Run this as a script for all of the files in a directory
 
@@ -190,6 +190,14 @@ Copied from [this GitHub thread](https://github.com/SublimeTextIssues/Core/issue
 	class FocusOnLoad (sublime_plugin.EventListener):
 	    def on_load(self, view):
 	        os.system('osascript -e "{0}"'.format(cmd))
+
+
+# Extract data from tables in a PDF file
+
+Use this software [here](https://tabula.technology/)
++ Install the software and run it in order to start the server
++ Then, navigate to the server in your browser in order to use the software (instructions are in the README)
+
 
 # Merge three videos in xy as a mosiac using FFMPEG
 

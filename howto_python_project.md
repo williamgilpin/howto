@@ -1,13 +1,11 @@
 
 # Structuring a Python project
 
-I recently needed to structure a Python project for distribution. I based the structure and approach of my project';s repository on [Google PyBadges](https://github.com/google/pybadges/)
+I recently needed to structure a Python project for distribution. I based the structure and approach of my project's repository on [Google PyBadges](https://github.com/google/pybadges/)
 
-My project was a simple stock portfolio management and rebalancing library, which puts in calls to the Tiingo API in order to pull historical stock data. For this reason, my project needed to store an API key that would not actually be distributed with the project. My final project is here:
+My project was [portbalance](https://github.com/williamgilpin/portbalance), a simple stock portfolio management and rebalancing library, which puts in calls to the Tiingo API in order to pull historical stock data. For this reason, my project needed to store an API key that would not actually be distributed with the project.
 
-[portbalance](https://github.com/williamgilpin/portbalance)
-
-The final structure is:
+The project structure is:
 
 	root/
 	├── portbalance
@@ -44,13 +42,14 @@ I based this approach on these resources:
 
 ## Adding tests
 
-+ I used unittests, since it is built-in and can accommodate doctests 
++ I used the unittests package, since it is built-in to most python distributions, and it can accommodate doctests 
 https://github.com/google/pybadges/blob/master/tests/test_precalculated_text_measurer.py
 https://www.blog.pythonlibrary.org/2016/07/07/python-3-testing-an-intro-to-unittest/
 
 [Running unittest with typical test directory structure](https://stackoverflow.com/questions/1896918/running-unittest-with-typical-test-directory-structure)
 
-
+Pytests also looks really nice:
+https://albumentations.readthedocs.io/en/latest/writing_tests.html
 
 
 
