@@ -4,7 +4,7 @@ date: "2017-02-23T10:20:00Z"
 ---
  -->
 
-My guides and tutorials for various computer-related things.
+My notes and guides for various things, mostly computer related.
 
 by [William Gilpin](http://www.wgilpin.com/)
 
@@ -69,6 +69,8 @@ by [William Gilpin](http://www.wgilpin.com/)
 [Restart servers in Stanford's SOE IT Dept](howto_restartStanfordSOEservers.md)
 
 [Use Stanford's Sherlock HPP Cluster](howto_sherlock.md)
+
+[Shortcuts for working with images and videos in FFMPEG](howto_ffmpeg.md)
 
 
 ## General professional
