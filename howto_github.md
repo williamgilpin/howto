@@ -1,4 +1,19 @@
-### Initialize git on new machine
+### Link to GitHub account
+
+In Terminal,
+
+	git config --global user.name github_username
+	git config --global user.email my_email@email.com
+	git config --global core.editor emacs
+
+The last line sets the default editor to emacs. The first time you push changes to remote, you will be prompted for your password. This will be saved for future use
+
+If you are still repeatedly prompted for your account credentials, use
+
+	git config credential.helper store
+
+Note that running the above will cause an unhashed copy of your GitHub password to be stored locally.
+
 
 ### fork repo online
 
@@ -69,6 +84,16 @@ You can fork a repository and make basic changes from the online GitHub GUI. Aft
 
   git clone https://github.com/username/repo_name
 
+### Update local with changes to remote
+
+  git pull origin
+
+This combines a `fetch` with a `merge`
+
+### Force overwrite local with remote
+
+	git fetch origin
+	git reset --hard origin/master
 
 
 

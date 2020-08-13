@@ -42,6 +42,8 @@ Removing an environment
 	
 	$ conda install numpy
 
+It is sometimes difficult to decide whether to install a package using pip or conda. As a rule of thumb, I only use conda to install binaries from the main Anaconda channels (ie, not from a forge channel), and I use pip for everything else.
+
 ## Distributing a package on Anaconda cloud
 
 Create an online Anaconda cloud account [here](https://anaconda.org/)

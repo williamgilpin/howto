@@ -7,6 +7,11 @@ These are my notes on graduate fellowships from graduate school, 2014 -- 2019. M
 Other good lists [here](http://med.stanford.edu/rmg/funding/grad_student.html#ASPB) and [here](https://ib.berkeley.edu/student/fundsources.php
 )
 
+The Open Philanthrophy AI PhD Fellowship
++ [Info here](https://www.openphilanthropy.org/focus/global-catastrophic-risks/potential-risks-advanced-artificial-intelligence/the-open-phil-ai-fellowship)
++ "long-term, large-scale impacts of AI a central focus of their research"
++ "$40,000 stipend, $10,000 in research support, and payment of tuition and fees, each year, starting in the year of their selection until the end of the 5th year of their PhD."
+
 Gilliam HHMI fellowship: 
 + Can only apply after exhausting NSF fellowship support
 + No outside work/funding allowed
