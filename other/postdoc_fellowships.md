@@ -1,6 +1,7 @@
 ### Postdoc positions and fellowships
 
-Organized by fellowship type, and then roughly chronologically by due date. Dates and descriptions are all from 2018, and have likely changed by now.
+Organized by fellowship type, and then roughly chronologically by due date in 2018. 
+**All dates and descriptions are all from 2018, and have likely changed by now.**
 
 ## Portable fellowships
 
@@ -28,9 +29,9 @@ Josephine de Karman Fellowship Trust for finishing PhD research
 
 California Alliance
 https://www.california-alliance.org/postdocfellowships
-Any large CA school
-Caltech Due January 15, all others due in June
-Need to have a potential postdoc advisor named
++ Any large CA school
++ Caltech Due January 15, all others due in June
++ Need to have a potential postdoc advisor named
 
 
 ## Institutional
@@ -68,7 +69,7 @@ Miller Fellowships
 
 LBL Luis Alvarez Fellowship in Computing Sciences at LBL
 + Due in November
-https://cs.lbl.gov/careers/alvarez-fellowship/
++ https://cs.lbl.gov/careers/alvarez-fellowship/
 
 Cornell presidential fellows
 https://research.cornell.edu/content/how-apply
@@ -102,9 +103,7 @@ https://sfiomidyar.fluidreview.com/
 + Three letters of recommendation from scholars who know your work. (The letters should be sent independently of the application. When you complete the online application, please be prepared to provide e-mail addresses of the three individuals who will recommend you. SFI will contact them directly with instructions for submitting letters.) 
 
 
-Truman fellowship at Sandia national labs
-http://www.sandia.gov/careers/students_postdocs/fellowships/truman_fellowship.html
-+ November 1
+
 
 <!-- Flatiron research fellows (Systems Biology, Simons data science, or  biophysics theory)
 Due Early November
@@ -115,14 +114,19 @@ Due Early November
 Luis Alvarez Postdoctoral fellow at LBL
 + November 2
 + Requires: CV/Resume, Cover Letter, Research Statement, Publications List
++ https://cs.lbl.gov/careers/alvarez-fellowship/
 
-https://www.sandia.gov/careers/students_postdocs/fellowships/johnvonneumann_fellowship.html/johnvonneumann_fellowship.html
+Truman fellowship at Sandia national labs
+http://www.sandia.gov/careers/students_postdocs/fellowships/truman_fellowship.html
++ November 1
+
+John Von Neumann fellowship at Sandia
++ https://www.sandia.gov/careers/students_postdocs/fellowships/johnvonneumann_fellowship.html/johnvonneumann_fellowship.html
 
 Caltech Burke Fellows
 due in November 15
 https://applications.caltech.edu/job/burke
 + Theoretical physics
-
 
 KITP / UCSB
 due in November 18
@@ -141,13 +145,10 @@ Raymond and Beverly Sackler Fellow
 Fellows at the Center for Studies in Physics and Biology: December 2018
 
 John Harvard Fellows
-https://cbmm.mit.edu/research/principal-investigators
 + Due November 31
 
-https://www.microsoft.com/en-us/research/academic-program/microsoft-ai-residency-program/
 
 Caltech: http://www.cms.caltech.edu/about/positions
-+ Computing+math postdocs are the way to go
 + DOLCIT, CMI, Von Karman Postdoctoral Fellowship: December 1-15, 2018
 + A CV, a Research Statement, and three reference letters (up to a maximum of five) are required. A cover letter and a Teaching Statement are optional.
 
@@ -188,14 +189,13 @@ https://simons.berkeley.edu/people/fellows
 
 
 UCSF Sandler fellows
-5-year faculty transition program 
-Due March 5
-Appears more biomedicine-oriented
++ 5-year faculty transition program 
++ Due March 5
++ Focus on biomedicine
 
 
 Princeton Lewis Sigler fellows
 https://lsi.princeton.edu/lewis-sigler-fellow-position-req-d-17-lsi-00002
-
 
 Harvard George F. Carrier Fellowship
 https://academicpositions.harvard.edu/postings/7821
@@ -204,10 +204,10 @@ Deadline in mid-fall, previous round it was November 1, 2017
 TTI-Chicago
 + Computer science
 + Due December
-http://www.ttic.edu/faculty-hiring/
++ http://www.ttic.edu/faculty-hiring/
 
 Harvard IACS Fellow
-http://iacs.seas.harvard.edu/postdoctoral-researcher
++ http://iacs.seas.harvard.edu/postdoctoral-researcher
 + Due in December or May the year before
 
 Broad institute fellows
@@ -262,6 +262,8 @@ Chan-Zuckerberg
 Microsoft Research
 https://www.microsoft.com/en-us/research/careers/?from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fjobs%2Ffulltime%2Fpostdoc.aspx
 
+Microsoft AI Residency
++ https://www.microsoft.com/en-us/research/academic-program/microsoft-ai-residency-program/
 
 IBM Goldstine Fellowship (Yorktown)
 http://www.research.ibm.com/goldstine/
