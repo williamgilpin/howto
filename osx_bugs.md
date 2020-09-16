@@ -24,6 +24,10 @@ But Sierra would not let me CD into that folder
 
 This seems to happen sometimes when using Flash on Chrome, for some reason the system volume preferences change mysteriously. It can be fixed in System Settings > Sound by dragging the slider back to the middle
 
+## Sound won't play from internal speakers or headphones
+
+Check System Preferences > Sound to see if the output device is correct. If that's not the issue, go into Activity Monitor and stop the process `coreaudiod`. It will automatically restart.
+
 ## Mission Control / Spaces / hotkeys stop working
 
 In the terminal, type `killall Dock` to restart the Dock
