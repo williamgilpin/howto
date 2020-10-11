@@ -23,40 +23,30 @@ Set the appropriate permissions
 
 ## Setup project structure
 
-Follow the instructions [here](howto_python_project.md) for properly setting up a Python project. In the root directory, add a file `setup.cfg`
+Follow the instructions [here](howto_python_project.md) for properly setting up a Python project. In the root directory, add a file `setup.cfg` containing the following
 
 	[metadata]
 	description-file = README.md
 
-## Publish the project
 
-First, register and upload it on the test server
+## Updating existing package
 
-	$ python setup.py register -r pypitest
-	$ python setup.py sdist upload -r pypitest
+Update `setup.py` to the latest version number. Pay attention to the number of digits after the decimal: 1.3 will be counted as a lower release number than 1.299
 
-If all goes okay, upload to the live server
-	
-	$ python setup.py register -r pypi
-	$ python setup.py sdist upload -r pypi
-
-
-## Updating the package
-
-This is really only necessary when the actual package changes, you can mess with the demos and README on GitHub all you want because that's not stored on PyPI
-
-+ Update the code
-+ Update setup.py and increment the version number
-+ Push to Github
-+ Now update git tags:
+Update and push the new version number to GitHub
 
     $ git tag 0.5 -m "latest version"
     $ git push --tags origin master
 
-+ Now update the PyPI listing with the newest version:
+Make a distribution
 
-    $ python setup.py sdist upload -r pypi
+	python setup.py sdist bdist_wheel
 
+Install twine using pip if needed. Now upload the new distribution via twine
+
+	python3 -m twine upload --skip-existing -r pypi dist/* --verbose
+
+Enter PyPI credentials when prompted to do so
 
 # Troubleshooting
 
@@ -74,4 +64,4 @@ You might need to make a file at `~/.pypirc` containing
 	username: <username>
 	password: <pass>
 
-This will help avoid having to login elsewhere
+This will help avoid having to login elsewhere. If you are having problems logging in, check the contents of this file

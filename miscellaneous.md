@@ -170,4 +170,16 @@ Use this software [here](https://tabula.technology/)
 + Install the software and run it in order to start the server
 + Then, navigate to the server in your browser in order to use the software (instructions are in the README)
 
+# Fix bad Dropbox (Enterprise) folder names
+
+When using both Dropbox business and personal accounts, your Dropbox folde will be renamed to "Dropbox (Personal)" and your business folder will become "Dropbox (Business Name)". This scheme is not Unix-friendly, and it cannot currently be resolved by renaming the folder.
+
+To resolve this, navigate to the home directory, and then create an alias and symlink through the terminal
+
+	ln -s ~/"Dropbox (Harvard University)"/ "./dbx_harvard"
+	ln -s ~/"Dropbox (Personal)"/ "./dbx_personal"
+
+
+
+
 

@@ -77,7 +77,20 @@ Now you can distribute and install the package using
 
 ### Updating a package on Anaconda cloud
 
-I have not found a more efficient way to do this besides literally deleting my package and re-uploading. There is probably a way to have versions, but it is not clearly outlined in the Anaconda Cloud documentation
+Edit 'devtools/conda-recipe/meta.yaml' to the latest version number
+
+Now re-build
+
+	conda build .
+
+Now check the output location 
+
+	conda build . --output
+
+Upload to anaconda cloud 
+
+	anaconda upload /path/to/file/somename.tar.bz2
+
 
 ### For a package that is already being distributed using PyPI
 
