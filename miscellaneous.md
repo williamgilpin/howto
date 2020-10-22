@@ -94,6 +94,10 @@ Use the following ghostscript command:
 
 More information on [StackExchange](https://askubuntu.com/questions/113544/how-can-i-reduce-the-file-size-of-a-scanned-pdf-file)
 
+Finer grain control of the embedding image resolution:
+
+	gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/default -dCompatibilityLevel=1.4 -sOutputFile=output.pdf -dDownsampleColorImages=true -dColorImageResolution=600 input.pdf
+
 # Open tar gz file
 
 # Convert a directory of FLAC to ALAC for iTunes
