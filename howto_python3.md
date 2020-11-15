@@ -1,4 +1,7 @@
-The easiest way to install Python 3 is to just use Homebrew
+
+**As of 2018, Python 3 should already be installed by default on macOS**
+
+Install Python 3 on OSX using Homebrew
 
 	$ brew install python3
 

@@ -4,12 +4,12 @@ date: "2017-02-23T10:20:00Z"
 ---
  -->
 
-My notes and guides for various things, mostly computer related.
+My notes and guides for various things.
 
 by [William Gilpin](http://www.wgilpin.com/)
 
 
-## Programming tutorials and numerical techniques
+## Programming and numerical techniques
 
 [Speed up Python using Cython/external C++ libraries](howto_cython.md)
 
@@ -27,7 +27,7 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 [Installing and virtualizing using Miniconda](howto_conda.md)
 
-[Install and use Python 3 on macOS](howto_python3.md)
+[Install and use Python 3 on older OSX versions](howto_python3.md)
 
 [Use and maintain virtualenv](howto_virtualenv.md)
 
@@ -36,7 +36,7 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 ## Computer and applications guides
 
-[Manage large amounts of data](howto_bigdata.md)
+[Our lab's protocol for managing large amounts of data](howto_bigdata.md)
 
 [Host a Markdown website with Couscous](howto_couscous.md)
 
@@ -66,22 +66,24 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 [Windows bugs and workarounds](windows_bugs.md)
 
-[Restart servers in Stanford's SOE IT Dept](howto_restartStanfordSOEservers.md)
-
 [Use Stanford's Sherlock HPP Cluster](howto_sherlock.md)
 
 [Shortcuts for working with images and videos in FFMPEG](howto_ffmpeg.md)
 
+[Set up remote access on a macOS computer](howto_remote_macos.md)
 
-## General professional
+
+## Academic Job Search Resources
 
 [Graduate fellowships and funding](other/graduate_fellowships.md)
 
 [Postdoc fellowships](other/postdoc_fellowships.md)
 
-## Other projects
+## Miscellaneous projects
 
 [Roasting coffee](other/roasting_coffee_beans.md)
+
+[Tracking revision history of a manuscript](other/revisions.md)
 
 <!-- [] -->
 

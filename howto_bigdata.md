@@ -1,4 +1,4 @@
-Our 2017 protocol for maintaining large quantities (> 10 TB) of experimental data
+Our 2017 Laboratory protocol for maintaining large quantities (> 10 TB) of experimental data
 
 ## Set up Backblaze
 
@@ -114,5 +114,4 @@ To extract metadata from an image (in order to check whether microscope metadata
 
 ## Other backup services
 
-We looked into Google Drive and Amazon Cloud Drive Unlimited. As of writing, both services were not time or cost efficient for our data storage needs.
-
+We looked into Google Drive and Amazon Cloud Drive Unlimited before deciding on Backblaze.

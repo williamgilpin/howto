@@ -29,7 +29,7 @@ Try the instructions here:
 
 https://scotch.io/tutorials/get-a-functional-and-sleek-console-in-windows
 
-Issues: anaconda environments really don't seem to want to work. The only fix is to manually put the environment on the path:
+We ran into some issues with Anaconda, where the solution was to manually put the environment on the path:
 https://groups.google.com/a/continuum.io/forum/#!topic/anaconda/VxL6QmcKgv4
 
 ## Using Cygwin
@@ -46,7 +46,6 @@ To run a program in the shell, make sure to use the "-i" flag
 
 	$ python -i
 
-**I'm stuck here because python keeps crashing when run in cygwin**
 
 ## Using MinGW and msys
 

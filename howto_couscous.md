@@ -1,7 +1,6 @@
-## Open source documentation with Couscous
+## Making a Markdown website with Couscous
 
-Attempted on a mid-2014 Macbook Pro running OSX Yosemite.
-
+Date: mid-2014 Macbook Pro running OSX Yosemite.
 
 ## Installation
 

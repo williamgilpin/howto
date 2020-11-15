@@ -184,6 +184,38 @@ To resolve this, navigate to the home directory, and then create an alias and sy
 	ln -s ~/"Dropbox (Personal)"/ "./dbx_personal"
 
 
+# Synchronize two backup drives
 
+To copy and update all files from `destination` to `source`:
 
+	rsync -avPi --dry-run /Volumes/source/allfiles/ /Volumes/destination/
+
+Note the unintuitive syntax. If `destination` already contains an earlier version of `allfiles`, the path to that folder should not be included in the path to destination---otherwise this command will create a new folder `/Volumes/destination/destination/`
+
+The flag `--dry-run` shows a preview of what files will be changed, and how. The other flags facilitate visualization. By default, this command appends and updates. To delete files from the destination, use the flag `--delete`
+
+See info [here](http://www.staroceans.org/e-book/understanding-the-output-of-rsync-itemize-changes.html) and [here](https://linux.die.net/man/1/rsync)
+
+# Vector Trace in Adobe Illustrator
+
+In Adobe Illustrator, perform vector tracing using the included macro
+
+	File > Scripts > ImageTracing
+
+This does all of the line tracing and canvas cropping for a collection of photos
+
+I also wrote an Illustrator action that saves as multiple file types and changes the ARtboards to the size of the iamge, which can be found in the Actions > User Actions menu
+
+# Restart our lab's remote servers
+
+Our servers are PCs running Windows 8 Server Edition. They are located in the smaller room adjacent to the main SOE server room, in the rack closest to the far wall. Boa and Mamba are on the bottom rack, and boa is the computer closer to the wall.
+
+After a power outage: restart the PC, connect a monitor and keyboard and enter the password
+
+# Putting ticks on a log log plot in Mathematical
+
+See answer [here](https://mathematica.stackexchange.com/questions/156834/how-to-increase-
+length-of-minor-and-major-ticks-of-a-frame)
+
+Basically any valid function for `Ticks` will also work with `FrameTicks`
 

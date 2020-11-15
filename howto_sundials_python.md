@@ -1,7 +1,9 @@
 
+# Installing Sundials and using it with Python on macOS
+
 Make sure that XCode with command-line tools has been installed and working
 
-Install SUNDIALS -- must be the exact version specified by scikits.odes documentation
+Install SUNDIALS. This must be the exact version specified by scikits.odes documentation
 https://computation.llnl.gov/projects/sundials/sundials-software
 + Put this in `/usr/local/`
 + Need to manually make some directories

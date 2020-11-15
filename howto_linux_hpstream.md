@@ -1,6 +1,6 @@
-### Installing Xubuntu on my HP Stream 11
+### Installing Xubuntu on an HP Stream 11
 
-I tried this on an HP Stream 11 that was purchased in May, 2015. The PC shipped with Windows 8.1
+I tried this on an HP Stream 11 that was purchased in May 2015. The PC shipped with Windows 8.1
 
 Redditor who succeeded:
 https://www.reddit.com/r/Ubuntu/comments/31yy34/hp_stream_11_with_ubuntu_1410/

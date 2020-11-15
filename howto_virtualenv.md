@@ -18,7 +18,7 @@
 
 ## Save Requirements
 	
-	$pip freeze > requirements.txt
+	$ pip freeze > requirements.txt
 
 # Python 3
 
@@ -44,5 +44,3 @@ Otherwise will get error
 	$ easy_install-3.3 --user pip
 	$ export PATH=~/.local/bin:$PATH
 	$ pip3.3 install --user scipy numpy matplotlib
-
-###
