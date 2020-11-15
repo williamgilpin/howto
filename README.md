@@ -9,6 +9,8 @@ My notes and guides for various things.
 by [William Gilpin](http://www.wgilpin.com/)
 
 
+
+
 ## Programming and numerical techniques
 
 [Speed up Python using Cython/external C++ libraries](howto_cython.md)
@@ -31,8 +33,7 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 [Use and maintain virtualenv](howto_virtualenv.md)
 
-[Alter settings for Terminal on macOS](howto_terminal_settings.md)
-
+[Alter Terminal settings on macOS](howto_terminal_settings.md)
 
 ## Computer and applications guides
 
@@ -72,7 +73,6 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 [Set up remote access on a macOS computer](howto_remote_macos.md)
 
-
 ## Academic Job Search Resources
 
 [Graduate fellowships and funding](other/graduate_fellowships.md)
@@ -83,7 +83,13 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 [Roasting coffee](other/roasting_coffee_beans.md)
 
-[Tracking revision history of a manuscript](other/revisions.md)
+[Renewing a HAM Radio License](other/renew_ham_radio_license.md)
+
+[Tracking the revision history of a manuscript](other/revisions.md)
+
+[Building a Cockroft-Walton high voltage multiplier](other/cockroft_walton.md)
+
+[Growing Bismuth oxide crystals](other/bismuth.md)
 
 <!-- [] -->
 

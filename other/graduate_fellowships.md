@@ -75,29 +75,22 @@ MASNA: June 17
 + "Highlight your personal accomplishments, achievements and experiences that have given you considerable satisfaction and have helped to form your character. In particular, note any involvement in a local marine aquarium club and/or participation in any marine field activities."
 + "Please include information about any aquariums that you have cared for or owned. Additionally, please explain what a difference receiving this scholarship would mean in your life, how you will be financing your college education and how this scholarship will impact your plans."
 
-
-
 Siebel Scholars
 + Final year of dissertation
 + Specific departments only
-+ [infp](http://www.siebelscholars.com/about)
-
-
++ [info](http://www.siebelscholars.com/about)
 
 Myers Marine trust
 + Due March 15
 + [here](http://ic.ucsc.edu/~kudela/OS130/Readings/MyersRFP2011.pdf)
 
-
 Nat Geo Waitts grant
 + [here](http://www.nationalgeographic.com/explorers/grants-programs/waitt-grants-application/)
 
-
 Nat Geo Young Explorers
-
 + http://images.nationalgeographic.com/wpf/media-content/file/YEG_Application_Guidelines-cb1423249960.pdf
 + http://www.nationalgeographic.com/explorers/grants-programs/yeg-application/
-+ Focused on enabling field work, appears to have an emphasis on visualization and media (sharing results with the broader world)
++ Focused on enabling field work, emphasis on visualization and media (sharing results with the broader world)
 
 
 ### Travel Grants
@@ -120,8 +113,6 @@ Grants-in-Aid of Research (GIAR) Awards
 
 Lindau Nobel Laureates Meeting:
 + https://med.stanford.edu/rmg/funding/lindau.html
-+ At Stanford, priority given to early-career students
-
 
 ### Stanford Only
 
@@ -131,8 +122,7 @@ Stanford SIGF/BioX
 + Can't have another source of support
 + Also have $500 travel grants
 
-Stanford travel fellowship
-+ Stanford Georges Lurcy Fellowship Program For Study in France
+Stanford Georges Lurcy Fellowship Program For Study in France
 
 
 

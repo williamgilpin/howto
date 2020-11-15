@@ -5,13 +5,6 @@ Organized by fellowship type, and then roughly chronologically by due date in 20
 
 ## Portable fellowships
 
-<!-- Schmidt fellows
-+ 100k for 1 year
-+ https://schmidtsciencefellows.org/fellows-selection/
-+ Nomination in August, must be selected through an internal university process with an earlier deadline
-+ Must have completed PhD less than a year earlier, or be right about to complete it -->
-
-
 McDonnell foundation fellowship — Usually due in early June
 https://www.jsmf.org/apply/fellowship/
 + Complex Systems, very broadly defined (examples include immunology, etc)
@@ -32,6 +25,12 @@ https://www.california-alliance.org/postdocfellowships
 + Any large CA school
 + Caltech Due January 15, all others due in June
 + Need to have a potential postdoc advisor named
+
+Schmidt fellows
++ 100k for 1 year
++ https://schmidtsciencefellows.org/fellows-selection/
++ Nomination in August, must be selected through an internal university process with an earlier deadline
++ Must have completed PhD less than a year earlier, or be right about to complete it
 
 
 ## Institutional
@@ -58,12 +57,10 @@ Harvard Simons Mathbio center
 + Research Proposal (up to 5 pages)
 + Summary of previous research accomplishments
 
-
 2018 Princeton/CUNY Center Fellows Competition
 + September 15, will contact references after application
 
-Berkeley
-Miller Fellowships
+Berkeley Miller Fellowships
 + need a named host
 + Nominations due September 10
 
@@ -103,8 +100,6 @@ https://sfiomidyar.fluidreview.com/
 + Three letters of recommendation from scholars who know your work. (The letters should be sent independently of the application. When you complete the online application, please be prepared to provide e-mail addresses of the three individuals who will recommend you. SFI will contact them directly with instructions for submitting letters.) 
 
 
-
-
 <!-- Flatiron research fellows (Systems Biology, Simons data science, or  biophysics theory)
 Due Early November
 + can apply online
@@ -124,8 +119,8 @@ John Von Neumann fellowship at Sandia
 + https://www.sandia.gov/careers/students_postdocs/fellowships/johnvonneumann_fellowship.html/johnvonneumann_fellowship.html
 
 Caltech Burke Fellows
-due in November 15
-https://applications.caltech.edu/job/burke
++ due in November 15
++ https://applications.caltech.edu/job/burke
 + Theoretical physics
 
 KITP / UCSB
@@ -137,37 +132,34 @@ https://academicjobsonline.org/ajo/jobs/11540
 * Publication List
 * Three Reference Letters (to be submitted by the reference writers at this site 
 
-
-http://uqbar.rockefeller.edu/fellows.html
-November 30
+Fellows at the Center for Studies in Physics and Biology: 
++ http://uqbar.rockefeller.edu/fellows.html 
++ November 30
 + Applicants should submit curriculum vitae, including a list of publications, a research statement and three letters of recommendation by November 30, 2018
-Raymond and Beverly Sackler Fellow
-Fellows at the Center for Studies in Physics and Biology: December 2018
 
 John Harvard Fellows
 + Due November 31
 
-
-Caltech: http://www.cms.caltech.edu/about/positions
+Caltech: 
++ http://www.cms.caltech.edu/about/positions
 + DOLCIT, CMI, Von Karman Postdoctoral Fellowship: December 1-15, 2018
 + A CV, a Research Statement, and three reference letters (up to a maximum of five) are required. A cover letter and a Teaching Statement are optional.
 
 MIT Math Instructorship
-December 1, 2018
-http://math.mit.edu/about/employment.php
++ December 1, 2018
++ http://math.mit.edu/about/employment.php
 
 Ford Fellowship
-http://sites.nationalacademies.org/PGA/FordFellowships
++ http://sites.nationalacademies.org/PGA/FordFellowships
 + Due December 6
 
 Institute for Advanced Studies
-need to write a special email for bio
-http://www.sns.ias.edu/apply
++ See special instructions for biophysics
++ http://www.sns.ias.edu/apply
 + November 15
 
-
 Harvard Data Science Fellows
-https://datascience.harvard.edu/data-science-postdoctoral-fellows
++ https://datascience.harvard.edu/data-science-postdoctoral-fellows
 + Due December 4
 + A cover letter that identifies up to five (and at least two) Harvard faculty members with whom the applicant would like to work.
 +  A statement of research interests of up to three pages that succinctly describes the applicant’s research interests. The statement should explain the importance and potential impact of this research.  
@@ -175,31 +167,28 @@ https://datascience.harvard.edu/data-science-postdoctoral-fellows
 
 
 Harvard Rubin Theoretical CS fellowship
-https://academicpositions.harvard.edu/postings/8512
++ https://academicpositions.harvard.edu/postings/8512
 + Due December 3
-Required application documents include a cover letter, cv, a statement of research interests, and up to three representative papers. Candidates are also required to submit the names and contact information for at least three and up to five references, and the application is complete only when three letters have been submitted.
-Applicants for the CRCS Postdoctoral Fellowship should describe what appeals to you about joining CRCS and describe how you would contribute to the existing community in your cover letter.
++ Required application documents include a cover letter, cv, a statement of research interests, and up to three representative papers. Candidates are also required to submit the names and contact information for at least three and up to five references, and the application is complete only when three letters have been submitted.
++ Applicants for the CRCS Postdoctoral Fellowship should describe what appeals to you about joining CRCS and describe how you would contribute to the existing community in your cover letter.
 
-
-+ Simons Computing Fellow
+Simons Computing Fellow
++ Short-term "visiting" fellowships
 + Due in December
-https://simons.berkeley.edu/programs/fellows
-https://simons.berkeley.edu/people/fellows
-+ These are short-term "visiting" fellowships
-
++ https://simons.berkeley.edu/programs/fellows
++ https://simons.berkeley.edu/people/fellows
 
 UCSF Sandler fellows
 + 5-year faculty transition program 
 + Due March 5
 + Focus on biomedicine
 
-
 Princeton Lewis Sigler fellows
-https://lsi.princeton.edu/lewis-sigler-fellow-position-req-d-17-lsi-00002
++ https://lsi.princeton.edu/lewis-sigler-fellow-position-req-d-17-lsi-00002
 
 Harvard George F. Carrier Fellowship
-https://academicpositions.harvard.edu/postings/7821
-Deadline in mid-fall, previous round it was November 1, 2017
++ https://academicpositions.harvard.edu/postings/7821
++ Deadline in mid-fall
 
 TTI-Chicago
 + Computer science
@@ -211,47 +200,45 @@ Harvard IACS Fellow
 + Due in December or May the year before
 
 Broad institute fellows
-https://www.broadinstitute.org/partnerships/academic-affairs/broad-fellows/broad-fellows-program
-https://www.broadinstitute.org/academic-affairs/schmidt-fellows-program
++ https://www.broadinstitute.org/partnerships/academic-affairs/broad-fellows/broad-fellows-program
++ https://www.broadinstitute.org/academic-affairs/schmidt-fellows-program
 
 Rowland fellows
 + Due  August
 
 Sackler fellow at University of Washington
-http://depts.washington.edu/sacklers/
++ http://depts.washington.edu/sacklers/
 
-EMBO Long term fellows
+EMBO Long-term fellows
 + Due in February and August
-http://www.embo.org/funding-awards/fellowships/long-term-fellowships#application
++ http://www.embo.org/funding-awards/fellowships/long-term-fellowships#application
 
 Oxford fellowships
-https://www.mpls.ox.ac.uk/postdocs/fellowships/glasstone-research-fellowships-in-science
++ https://www.mpls.ox.ac.uk/postdocs/fellowships/glasstone-research-fellowships-in-science
 
 
-
-## Corporate positions
+## Corporate research positions
 
 Google DeepMind
-https://deepmind.com/careers/1184837/
++ https://deepmind.com/careers/1184837/
 + October 30
 
 Google Brain Residency
-https://research.google.com/teams/brain/residency/
++ https://research.google.com/teams/brain/residency/
 + Due in early January
 
-
 DE Shaw research
-https://careers.deshawresearch.com/recruit/ApplyOnlineDESRES.html
-Computational biophysics
++ https://careers.deshawresearch.com/recruit/ApplyOnlineDESRES.html
++ Computational biophysics
 
 Facebook Research
-https://www.facebook.com/careers/jobs/a0I1H00000LCMqqUAH/
-https://www.facebook.com/careers/jobs/a0I1H00000LJm4KUAT/
++ https://www.facebook.com/careers/jobs/a0I1H00000LCMqqUAH/
++ https://www.facebook.com/careers/jobs/a0I1H00000LJm4KUAT/
 + rolling
 
 LBL: Lawrence Berkeley postdoctoral fellows in applied mathematics
-https://lbl.referrals.selectminds.com/page/science-amp-engineering-21
-https://lbl.referrals.selectminds.com/jobs/postdoctoral-scholar-applied-mathematics-department-computational-research-423
++ https://lbl.referrals.selectminds.com/page/science-amp-engineering-21
++ https://lbl.referrals.selectminds.com/jobs/postdoctoral-scholar-applied-mathematics-department-computational-research-423
 
 Genentech has applied math postdoc positions
 + rolling
@@ -260,11 +247,11 @@ Chan-Zuckerberg
 + rolling
 
 Microsoft Research
-https://www.microsoft.com/en-us/research/careers/?from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fjobs%2Ffulltime%2Fpostdoc.aspx
++ https://www.microsoft.com/en-us/research/careers/?from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fjobs%2Ffulltime%2Fpostdoc.aspx
 
 Microsoft AI Residency
 + https://www.microsoft.com/en-us/research/academic-program/microsoft-ai-residency-program/
 
 IBM Goldstine Fellowship (Yorktown)
-http://www.research.ibm.com/goldstine/
++ http://www.research.ibm.com/goldstine/
 
