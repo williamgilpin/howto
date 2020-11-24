@@ -28,6 +28,13 @@ Follow the instructions [here](howto_python_project.md) for properly setting up 
 	[metadata]
 	description-file = README.md
 
+## Development and testing
+
+During development, continuously update your local installation by having a Terminal window directed to the location of `setup.py`, and periodically run 
+
+	pip install --upgrade .
+
+This is much easier than trying to import locally from a path
 
 ## Updating existing package
 
