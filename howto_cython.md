@@ -1,6 +1,4 @@
 
-
-
 ### Running a C/C++ executable from within Python, without any IO
 
 Compile your executable, and then use the subprocess library. Then, in your Python script, use some variant of this:

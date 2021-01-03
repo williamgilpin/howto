@@ -57,8 +57,6 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 [Configure Sublime Text](howto_sublime_notes.md)
 
-[Vector trace an image using Adobe Illustrator](howto_vectortrace.md)
-
 [Host a simple website using GitHub pages and Jekyll](howto_website.md)
 
 [Miscellaneous computer scripts and tricks](miscellaneous.md)
