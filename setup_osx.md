@@ -8,15 +8,11 @@ Do not use any software from [here](https://www.reddit.com/r/piracy/wiki/guides)
 
 ### Programs List
 
-The Unarchiver (RAR and other file unzipper)
-
-Details of my installed programs and applications, as well as any special hacks, in the event I ever lose my system.
-
 Homebrew -- Install this first to get command-line download of many important packages
 
 KeepingYouAwake -- useful utility for preventing computer from sleeping.
 
-Backblaze -- My preferred option for hard drive backup, although Crashplan is an alternative. In the future, I'll use whichever one has more flexible options for external hard drives that I anticipate needing to backup only once every few months
+Backblaze
 
 Miniconda
 
@@ -26,23 +22,13 @@ Prey
 
 TeX / MacTeX
 
-Transmission
-
 Sublime Text 3
 
 Fiji / ImageJ
 + [Save As Movie plugin](https://sites.google.com/site/qingzongtseng/save-as-movie)
 
-Vox music player
-+ Put the ".prefPane" file under `/Users/william/Library/PreferencePanes/VOX Preferences.prefPane` in order to use the media keys
-+ Recent versions of this have ads and other weird stuff going on
-
 Unarchiver
 + Nice general-purpose GUI utility for opening files
-
-Backup and Sync (Google)
-+ Have the online Google drive program sync with a local folder (for offline backups)
-+ Designate a different "notes" folder that automatically gets synchronized with online
 
 Install the google cloud SDK
 + watch out for the `.bash_profile` and `.bash_rc`, these likely need to be checked individually
@@ -57,22 +43,6 @@ sox (working with audio files, making spectrograms)
 
 
 
-### Chrome
-
-#### Plugins/Extensions
-
-eHistory -- selective blacklisting of certain sites in search history, like news websites and other links that I'm unlikely to need to find again. Can also search and delete specific sites (like news and entertainment sites) from history
-
-the Great Suspender -- pause inactive tabs
-uBlock Origin -- the current best ad blocker
-Tampermonkey -- good for more aggressive popup blocking, but a little bit memory-expensive
-
-Copy All URLs -- allows all current tab names to be saved to the clipboard. can then paste them back in to re-open. very useful for making persistent sessions without relying on Chrome to remember recent tabs that were opened at very different times. One limitation is the preamble that the Great Suspender adds to all urls--it's best to "un-suspend" all tabs before using this extension
-
-Previously:
-Ghostery
-AdBlock Plus
-Flashcontrol (chrome now does this automatically)
 
 
 ## Upgrading from OSX Yosemite to macOS Sierra (10.12.4)
