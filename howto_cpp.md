@@ -1,10 +1,10 @@
 ### Installing an editor / build system
 
-I am using OSX. I started out with Sublime Text. I first made sure that XCode had command line tools installed.
+On macOS with Sublime Text, install command line tools for XCode.
 
 Pick a Build System using Command + Shift + B. This has two options: just build, or build+run. Depending on the dependencies. it might make sense to build only
-+ However, for basic scripts I just Build+Run [Super + B], for which Sublime will give Terminal output
-+ To run without re-building, select "Build only" as the build system, then build only with Super+B. Then run only using
++ However, for basic scripts Build + Run [Super + B], for which Sublime will give Terminal output
++ To run without re-building, select "Build only" as the build system, then build only with Super+B. 
 
 Adding modules appears to consist of just including the files on the path in a header file, similar to MATLAB
 + The MAKEFILE can include a path to an external library, if needed
@@ -13,8 +13,7 @@ Adding modules appears to consist of just including the files on the path in a h
 
 ## Resources
 
-
-Here is a nice thread on the basics of installing C++ packages and using make on OSX. See [here](https://www.boost.org/doc/libs/1_69_0/more/getting_started/unix-variants.html)
+A nice thread here on the basics of installing C++ packages and using make on macOS. See [here](https://www.boost.org/doc/libs/1_69_0/more/getting_started/unix-variants.html)
 + Standard place to install libraries is `/usr/local/` and the header files go in `/usr/local/include`
 + However, it might be good to install somewhere else and just re-link, since it's good to avoid polluting system folders with 3rd party stuff
 
