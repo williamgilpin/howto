@@ -1,6 +1,6 @@
 # OSX bugs
 
-A running list of bugs and catches I've encountered with OSX
+A running list of bugs and catches I've encountered on macOS
 
 ## MATLAB looks fuzzy on a Retina computer
 
@@ -8,16 +8,16 @@ You need to update your Java Runtime Environment.
 
 ## Keynote can't save files or export them
 
-Take screenshots and do whatever you can to save your work. If you try closing the file you will get the opportunity to duplicate before discard. Before you discard, try making a new document and copying all your slides into it.
+Take screenshots, and copy the open File in Finder in order to protect your work. If you try closing the file you will get the opportunity to duplicate before discard. Before you discard, try making a new document and manually copying all your slides into it.
 
-All of you movie links will break for no reason. You need to manually re-import using Inspector, because right-clicking and choosing "replace" will only work for media that you've copied into Photos, which you haven't used since 2013. If replace keeps failing, try copying your slides manually into a new document.
+Links to movies may break in the duplicated file. You need to manually re-import using Inspector, because right-clicking and choosing "replace" will only work for media that you've copied into Photos. If "replace" keeps failing, try copying the slides manually into a new document.
 
 ## Deleted Evernote app still trying to use location services
 
 This is the same bug as described [here](https://discussions.apple.com/thread/4618820?start=0&tstart=0)
 
 I tried removing location services access for the app. However, the only known full solution is [this one](https://superuser.com/questions/429344/remove-application-from-location-services-in-security-privacy-on-mac-os-x-10-7)
-But Sierra would not let me CD into that folder
+But Sierra would not let me access that folder
 
 
 ## Volume suddenly jumps to the right
@@ -44,13 +44,13 @@ Go through the wizard and it should be able to figure out what's going on.
 
 ## MATLAB MEX files won't compile
 
-+ Append the MATLAB.app/bin to the FRONT of your path, then retry the install. The issue is that TeXLive has a Polish language command with the same name, which should should not recieve preference
++ Append the MATLAB.app/bin to the FRONT of your path, then retry the install. The issue is that TeXLive has a Polish language command with the same name.
 
 + Check to see where within XCode the current MACOSX10.?.sdk file resides. On my system this was located at:
 
 	/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk
 
-+ There's a hard-coded path inside MATLAB's mexopts clang files that might not include recent macOS releases. These need to be manually edited (seriously) to include recent releases
++ There's a hard-coded path inside MATLAB's mexopts clang files that might not include recent macOS releases. These need to be manually edited to include recent releases
 
 	/Applications/MATLAB_R2014a.app/bin/maci64/mexopts/clang_maci64.xml
 	/Applications/MATLAB_R2014a.app/bin/maci64/mexopts/clang++_maci64.xml
@@ -63,7 +63,7 @@ and
 
     <cmdReturns name="find $$ -name MacOSX10.13.sdk" />
                        
-Oddly, the operating system version you are using is not equivalent to the name of the SDK file. I am using macOS 10.12.6, but the SDK file was named `MacOSX10.13.sdk`
+The operating system version you are using is not equivalent to the name of the SDK file. I am using macOS 10.12.6, but the SDK file was named `MacOSX10.13.sdk`
 
 ## External hard drive not ejected properly, and now it won't mount
 
@@ -79,11 +79,11 @@ Now plug it into a different USB port on your computer and it will probably moun
 
 This advice was taken from [Stackexchange](http://apple.stackexchange.com/questions/243559/sometimes-mac-doesnt-recognise-my-external-hard-drive)
 
-Other advice is to just leave it alone for 15-30 minutes while OSX figures out what's going on. This advice is from [this Stackexchange thread](http://superuser.com/questions/432831/mac-finder-wd-my-passport-wont-mount)
+Another option is to just leave the disk alone for 15-30 minutes while macOS figures out what's going on. See discussion [here](http://superuser.com/questions/432831/mac-finder-wd-my-passport-wont-mount)
 
 ## An external hard drive will not mount, even after proper ejection
 
-I have encountered this issues with Western Digital drives containing Time Machine backups. It may be related to when Spotlight is re-indexing my computer. In terminal, type:
+I have encountered this issues with Western Digital drives containing Time Machine backups. It may be related to when Spotlight is re-indexing the  computer. In terminal, type:
 
 	diskutil list
 
@@ -112,11 +112,10 @@ If you don't see your hard drive then this won't work. To mount "Pawhuska" above
 
 ## Completely delete a program and its remnants from your computer
 
-Use the application's onw uninstaller if at all possible
-
-Delete it from /Users/william/Applications
-Delete it from /Users/william/ApplicationData
-Delete the plist files from LaunchAgents and LaunchDaements (Important! see below)
++ Use the application's own uninstaller, if at all possible
++ Delete all related files from /Users/william/Applications
++ Delete it from /Users/william/ApplicationData
++ Delete the plist files from LaunchAgents and LaunchDaements (Important! see below)
 
 Here is an example for uninstalling KeyAccess (from [UT Austin](https://www.uta.edu/oit/cs/software/sassafras/keyaccess-62-mac/uninstall.php))
 
@@ -131,6 +130,7 @@ Here is an example for uninstalling KeyAccess (from [UT Austin](https://www.uta.
 	Delete /Library/Preferences/KeyAccess/
 
 ## Junk appearing at startup that does not appear under login items
+
 ### Check Launch Agents and Launch Daemons
 
 Look for any Adobe or Skype stuff in LaunchAgents
@@ -157,7 +157,7 @@ For a general search,
 
 	sudo launchctl list
 
-For any processes that really do not need to run. For example `KeyAccess` is a software license key monitor that I installed four years ago and promptly uninstalled. However, even after uninstallation a daemon remained, which was removed using
+For any processes that do not need to run. For example `KeyAccess` is a software license key monitor that I installed four years ago and promptly uninstalled. However, even after uninstallation a daemon remained, which was removed using
 
 	launchctl remove com.sassafras.KeyAccess.kass.1668
 
@@ -171,7 +171,7 @@ Follow the advice [here](https://apple.stackexchange.com/questions/138941/how-do
 
 ### Disable Adobe CoreSync and other background processes Adobe runs for its apps
 
-Follow the incredible instructions [here](https://apple.stackexchange.com/questions/236577/how-to-disable-adobe-core-sync-app-on-os-x-from-being-launched-automatically)
+Follow the instructions [here](https://apple.stackexchange.com/questions/236577/how-to-disable-adobe-core-sync-app-on-os-x-from-being-launched-automatically)
 
 Can also just kill off Creative Cloud using the instructions [here](https://apple.stackexchange.com/questions/218681/how-do-i-programatically-kill-the-cclibrary-process-by-pid)
 
@@ -179,7 +179,7 @@ Can also just kill off Creative Cloud using the instructions [here](https://appl
 
 	ls -a /Volumes/Library/StartupItems
 
-For example, remove the old KeyAccess software by killing the process, torching its folder in the StartupItems,
+For example, remove the old KeyAccess software by killing the process, and removing its folder in the StartupItems,
 
 ### Delete all remnants of other programs, as needed
 
