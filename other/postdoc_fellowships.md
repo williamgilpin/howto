@@ -5,8 +5,13 @@ Organized by fellowship type, and then roughly chronologically by due date in 20
 
 ## Portable fellowships
 
-McDonnell foundation fellowship — Usually due in early June
-https://www.jsmf.org/apply/fellowship/
+eFellows (Engineering Fellows)
++ https://efellows.asee.org/eligibility
++ Need to have a potential postdoc advisor named
+
+McDonnell foundation fellowship 
++ Usually due in early June
++ https://www.jsmf.org/apply/fellowship/
 + Complex Systems, very broadly defined (examples include immunology, etc)
 
 Branco Weiss
@@ -22,12 +27,12 @@ Josephine de Karman Fellowship Trust for finishing PhD research
 
 California Alliance
 https://www.california-alliance.org/postdocfellowships
-+ Any large CA school
++ Many large CA schools
 + Caltech Due January 15, all others due in June
 + Need to have a potential postdoc advisor named
 
 Schmidt fellows
-+ 100k for 1 year
++ 100k for 1 year, renewable for one more year
 + https://schmidtsciencefellows.org/fellows-selection/
 + Nomination in August, must be selected through an internal university process with an earlier deadline
 + Must have completed PhD less than a year earlier, or be right about to complete it
@@ -38,7 +43,6 @@ Schmidt fellows
 <!-- BioHub biophysics theory group
 https://www.czbiohub.org/careers/
 + rolling applications -->
-
 
 Whitehead fellows program
 http://wi.mit.edu/people/fellows/selection

@@ -4,10 +4,9 @@ date: "2017-02-23T10:20:00Z"
 ---
  -->
 
-My notes and guides for various things.
+My personal notes and guides for various things.
 
 by [William Gilpin](http://www.wgilpin.com/)
-
 
 
 
@@ -31,15 +30,16 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 [Install and use Python 3 on older OSX versions](howto_python3.md)
 
-[Use and maintain virtualenv](howto_virtualenv.md)
+[Use and maintain environments using virtualenv](howto_virtualenv.md)
 
 [Alter Terminal settings on macOS](howto_terminal_settings.md)
 
-## Computer and applications guides
+
+## Computer and applications
 
 [Our lab's protocol for managing large amounts of data](howto_bigdata.md)
 
-[Host a Markdown website with Couscous](howto_couscous.md)
+[Host a Markdown website with Couscous](couscous.md)
 
 [Connect to local Windows servers](howto_connect_to_lab_servers.md)
 
@@ -57,6 +57,8 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 [Configure Sublime Text](howto_sublime_notes.md)
 
+[Install Linux on an HP Stream computer](linux_hpstream.md)
+
 [Host a simple website using GitHub pages and Jekyll](howto_website.md)
 
 [Miscellaneous computer scripts and tricks](miscellaneous.md)
@@ -71,13 +73,21 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 [Set up remote access on a macOS computer](howto_remote_macos.md)
 
+
 ## Academic Job Search Resources
 
 [Graduate fellowships and funding](other/graduate_fellowships.md)
 
 [Postdoc fellowships](other/postdoc_fellowships.md)
 
-## Miscellaneous projects
+
+## Other projects
+
+[Building a Cockroft-Walton high voltage multiplier](other/cockroft_walton.md)
+
+[Growing Bismuth oxide crystals](other/bismuth.md)
+
+[Make a Tesla coil from a CRT television set](other/flyback.md)
 
 [Roasting coffee](other/roasting_coffee_beans.md)
 
@@ -85,9 +95,6 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 [Tracking the revision history of a manuscript](other/revisions.md)
 
-[Building a Cockroft-Walton high voltage multiplier](other/cockroft_walton.md)
-
-[Growing Bismuth oxide crystals](other/bismuth.md)
 
 <!-- [] -->
 

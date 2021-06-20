@@ -1,18 +1,25 @@
 ### Link to GitHub account
 
-In Terminal,
+Using SSH
 
-	git config --global user.name github_username
-	git config --global user.email my_email@email.com
-	git config --global core.editor emacs
+In terminal,
+    
+    ssh-keygen -o -t rsa -C "username@email.com"
 
-The last line sets the default editor to emacs. The first time you push changes to remote, you will be prompted for your password. This will be saved for future use
+Press enter twice to assign to default location and have no password. Now view the SSH key by going to
 
-If you are still repeatedly prompted for your account credentials, use
+    cat /n/home03/wgilpin/.ssh/id_rsa.pub
 
-	git config credential.helper store
+Copy and paste this into your SSH key collection on the GitHub website. To test that this is set up correction, on your local machine run
 
-Note that running the above will cause an unhashed copy of your GitHub password to be stored locally.
+    ssh -T git@github.com
+
+and receive response
+
+    Hi username! You've successfully authenticated, but Github does
+    not provide shell access.
+
+A nice guide is [here](https://kbroman.org/github_tutorial/pages/first_time.html)
 
 
 ### fork repo online
@@ -119,4 +126,21 @@ Somehow the ownership got messed up for some files. From project base directory,
     sudo chown -R yourname:yourgroup *
 
 yourname and yourgroup can be figured out by seeing what the majority of of the ls -al usernames and groups are. My "group" appeared to be staff for some reason. This answer is taken from [StackExchange](http://stackoverflow.com/questions/6448242/git-push-error-insufficient-permission-for-adding-an-object-to-repository-datab)
+
+
+## Deprecated: connecting a new computer to GitHub using password authentication
+
+(Old) To use traditional authentication, in Terminal,
+
+    git config --global user.name github_username
+    git config --global user.email my_email@email.com
+    git config --global core.editor emacs
+
+The last line sets the default editor to emacs. The first time you push changes to remote, you will be prompted for your password. This will be saved for future use
+
+If you are still repeatedly prompted for your account credentials, use
+
+    git config credential.helper store
+
+Note that running the above will cause an unhashed copy of your GitHub password to be stored locally.
 

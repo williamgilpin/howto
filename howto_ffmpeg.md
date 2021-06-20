@@ -1,6 +1,6 @@
 Various commands and shortcuts for working with ffmpeg
 
-### Turn folder of frames into a video
+### Turn folder of frames into a timelapse video
 
 	ffmpeg -r 20 -i pic%03d.png -vcodec libx264 -pix_fmt yuv420p -crf 25 my_video.mov
 
@@ -73,3 +73,17 @@ Note that this throws an error if the video heights or widths are not even numbe
 
 [Source 1](https://stackoverflow.com/questions/33330279/ffmpeg-selects-shortest-movie-but-leaves-full-length-audio)[Source 2](
 https://trac.ffmpeg.org/wiki/Create%20a%20mosaic%20out%20of%20several%20input%20videos)
+
+
+## Examples
+
+Turn an image stack into a video, and crop to have even dimensions
+
+	ffmpeg -r 30 -i frame_%03d.png -vcodec libx264 -pix_fmt yuv420p -crf 25 -filter:v "crop=1210:1320:0:0" my_video.mov
+
+
+Make a mosaic of three movies with equal height and length
+
+	ffmpeg -i mov1.mov -i mov2.mov -i mov3.mov -filter_complex hstack=inputs=3 -vcodec libx264 -acodec aac output.mp4
+
+

@@ -18,7 +18,7 @@ Now try making a new virtual environment via conda
 	(cenv) $ conda activate cenv
 	(cenv) $ conda deactivate
 
-*Note: before 2018, `source activate` and `source deactivate` were used instead of `conda activate`*
+*Note: before 2018, `source activate` and `source deactivate` were used instead of `conda activate`. Some older clusters still use these commands.*
 
 Updating conda
 
@@ -171,4 +171,8 @@ If this works, then you don't have jupyter correctly installed in your environme
 
 	$ conda install jupyter
 
+#### Broken conda installation in an HPC without `sudo` priveleges
 
+I had an issue in which all conda operations would fail, but I could not reinstall conda. I found that the culprit was my `.bashrc` and `.bash_profile` files. I removed all references to conda from both, and then reloaded the module on the cluster. 
+
+I did need to delete and re-create all of my environments, however.
