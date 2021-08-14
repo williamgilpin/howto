@@ -32,9 +32,9 @@ Follow the instructions [here](howto_python_project.md) for properly setting up 
 
 During development, continuously update your local installation by having a Terminal window directed to the location of `setup.py`, and periodically run 
 
-	pip install --upgrade .
+	pip install -I --no-dependencies .
 
-This is much easier than trying to import locally from a path
+This is much easier than trying to import locally from a path. The `no-dependencies` flag ensures that pip does not try to reinstall all of the dependencies, especially packages like numpy that may have been installed using conda.
 
 ## Updating existing package
 

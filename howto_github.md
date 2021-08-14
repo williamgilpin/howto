@@ -128,6 +128,29 @@ Somehow the ownership got messed up for some files. From project base directory,
 yourname and yourgroup can be figured out by seeing what the majority of of the ls -al usernames and groups are. My "group" appeared to be staff for some reason. This answer is taken from [StackExchange](http://stackoverflow.com/questions/6448242/git-push-error-insufficient-permission-for-adding-an-object-to-repository-datab)
 
 
+## Recieve warnings about passwords being deprecated 
+
+After using GitHub from the command line, I recieved the following email
+
+
+    Hi @williamgilpin,
+
+    You recently used a password to access the repository at williamgilpin/dysts with git using git/2.24.3 (Apple Git-128).
+
+    Basic authentication using a password to Git is deprecated and will soon no longer work. Visit https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information around suggested workarounds and removal dates.
+
+    Thanks,
+    The GitHub Team
+
+
+I follwed GitHub's instructions [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) to create a PAT. 
+
+To store the PAT after creating it, I follwed the instructions 
++ [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
++ and then [here](https://docs.github.com/en/get-started/getting-started-with-git/updating-credentials-from-the-macos-keychain)
++ I also removed the file `~/..git-credentials`
++ Other useful information about storing PAT [here](https://askubuntu.com/questions/773455/what-is-the-correct-way-to-use-git-with-gnome-keyring-and-https-repos/959662#959662) and [here](https://stackoverflow.com/questions/46645843/where-to-store-the-personal-access-token-from-github)
+
 ## Deprecated: connecting a new computer to GitHub using password authentication
 
 (Old) To use traditional authentication, in Terminal,

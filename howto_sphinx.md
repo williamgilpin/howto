@@ -1,3 +1,6 @@
+
+As of 2021, the best guide that I have found is [here](https://eikonomega.medium.com/getting-started-with-sphinx-autodoc-part-1-2cebbbca5365)
+
 # Hosting project documentation using GitHub pages
 
 Make a sister directory to the project repo so that it doesn't get commited to your main GitHub repo
@@ -74,9 +77,11 @@ Eventually one of them will force a rebuild. Can also try:
 
 	$ sphinx-build -E -b html -d _build/doctrees   . _build/html
 
+# Rebuilding documention
+
+Delete all directories beginning with an underscore. Running `make clean` will delete everything under `_build`, but the output of extensions like `autosummary` will not be deleted, which can cause issues.
+
 # Using Read The Docs
-
-
 
 Acivate a Web Hook in the settings of the GitHub repository so that every commit will update the docs
 
@@ -85,6 +90,29 @@ In the Project Admin page, enable virtualenv and include a requirements.txt file
 	numpydoc
 
 Put this file in the root of the documentation, docs/. You may also get an ImportError with autodoc that requires you to put a copy of the repository's setup.py in docs/. Why this is necessary is a profound and uninteresting mystery.
+
+# Sphinx with GitHub pages
+
+Follow the instructions in [this thread](https://github.com/sphinx-doc/sphinx/issues/3382)
+
+Key points
++ Add a `.nojekyll` file to the base `docs` directory
+
+	touch .nojekyll
+
++ GitHub will ignore files starting with an underscore. Depending on the contents of `.gitignore`, files containing the name `build` may also be ignored. In this case, edit the contents of the sphinx `Makefile` to point to the new `newbuilddirname/html/` directory.
+
++ Now add a new `index.html` to the sphinx base directory that redirects to the `index.html` inside the new build directory
+
+	<meta http-equiv="refresh" content="0; url=./spbuild/html/index.html" />
+
+
+
+# Problems
+
++ Updating my documentation does not update my docs, even when I delete everything
+
+Sphinx builds from the module from the version that is installed in the environment. It does *not* use the current local setup.py; it uses whatever was most recently installed in the environment. See [here](https://stackoverflow.com/questions/44693301/sphinx-is-caching-python-module-somewhere-where)
 
 # Useful links
 
