@@ -52,6 +52,14 @@ Open preferences from the menus and put your preferences in a single pair of cur
 		]
 	}
 
+# Weird LaTeX error with natbib
+
+When compiling a document, I kept running into an error ending in the following string
+
+	\NAT@force@numbers{}\NAT@force@numbers
+
+Trashing aux files did not fix the issue. The problem ended up being a citation missing a reference / year. However, in order to fix the bibliography, I needed to manually delete the `.log` and `.bbl` files and re-compile with BibTeX. See additional info [here](https://tex.stackexchange.com/questions/460261/natbib-error-providecommand-natforcenumbers-natforcenumbers)
+
 # Put parentheses around all citations in LaTeX
 
 This is useful for switching a document over to NatBib

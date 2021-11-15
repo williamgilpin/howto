@@ -28,7 +28,11 @@ For an MP4 file this is easy
 
 ### Encode a video for Twitter
 
-Use FFMPEG, for mp4 the file shape has to be even in both dimensions; can omit the -filter crop below if this is already true
+Use FFMPEG, for mp4 the file shape has to be even in both dimensions; can omit the -`vf` crop below if this is already true
+
+	ffmpeg -i video2_small.mp4 -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" -vcodec libx264 -acodec aac output.mp4
+
+As a fallback, manually crop the file
 
 	ffmpeg -i video2_small.mp4 -filter:v "crop=3008:3000:0:0" -vcodec libx264 -acodec aac output.mp4
 

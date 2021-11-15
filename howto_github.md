@@ -167,3 +167,6 @@ If you are still repeatedly prompted for your account credentials, use
 
 Note that running the above will cause an unhashed copy of your GitHub password to be stored locally.
 
+### Transfer repo to an organization
+
+Transfer as normal using the "Settings tab"
