@@ -1,5 +1,5 @@
 
-Sometimes you have a bunch of helper functions or utilities that you've created for plotting or analyzing certain types of data. Putting these in a dedicated GitHub repo is overkill, but you'd like to have a single local directory with these files for the sake of easy version control, etc
+Sometimes you have a bunch of helper functions or utilities that you've created for plotting or analyzing certain types of data. Putting these in a dedicated GitHub repo is overkill, but you'd like to have a single local directory with these files for the sake of easy version control, etc.
 
 Loosely based on [this stackexchange post](http://stackoverflow.com/questions/42214325/how-to-create-a-local-python-package-for-modules-that-i-use-for-several-differen)
 
