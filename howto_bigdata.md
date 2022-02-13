@@ -5,7 +5,7 @@ Our 2017 Laboratory protocol for maintaining large quantities (> 10 TB) of exper
 + Exclude local backup drives in the settings
 + Set the "temporary data drive" to one of the externals
 
-Make sure each drive you want backed up has a ".bzvol" file somewhere in its top-level directory (this should be there automatically when you set up BackBlaze)
+Make sure each drive you want backed up has a ".bzvol" file somewhere in its top-level directory (this should be there automatically when you set up BackBlaze).
 
 To speed up the initial upload
 
