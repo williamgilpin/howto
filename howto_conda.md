@@ -15,7 +15,7 @@ You can also a GUI installer for Anaconda, but I found the bash script easier to
 Now try making a new virtual environment via conda
 
 	$ conda create -n cenv python=2.7
-	(cenv) $ conda activate cenv
+	$ conda activate cenv
 	(cenv) $ conda deactivate
 
 *Note: before 2018, `source activate` and `source deactivate` were used instead of `conda activate`. Some older clusters still use these commands.*
@@ -23,7 +23,6 @@ Now try making a new virtual environment via conda
 Updating conda
 
 	 $ conda update conda
-
 
 Duplicating an environment
 
@@ -162,7 +161,7 @@ However, in a jupyter notebook (or iPython terminal), the following returns a `M
 
 	$ import matplotlib
 
-Try checking in a bare python terminal
+Try checking in a bare Python terminal
 
 	$ python
 	>>> import matplotlib

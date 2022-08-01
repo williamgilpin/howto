@@ -55,8 +55,8 @@ Install twine using pip if needed. Now upload the new distribution via twine
 
 Enter PyPI credentials when prompted to do so
 
-# Troubleshooting
 
+# Troubleshooting
 
 ### Issues authenticating when uploading to PyPI from Terminal
 

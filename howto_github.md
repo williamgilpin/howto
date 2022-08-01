@@ -53,9 +53,9 @@ go to github and make a pull request
 ### Editing commit history
 
 To alter or combine the last four commits, run
-
+```
    $ git rebase -i HEAD~4
-
+```
 A text editor will pop up. Replace "pick" with "squash" for the commits that you want to merge together. It will then prompt you to come up with a new commit message for all of the commits that you just squashed.
 
 Save and close using standard emacs commands
