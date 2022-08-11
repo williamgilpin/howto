@@ -170,3 +170,20 @@ Note that running the above will cause an unhashed copy of your GitHub password 
 ### Transfer repo to an organization
 
 Transfer as normal using the "Settings tab"
+
+### Global Configurations
+
+My `~/.gitconfig` file is as follows
+
+    [user]
+            name = myname
+            email = myemail@email.com
+    [core]
+            editor = emacs
+    [credential]
+            helper = store
+    [alias]
+            acp = !git add . && git commit -m "latest" && git push
+
+
+
