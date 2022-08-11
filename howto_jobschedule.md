@@ -12,7 +12,7 @@ From remote host to remote (currently in local):
 
     scp john@yale.edu:some/remote/directory/my_files.txt /some/local/directory
 
-Standard regular expressions (like *) can be used to send groups of files back and forth
+Standard regular expressions (`*`) can be used to send groups of files back and forth
 
 ### Example workflow
 
