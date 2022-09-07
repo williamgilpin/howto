@@ -20,10 +20,14 @@
 
 + Copy and paste the resulting link, which you can use to access that session remotely
 
-
+Can manage virtual environment and other Terminal tasks by opening a Terminal from within the VSCode interface
 
 ### Troubleshooting
 
 + VSCode is running hot on my MacBook
 
 + + I had this issue on Catalina in 2022, and the only fix I could find was upgrading macOS to the latest release
+
++ My local connection to VSCode is throwing strange errors
+
++ + If you have a separate VSCode session running on remote as a local instance, you can sometimes get bugs. My preferred workflow is to keep the server running on remote, but avoid opening the application on it. 

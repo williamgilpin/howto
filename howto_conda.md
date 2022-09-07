@@ -175,3 +175,15 @@ If this works, then you don't have jupyter correctly installed in your environme
 I had an issue in which all conda operations would fail, but I could not reinstall conda. I found that the culprit was my `.bashrc` and `.bash_profile` files. I removed all references to conda from both, and then reloaded the module on the cluster. 
 
 I did need to delete and re-create all of my environments, however.
+
+#### Kernel dying after updating with pip or numpy
+
+Avoid mixing conda and pip installs on core packages. You might need to uninstall the pip version of numpy
+
+For certain packages, it makes sense to use, to avoid installing duplicate numpy
+
+	pip install --upgrade-strategy only-if-needed some-random-package
+
+or, if this fails to solve the issue
+
+	pip install --no-deps some-random-package

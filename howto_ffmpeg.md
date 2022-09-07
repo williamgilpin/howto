@@ -10,6 +10,12 @@ Various commands and shortcuts for working with ffmpeg
 
 To invert the colors of each image (or apply any other image filter), add `-filter negate` anywhere before the output video name
 
+### Convert a folder of images to an exact size
+
+We will actually use ImageMagick for this, but this is a common preprocessing step before ffmeg timelapses
+
+	mogrify -resize 100x100 *png
+
 ### Watermark a video
 
 Follow [the instructions here](http://ksloan.net/watermarking-videos-from-the-command-line-using-ffmpeg-filters/)
@@ -61,7 +67,22 @@ I saved this as a bash script, so just cd into the directory containing the FLAC
 
 The height and widht parameters have to be calculated very carefully---any extra space will be filled with black thanks to the "color" option below
 
-Crop mosaic length to the shortest video length
+A structured example
+
+	ffmpeg \
+		-i 1.mov -i 2.mov -i 3.mov \
+		-filter_complex "\
+			nullsrc=size=2712x904 [base]; \
+			[0:v] setpts=PTS-STARTPTS, scale=904x904 [left]; \
+			[1:v] setpts=PTS-STARTPTS, scale=904x904 [middle]; \
+			[2:v] setpts=PTS-STARTPTS, scale=904x904 [right]; \
+			[base][left] overlay=shortest=1 [tmp1]; \
+			[tmp1][middle] overlay=shortest=1:x=904 [tmp2]; \
+			[tmp2][right] overlay=shortest=1:x=1808 \
+		" \
+		-c:v libx264 output.mov
+
+Another example that cropsmosaic length to the shortest video length
 
 	ffmpeg -i 1.mov -i 2.mov -i 3.mov -filter_complex "color=s=4912x1502:c=black [base];[0:v] setpts=PTS-STARTPTS, scale=1504x1502 [left];[1:v] setpts=PTS-STARTPTS, scale=1504x1502 [middle];[2:v] setpts=PTS-STARTPTS, scale=1504x1502 [right];[base][left] overlay=shortest=1 [tmp1];[tmp1][middle] overlay=shortest=1:x=1704 [tmp2];[tmp2][right] overlay=shortest=1:x=3408" -c:v libx264 output_merge.mov
 

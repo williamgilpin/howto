@@ -37,6 +37,8 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 ## Computer and applications
 
+[Setting up TACC](using_tacc.md)
+
 [Our lab's protocol for managing large amounts of data](howto_bigdata.md)
 
 [Host a Markdown website with Couscous](couscous.md)
