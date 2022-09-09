@@ -28,3 +28,37 @@ You can activate, install packages, etc as you would for a local conda environme
 In a web browser, visit the [TACC Vis portal](https://vis.tacc.utexas.edu/).
 
 Create a job with your desired resources and partition. Leave the "reservation" field blank.
+
+# Using zsh shell on TACC
+
+*Instructions by [Jeffrey Lai](https://github.com/jbial)*
+
+Instructions for downloading zsh + oh-my-zsh on LS6:
+
+First download zsh from source:
+
+    wget -O zsh.tar.xz https://sourceforge.net/projects/zsh/files/latest/download
+    mkdir zsh && unxz zsh.tar.xz && tar -xvf zsh.tar -C zsh --strip-components 1
+    cd zsh
+
+Compile it into the home directory:
+
+    ./configure --prefix=$HOME
+    make
+    make install
+
+Place the following lines at the bottom of `$HOME/.bashrc`
+
+    rm -rf $HOME/.zcompdump*
+    exec $HOME/bin/zsh -l
+
+Restart the shell to run zsh (`reset`  or `zsh`). Then install oh-my-zsh:
+
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+Then place the following line at the top of the `$HOME/.zshrc file`
+
+    export FPATH=$HOME/share/zsh/5.9/functions:$FPATH
+
+Finally, restart the shell and enjoy the features of oh-my-zsh!
+
