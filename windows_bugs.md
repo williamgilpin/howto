@@ -19,8 +19,7 @@ Try [temporarily disabling SSL](https://github.com/conda/conda/issues/1166)
 	conda update --all
 	conda config --set ssl_verify true
 
-
-## Mounting a mapped network windows drive from a OSX
+## Mounting a mapped network windows drive from macOS
 
 1. Enable sharing of the drive from within Windows
 2. Email IT to get the drive whitelisted with the firewall
