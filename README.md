@@ -14,7 +14,7 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 [Speed up Python using Cython/external C++ libraries](howto_cython.md)
 
-[Structure, distribute, and test an open-source Python project](howto_python_project.md)
+[Structure an open-source Python project](python_project.md)
 
 [Maintain a local Python package](howto_packages.md)
 

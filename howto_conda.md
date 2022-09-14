@@ -4,9 +4,7 @@ I generally use miniconda to avoid installing tons of packages that I don't need
 
 Currently, you can install Anaconda or Miniconda simply by downloading and running a bash script from the project website
 
-
 	 $ bash ./[some long file name].sh
-
 
 You can also a GUI installer for Anaconda, but I found the bash script easier to use.
 
