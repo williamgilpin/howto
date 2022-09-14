@@ -16,6 +16,8 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 [Structure an open-source Python project](python_project.md)
 
+[Unit testing in Python](python_unit_testing.md)
+
 [Maintain a local Python package](howto_packages.md)
 
 [Distributing a Python package using PyPI](howto_pypi.md)

@@ -20,20 +20,20 @@ An example of a generic project structure might look something like the followin
 	├── demos
 	│	└── demos.ipynb
 	├── docs
-	│	└── index.html
+	│	├── index.html
 	│	└── doc_buildfiles
 	├── resources
-	│	└── sample_dataset.txt
-	│	└── example_output.txt
-	│	└── figure_for_readme.png
+	│	├── sample_dataset.txt
+	│	├── example_output.txt
+	│	├── figure_for_readme.png
 	│	└── video_for_readme.gif
 	├── tests
-	│	└── test_core.py
+	│	├── test_core.py
 	│	└── test_utils.py
 	├── benchmarks
-	│	└── run_benchmarks.py
+	│	├── run_benchmarks.py
 	│	└── benchmark_data/
-	│		└── benchmark_dataset1.txt
+	│		├── benchmark_dataset1.txt
 	│		└── benchmark_dataset2.txt
 	├── .gitignore
 	├── MANIFEST.in
