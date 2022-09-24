@@ -84,7 +84,7 @@ If all was successful, you should find the documentation rendered as an HTML fil
 
 8. Add a new `index.html` to your `docs` directory that redirects to the `index.html` inside the new build directory. You can make this HTML file in VSCode or another text editor, or directly in the terminal with emacs or vim. In any case, `index.html` should contain only the following line
 
-	<meta http-equiv="refresh" content="0; url=./build/html/index.html" />
+		<meta http-equiv="refresh" content="0; url=./build/html/index.html" />
 
 If you renamed your `build` folder in the previous step in order to get around your `.gitignore` restrictions, then you will need to rename it in the url here as well. 
 
