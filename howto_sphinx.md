@@ -151,17 +151,6 @@ If you are using a custom docstring style or otherwise have a dependency outside
 
 Put this file in the root of the documentation, docs/. You may also get an ImportError with autodoc that requires you to put a copy of the repository's setup.py in docs/. Why this is necessary is a profound and uninteresting mystery.
 
-<!-- # Sphinx with GitHub pages
-
-
-+ GitHub will ignore files starting with an underscore. Depending on the contents of `.gitignore`, files containing the name `build` may also be ignored. In this case, edit the contents of the sphinx `Makefile` to point to the new `newbuilddirname/html/` directory. -->
-
-<!-- + Now add a new `index.html` to the sphinx base directory that redirects to the `index.html` inside the new build directory
-
-	<meta http-equiv="refresh" content="0; url=./spbuild/html/index.html" /> -->
-
-
-
 # Problems
 
 1. Updating my documentation does not update my docs.
