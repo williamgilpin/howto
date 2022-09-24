@@ -171,11 +171,21 @@ Put this file in the root of the documentation, `docs/`. You may also get an Imp
 + If all else fails, try deleting the current files inside the `_build` directory and re-running `make html` 
 
 
-2. Sphinx is not finding the correct directory for documentation
+2. Sphinx is not finding the correct directory for documentation, or my documentation is empty
 
- Edit the `conf.py` file to include an explicit absolute local path to the "core" folder of your module or library:
++ Edit the `conf.py` file to include an explicit absolute local path to the "core" folder of your module or library:
 
+		import sys
+		import os
+		sys.path.insert(0, os.path.abspath('.'))
 		sys.path.insert(0,"/Users/myname/python_files/my_project/my_project")
+
++ In the `docs` folder, manually edit `index.rst` to include the following lines
+
+		.. toctree::
+			:maxdepth: 2
+			:caption: Contents:
+
 
 
 # Useful links
