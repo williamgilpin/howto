@@ -3,7 +3,7 @@
 
 # Creating a documentation website from docstrings
 
-This guide shows how to convert Python code with well-formatted docstrings into a dedicated documentation website for your project, using autodocumentation. Examples of autodocs can be seen [here] and [here]
+This guide shows how to convert existing Python code with well-formatted docstrings into a dedicated online documentation website for your project, using autodocumentation tools. Examples of autodocs can be seen [here](https://flask.palletsprojects.com/en/2.2.x/api/#application-object) and [here](https://unit8co.github.io/darts/generated_api/darts.html)
 
 1. Install Sphinx in your working environment. Depending on the formatting of your docstrings, you may need to also install an extension that allows sphinx to correctly parse them. I use [Google-style docstrings](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/), which are supported in sphinx by default
 
