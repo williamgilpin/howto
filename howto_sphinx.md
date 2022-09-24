@@ -41,9 +41,8 @@ We have used `...` to denote miscellaneous files that are either unrelated to do
 		$ cd docs
 		$ sphinx-quickstart
 
+
 3. The quickstart will walk you through the various options. I normally accept all the defaults, but I make sure to enable autodoc when asked about it. For version numbers, for code-in-progress I usually start with low decimals like 0.1, with version 1.0 coming later as a release candidate (ready for public consumption), and major releases with new features, refactoring, or backwards-incompatible changes reserved for whole numbers (2.0, 2.0, etc).
-
-
 
 
 4. Add the following lines to the `conf.py` file, in order to include an explicit local path to the "core" folder of your module or library
@@ -68,7 +67,11 @@ Finally, you can also tweak the visual appearance of your documentation by modif
 
 		html_theme = 'alabaster'
 
-6. Once the configuration is set up, Navigate in your terminal to the docs directory and run sphinx.
+6. GitHub Pages will ignore any files starting with an underscore. Depending on the contents of your `.gitignore`, files containing the name `build` may also be ignored. To avoid these issues, edit the contents of the sphinx `Makefile` to point to a new `spbuild` directory.
+
+	BUILDDIR      = spbuild
+
+7. Once the configuration is set up, Navigate in your terminal to the docs directory and run sphinx.
 
 		$ make html
 
@@ -76,19 +79,19 @@ Sphinx should start attempting to render HTML from your project's docstrings. If
 
 If all was successful, you should find the documentation rendered as an HTML file in the `_build` directory.
 
-7. We now want to host our project documentation using GitHub pages. Still within your `docs` directory, create a file that will tell GitHub pages to avoid attempting to re-render the HTML pages that sphinx just created. In the Terminal, run
+8. We now want to host our project documentation using GitHub pages. Still within your `docs` directory, create a file that will tell GitHub pages to avoid attempting to re-render the HTML pages that sphinx just created. In the Terminal, run
 
 		$ touch .nojekyll
 
-*(Optional) GitHub Pages will ignore any files starting with an underscore. Depending on the contents of your `.gitignore`, files containing the name `build` may also be ignored. In this case, edit the contents of the sphinx `Makefile` to point to the new `newbuilddirname/html/` directory.
 
-8. Add a new `index.html` to your `docs` directory that redirects to the `index.html` inside the new build directory. You can make this HTML file in VSCode or another text editor, or directly in the terminal with emacs or vim. In any case, `index.html` should contain only the following line
 
-		<meta http-equiv="refresh" content="0; url=./build/html/index.html" />
+9. Add a new `index.html` to your `docs` directory that redirects to the `index.html` inside the new build directory. You can make this HTML file in VSCode or another text editor, or directly in the terminal with emacs or vim. In any case, `index.html` should contain only the following line
+
+		<meta http-equiv="refresh" content="0; url=./spbuild/html/index.html" />
 
 If you renamed your `build` folder in the previous step in order to get around your `.gitignore` restrictions, then you will need to rename it in the url here as well. 
 
-9. Assuming that your project has a working GitHub repository, push all of your changes to the main branch on GitHub. In the GitHub UI, navigate to your project's settings. These are usually found under a URL of the form
+10. Assuming that your project has a working GitHub repository, push all of your changes to the main branch on GitHub. In the GitHub UI, navigate to your project's settings. These are usually found under a URL of the form
 
 		https://github.com/myusername/my_project/settings/pages
 
@@ -96,7 +99,7 @@ In this interface, make sure that "Source" is set to "Deploy from a Branch" and 
 
 GitHub pages should now find your rendered sphinx HTML files, and (after some time delay), they will appear online at
 
-		http://username.github.io/my_project/build/html/index.html
+		http://username.github.io/my_project/
 
 
 
