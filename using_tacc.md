@@ -5,12 +5,23 @@ Useful information
 + TACC conda and advanced [guide](https://wikis.utexas.edu/display/bioiteam/Linux+and+stampede2+Setup+--+GVA2021#Linuxandstampede2SetupGVA2021-MovingbeyondthepreinstalledcommandsonTACC)
 + Run Jupyter in browser via [TACC Vis portal](https://vis.tacc.utexas.edu/).
 + Notes on getting started with Python and conda [here](https://www.wgilpin.com/cphy/labs/getting_started_with_python.html)
++ Notes on using SSH and configuring Lonestar6 [here](https://issm.ess.uci.edu/trac/issm/wiki/lonestar)
+
+# General guidelines
+
++ $HOME is your home directory on TACC. This has a strict storage limit of 10 GB, but it is backed up. This is not a suitable place for long-term storage of large files. I mainly just keep basic scripts there. Check your disk usage with `du -sh ./*/`
+
++ $WORK does not have the same storage limit, but it is also not backed up. For machine learning, I have found it necessary to install conda within work, since environments can get pretty large
 
 # Using conda on Lonestar
 
 Since conda is not installed by default, you cannot currently use `module load conda` as you would on Stampede
 
-In your user folder, make a directory called `src` and then use wget to download the Miniconda 64 bit Linux installer into the folder (go to the Miniconda page, find the first Linux installer, and right click to copy the link address). Follow the Miniconda instructions to run the installer bash script.
+In your user folder, make a directory called `src` and then use wget to download the Miniconda 64 bit Linux installer into the folder (go to the Miniconda page, find the first Linux installer, and right click to copy the link address). 
+
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+Follow the Miniconda instructions to run the installer bash script. When asked for an install location, specify $WORK
 
 Add your conda install to your path
 
@@ -18,9 +29,16 @@ Add your conda install to your path
 
 test that everything is working
 
-    conda list --envs
+    conda info --envs
 
 You can activate, install packages, etc as you would for a local conda environment
+
+# Using PyTorch on Lonestar6
+
+In a clean conda environment, install torch and torchvision
+
+    conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia
+
 
 
 # Using Jupyter notebooks on TACC

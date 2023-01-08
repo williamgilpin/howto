@@ -42,7 +42,7 @@ We have used `...` to denote miscellaneous files that are either unrelated to do
 		$ sphinx-quickstart
 
 
-3. The quickstart will walk you through the various options. I normally accept all the defaults, but I make sure to enable autodoc when asked about it. For version numbers, for code-in-progress I usually start with low decimals like 0.1, with version 1.0 coming later as a release candidate (ready for public consumption), and major releases with new features, refactoring, or backwards-incompatible changes reserved for whole numbers (2.0, 2.0, etc).
+3. The quickstart will walk you through the various options. I normally accept all the defaults, but I make sure to enable autodoc when asked about it. Regarding version numbers, for code-in-progress I usually start with low decimals like 0.1, with version 1.0 coming later as a release candidate (ready for public consumption), and major releases with new features, refactoring, or backwards-incompatible changes reserved for whole numbers (2.0, 2.0, etc).
 
 
 4. Add the following lines to the `conf.py` file, in order to include an explicit local path to the "core" folder of your module or library
@@ -77,13 +77,13 @@ Finally, you can also tweak the visual appearance of your documentation by modif
 
 Sphinx should start attempting to render HTML from your project's docstrings. If you run into an error, make sure that you are in the `docs` folder, and that the conda environment in which you install sphixn is currently active.
 
-If all was successful, you should find the documentation rendered as an HTML file in the `_build` directory.
+If all was successful, you should find the documentation rendered as an HTML file in the `docs/spbuild` directory.
 
 8. We now want to host our project documentation using GitHub pages. Still within your `docs` directory, create a file that will tell GitHub pages to avoid attempting to re-render the HTML pages that sphinx just created. In the Terminal, run
 
 		$ touch .nojekyll
 
-
+This will create an empty file called `.nojekyll` within the repository.
 
 9. Add a new `index.html` to your `docs` directory that redirects to the `index.html` inside the new build directory. You can make this HTML file in VSCode or another text editor, or directly in the terminal with emacs or vim. In any case, `index.html` should contain only the following line
 
