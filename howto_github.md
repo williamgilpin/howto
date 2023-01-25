@@ -1,6 +1,6 @@
-### Link to GitHub account
+### Link your local to GitHub account via SSH
 
-Using SSH
+GitHub no longer supports password authentication. Instead, you can use SSH keys or a personal access token (PAT). I prefer SSH keys, because they are a bit more general and can be used for other things.
 
 In terminal,
     
@@ -63,6 +63,23 @@ Save and close using standard emacs commands
 If you've already commited, you have to force the update:
   
   $  git push origin master --force
+
+### Remove a "dirty" commit, like a large or private file
+
+If you commit a large file that is rejected on push (for example, GitHub will reject files >100MB), you need to completely remove it from the commit history before you will be able to push again. This is a good idea if you have a private file that you don't want to be public.
+
+Install bfg
+
+    brew install bfg
+
+Remove the file from the history. Don't specify the path, just the filename (e.g. `my_bad_file.zip`)
+
+    bfg --delete-files my_bad_file.zip
+
+Fix the commit history to remove this bad file
+
+    git reflog expire --expire=now --all && git gc --prune=now --aggressive
+
 
 
 ### Examine and merge a pull request
@@ -151,22 +168,6 @@ To store the PAT after creating it, I follwed the instructions
 + I also removed the file `~/..git-credentials`
 + Other useful information about storing PAT [here](https://askubuntu.com/questions/773455/what-is-the-correct-way-to-use-git-with-gnome-keyring-and-https-repos/959662#959662) and [here](https://stackoverflow.com/questions/46645843/where-to-store-the-personal-access-token-from-github)
 
-## Deprecated: connecting a new computer to GitHub using password authentication
-
-(Old) To use traditional authentication, in Terminal,
-
-    git config --global user.name github_username
-    git config --global user.email my_email@email.com
-    git config --global core.editor emacs
-
-The last line sets the default editor to emacs. The first time you push changes to remote, you will be prompted for your password. This will be saved for future use
-
-If you are still repeatedly prompted for your account credentials, use
-
-    git config credential.helper store
-
-Note that running the above will cause an unhashed copy of your GitHub password to be stored locally.
-
 ### Transfer repo to an organization
 
 Transfer as normal using the "Settings tab"
@@ -185,5 +186,35 @@ My `~/.gitconfig` file is as follows
     [alias]
             acp = !git add . && git commit -m "latest" && git push
 
+### Removing git-lfs
+
+Oftentimes, you might find yourself needing to completely remove git-lfs from a respository, and then re-add the files it tracks to git. Remove all traces of git-lfs from `.gitattributes`. Then, from the command line, run
+
+    git lfs uninstall
+
+You will likely still need to manually go through and untrack every file that was previously tracked by git-lfs. This can be done by running
+
+    git lfs untrack filename
+
+You can list out all tracked files by running
+
+    git lfs ls-files
+  
+
+## Deprecated: connecting a new computer to GitHub using password authentication
+
+(Old) To use traditional authentication, in Terminal,
+
+    git config --global user.name github_username
+    git config --global user.email my_email@email.com
+    git config --global core.editor emacs
+
+The last line sets the default editor to emacs. The first time you push changes to remote, you will be prompted for your password. This will be saved for future use
+
+If you are still repeatedly prompted for your account credentials, use
+
+    git config credential.helper store
+
+Note that running the above will cause an unhashed copy of your GitHub password to be stored locally.
 
 
