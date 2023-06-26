@@ -1,3 +1,4 @@
+# Using TACC cluster
 
 Useful information
 
@@ -7,11 +8,32 @@ Useful information
 + Notes on getting started with Python and conda [here](https://www.wgilpin.com/cphy/labs/getting_started_with_python.html)
 + Notes on using SSH and configuring Lonestar6 [here](https://issm.ess.uci.edu/trac/issm/wiki/lonestar)
 
-# General guidelines
+## Log in to your account
 
-+ $HOME is your home directory on TACC. This has a strict storage limit of 10 GB, but it is backed up. This is not a suitable place for long-term storage of large files. I mainly just keep basic scripts there. Check your disk usage with `du -sh ./*/`
+    ssh USERNAME@ls6.tacc.utexas.edu 
 
-+ $WORK does not have the same storage limit, but it is also not backed up. For machine learning, I have found it necessary to install conda within work, since environments can get pretty large
+You will be prompted to enter your password and provide a two-factor authentication. Currently, you need to type in a physical 4 digit code from your phone; you can't approve a push notification (as far as I'm aware).
+
+
+## General guidelines and quotas
+
++ `$HOME` is your home directory on TACC. This has a strict storage limit of 10 GB, but it is backed up. This is not a suitable place for long-term storage of large files. I mainly just keep basic scripts there. Check your disk usage with `du -sh ./*/`
+
++ `$WORK` does not have the same storage limit, but it is also not backed up. For machine learning, I have found it necessary to install conda within `$WORK`, since environments can get pretty large
+
+Most of the time you want to work in the `$WORK` folder. This is also the best place to install large programs, due to the file size limits on other partitions. 
+
+    cd $WORK
+
+## Submitting a job
+
+Now submit your job
+
+	sbatch FILENAME.sbatch
+
+Check on your job status
+
+	squeue -u USERNAME
 
 # Using conda on Lonestar
 
@@ -33,13 +55,24 @@ test that everything is working
 
 You can activate, install packages, etc as you would for a local conda environment
 
+
+# Using mamba on Lonestar6
+
+Install from the command line. During installation, manually install mambaforge to $WORK instead of the top level
+
+You will need to manually add the condaforge bin to your path
+
+    export PATH="~/work/mambaforge/bin:$PATH"
+
+Also try manually running init
+
+    ~/work/mambaforge/condabin/mamba init
+
 # Using PyTorch on Lonestar6
 
 In a clean conda environment, install torch and torchvision
 
     conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia
-
-
 
 # Using Jupyter notebooks on TACC
 
@@ -79,4 +112,47 @@ Then place the following line at the top of the `$HOME/.zshrc file`
     export FPATH=$HOME/share/zsh/5.9/functions:$FPATH
 
 Finally, restart the shell and enjoy the features of oh-my-zsh!
+
+## Template for SLURM on TACC
+
+```
+#!/bin/bash
+# Job name:
+#SBATCH --job-name=myjob
+#
+# Account to charge:
+#SBATCH --account=PHY22025
+#
+# Pick partition to run on:
+#SBATCH --partition=gpu-a100
+#
+# File where job progress and standard output is written
+#SBATCH --output=myjob.out
+#
+# File where job errors are written
+#SBATCH --error=myjob.err      
+#
+# Request only one node:
+#SBATCH --nodes=1
+#
+# memory per node: (uses full node memory if set to zero)
+#SBATCH --mem=0  
+#
+# number of tasks
+#SBATCH --ntasks=1
+#
+# Processors per task:
+#SBATCH --cpus-per-task=2
+#
+# Wall clock limit: HH:MM:SS. Max is 48 hours on most nodes
+#SBATCH --time=05:30:00
+#
+## Command(s) to run
+python scripts/my_program.py 
+```
+
+For this example, you can check standard out and errors while the job is in progress by running 
+
+    cat myjob.err
+    cat myjob.out
 

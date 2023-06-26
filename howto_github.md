@@ -64,9 +64,9 @@ If you've already commited, you have to force the update:
   
   $  git push origin master --force
 
-### Remove a "dirty" commit, like a large or private file
+### Remove a "dirty" commit containg a large or private file
 
-If you commit a large file that is rejected on push (for example, GitHub will reject files >100MB), you need to completely remove it from the commit history before you will be able to push again. This is a good idea if you have a private file that you don't want to be public.
+If you commit a large file that is rejected on push (for example, GitHub will reject files >100MB), you need to completely remove it from the commit history before you will be able to push again. This is a also good idea if you have committed private file that you don't want to be public.
 
 Install bfg
 
@@ -80,6 +80,10 @@ Fix the commit history to remove this bad file
 
     git reflog expire --expire=now --all && git gc --prune=now --aggressive
 
+If using `bfg` fails, try overrwriting the hashes. This can cause issues on shared repositories, and should be used as a last resort.
+
+    git filter-branch --force --index-filter "git rm --cached --ignore-unmatch <path/filename>" --prune-empty --tag-name-filter cat -- --all
+    git push origin master --force
 
 
 ### Examine and merge a pull request
