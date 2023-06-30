@@ -12,18 +12,20 @@ Useful information
 
     ssh USERNAME@ls6.tacc.utexas.edu 
 
-You will be prompted to enter your password and provide a two-factor authentication. Currently, you need to type in a physical 4 digit code from your phone; you can't approve a push notification (as far as I'm aware).
+You will be prompted to enter your password and provide a two-factor authentication. Currently, you need to type in a physical six-digit code from your phone; you can't approve a push notification (as far as I'm aware).
 
 
 ## General guidelines and quotas
 
 + `$HOME` is your home directory on TACC. This has a strict storage limit of 10 GB, but it is backed up. This is not a suitable place for long-term storage of large files. I mainly just keep basic scripts there. Check your disk usage with `du -sh ./*/`
++ + This directory recieves a full backup every few months, and an incremental backup every few days. You can open a support ticket to retrieve files, if needed.
 
 + `$WORK` does not have the same storage limit, but it is also not backed up. For machine learning, I have found it necessary to install conda within `$WORK`, since environments can get pretty large
 
 Most of the time you want to work in the `$WORK` folder. This is also the best place to install large programs, due to the file size limits on other partitions. 
 
     cd $WORK
+
 
 ## Submitting a job
 
@@ -53,8 +55,16 @@ test that everything is working
 
     conda info --envs
 
-You can activate, install packages, etc as you would for a local conda environment
+You can activate, install packages, etc as you would for a local conda environment. 
 
+Automatically loading conda environments within batch scripts can be a bit challenging. Currently, the following lines work within a `.sbatch` file
+
+    conda init bash
+    source ~/work/miniconda3/etc/profile.d/conda.sh
+    conda activate dysts
+    echo $CONDA_DEFAULT_ENV
+
+This should write the correct environment name to output.
 
 # Using mamba on Lonestar6
 
@@ -74,11 +84,34 @@ In a clean conda environment, install torch and torchvision
 
     conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia
 
+To use a GPU, make sure that you load a matching version of CUDA in all of your `.sbatch` scripts
+
+    module load cuda/12.0
+
 # Using Jupyter notebooks on TACC
 
 In a web browser, visit the [TACC Vis portal](https://vis.tacc.utexas.edu/).
 
 Create a job with your desired resources and partition. Leave the "reservation" field blank.
+
+# Using JAX with GPU on TACC
+
+Make sure that you install in your environment a version of JAX that matches the version of CUDA that you are running. The available JAX versions are listed in the [JAX installation guide](https://github.com/google/jax#installation)
+
+For example, installing CUDA 12 
+
+    pip install --upgrade "jax[cuda12_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+
+Next, make sure that all of your `.sbatch` scripts load the matching CUDA version
+
+    module load cuda/12.0
+
+You can check that everything is working by opening a Python prompt and running
+
+    import jax
+    jax.devices()
+
+A GPU should appear somewhere
 
 # Using zsh shell on TACC
 
