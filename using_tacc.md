@@ -45,7 +45,7 @@ In your user folder, make a directory called `src` and then use wget to download
 
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
-Follow the Miniconda instructions to run the installer bash script. When asked for an install location, specify $WORK
+Follow the Miniconda instructions to run the installer bash script. When asked for an install location, specify `$WORK`
 
 Add your conda install to your path
 
@@ -57,14 +57,14 @@ test that everything is working
 
 You can activate, install packages, etc as you would for a local conda environment. 
 
-Automatically loading conda environments within batch scripts can be a bit challenging. Currently, the following lines work within a `.sbatch` file
+As of writing, automatically loading conda environments within batch scripts can be a bit challenging. Currently, the following lines work within a `.sbatch` file. See full sbatch template [here](#template)
 
-    conda init bash
+    module load gcc
     source ~/work/miniconda3/etc/profile.d/conda.sh
-    conda activate dysts
-    echo $CONDA_DEFAULT_ENV
+    conda init bash
+    conda activate ~/work/mambaforge/envs/dedalus
+    python kolmo.py
 
-This should write the correct environment name to output.
 
 # Using mamba on Lonestar6
 
@@ -146,7 +146,7 @@ Then place the following line at the top of the `$HOME/.zshrc file`
 
 Finally, restart the shell and enjoy the features of oh-my-zsh!
 
-## Template for SLURM on TACC
+## Template for SLURM on TACC {template}
 
 ```
 #!/bin/bash
