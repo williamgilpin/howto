@@ -80,7 +80,10 @@ We are now going to a create a basic website to accompany our repository. This i
 
 1. The best approach is to follow the instructions [from GitHub](https://pages.github.com/). Use the instructions for a Project Site. 
 
-+ Create a new git and GitHub repository, or go to an existing repository. The simplest thing you can do is go into your repository’s online settings through the GitHub GUI, and activate the option for GitHub pages. It should automatically convert your README.md file into an index.html file and then host it at:
++ Create a new git and GitHub repository, or go to an existing repository's settings in the online GitHub GUI 
++ In the Settings menu, enable GitHub pages and pick a source as README.md. 
+
+After some time passes, Github will automatically convert your `README.md`` file into an index.html file and then host it at:
 
 	https://yoursusername.github.io/my_repository
 
