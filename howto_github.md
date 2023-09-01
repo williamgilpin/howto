@@ -8,7 +8,7 @@ Getting Started with: Git, GitHub, and GitHub pages
 
 2. Make a GitHub account. You might consider applying to link your account to your school email via [GitHub for Education](https://education.github.com/). This comes with a lot of perks, like private repositories and free access to the [GitHub Copilot](https://github.com/features/copilot) plugin for VSCode and PyCharm.
 
-3. Create a local project folder on your computer containing code that you want to track. For example, you might want to create a folder for your course homeworks, or for these labs, or for your final project when the time comes. For now, let’s just make a test repository, to make sure that everything is working.
+3. Create a local project folder on your computer containing code that you want to track. For example, you might want to create a folder for your course homeworks, or for labs, or for the final project. For now, let’s just make a test repository, to make sure that everything is working.
 
 ```
 $ mkdir test_repo
@@ -49,6 +49,8 @@ If this is your first time setting up GitHub and git, the commands will fail at 
 ```
 
 7. Once you have your `.gitconfig` set up, attempt again to run the commands from step 6. You will probably be prompted for your password or access token. To set up your local Terminal to automatically remember your GitHub login info, you need to create a Personal Access Token (PAT) using the instructions [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token). I set mine up with maximal priveleges and no expiry. After obtaining the PAT, attempt yet again to run the commands from step 6, but this time enter your PAT instead of your password.
+
+If setting up a PAT fails, then you might instead opt to authenticate with SSH. See the instructions[here](#ssh)
 
 8. The basic solo git workflow is pretty straightforward; it's like a manual Dropbox folder you manage from the Terminal. Make some changes to your local repository; for example, by editing into your README.md file. Whenever you want to apply those changes to the remote (the GitHub version of your code), first add these files in the Terminal (make sure you are in your repository). Since we already made a README.md file, you will need to start by staging the changes in your local repository. 
 
@@ -93,7 +95,7 @@ When used for single projects, GitHub acts sort of like a manual Dropbox folder,
 
 For smaller projects (like class projects), it isn't necessary to use pull requests---instead, you can [invite collaborators to a shared repository](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository), and everyone wil be able to make commits.
 
-Important: if you have a fork that you are using to complete the homeworks, please make sure that you don’t use your assignment fork to submit pull requests to my main repository. Since your versions of the assignments will override mine, it could lead to weird merge conflicts. If you fork a single version of an active repo (like a class repo), periodically [`git pull`](https://git-scm.com/docs/git-pull) to get any changes. Just double check to make sure that to `git stash` any changes you've made locally (like assignments)
+Important: if you have a fork that you are updating from a main---such as a fork of a class repository that you are using to complete homeworks--make sure that you don’t use your assignment fork to submit pull requests to my main repository. Since your versions of the assignments will override mine, it could lead to weird merge conflicts. If you fork a single version of an active repo (like a class repo), periodically [`git pull`](https://git-scm.com/docs/git-pull) to get any changes. Just double check to make sure that to `git stash` any changes you've made locally (like assignments)
 
 ### Link your local machine to GitHub account via SSH {#ssh}
 
