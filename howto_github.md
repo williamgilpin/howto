@@ -76,9 +76,11 @@ You might have local files that you don't want to appear in your public repo. Fo
 
 ## Create a website using GitHub pages
 
-We are now going to a create a basic website to accompany our repository. This usually isn’t necessary, but I think this feature is worth knowing about for when you quickly need to create a website—--for example, for [this course’s webpage](https://www.wgilpin.com/cphy/) is written entirely in Markdown, and rendered into HTML internally via GitHub (which also provides free hosting for small websites)
+We are now going to a create a basic website to accompany our repository. This isn’t always necessary, but this feature is useful to quickly create a website—--for example, for [the computational physics course webpage](https://www.wgilpin.com/cphy/) is written entirely in Markdown, and rendered into HTML automatically every time an update is pushed to GitHub (which also provides free hosting for small websites)
 
-1. We will follow the instructions [from GitHub](https://pages.github.com/) are pretty clear. The simplest thing you can do is go into your repository’s online settings through the GitHub GUI, and activate the option for GitHub pages. It should automatically convert your README.md file into an index.html file and then host it at:
+1. The best approach is to follow the instructions [from GitHub](https://pages.github.com/). Use the instructions for a Project Site. 
+
++ Create a new git and GitHub repository, or go to an existing repository. The simplest thing you can do is go into your repository’s online settings through the GitHub GUI, and activate the option for GitHub pages. It should automatically convert your README.md file into an index.html file and then host it at:
 
 	https://yoursusername.github.io/my_repository
 
