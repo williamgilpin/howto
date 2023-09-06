@@ -20,20 +20,20 @@ Now try making a new virtual environment via conda
 
 Updating conda
 
-	 $ conda update conda
+	$ conda update conda
 
 Duplicating an environment
 
-	 $ conda list --export > exported-packages.txt
-	 $ conda create -n py3clone --file exported-packages.txt
+	$ conda list --export > exported-packages.txt
+	$ conda create -n py3clone --file exported-packages.txt
 
 -OR-
 
-	 $ conda create -n newname --clone oldname
+	$ conda create -n newname --clone oldname
 
 Removing an environment
 
-	 $ conda remove -n myenv --all
+	$ conda remove -n myenv --all
 
 ## Installing packages
 	
