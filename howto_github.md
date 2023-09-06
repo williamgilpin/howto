@@ -51,7 +51,7 @@ Of these lines, the `[user]` and `[credential]` fields are the most important fi
 If you run into difficulty, please follow the more detailed instructions provided by GitHub on created a PAT [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 If setting up a PAT fails, then you might instead opt to authenticate with SSH. See the instructions[here](#ssh)
 
-6. Now return to your empty repo's GitHub page, https://github.com/yourusername/test_repo. There will be instructions there listing what to do in order to get everything working on your local repo, but I've summarized them here. In your Terminal, navigate to your local repo. You will run the following commands in sequence:
+8. Now return to your empty repo's GitHub page, https://github.com/yourusername/test_repo. There will be instructions there listing what to do in order to get everything working on your local repo, but I've summarized them here. In your Terminal, navigate to your local repo. You will run the following commands in sequence:
 
 ```bash
 $ git init
@@ -82,7 +82,7 @@ To https://github.com/williamgilpin/test_repo
    e049541..ee2cb7d  main -> main
 ```
 
-8. Now that git is working, you can modify and update your local repository, and then manually push updates to your remote. To practice these steps, make some changes to your local repository; for example, by editing into your `README.md` file. 
+9. Now that git is working, you can modify and update your local repository, and then manually push updates to your remote. To practice these steps, make some changes to your local repository; for example, by editing into your `README.md` file. 
 
 ```bash
 $ emacs README.md
@@ -93,13 +93,13 @@ Whenever you want to apply those changes to the remote (the GitHub version of yo
 $ git add .
 ```
 
-9. Then commit the changes with a short but descriptive message
+10. Then commit the changes with a short but descriptive message
 
 ```bash
 $ git commit -m "added example changes to the README file"
 ```
 
-10. Then finally send the update to GitHub
+11. Then finally send the update to GitHub
 
 ```bash
 $ git push
@@ -133,7 +133,7 @@ When used for single projects, GitHub acts sort of like a manual Dropbox folder,
 + Make sure that your local branch is up-to-date with the course using fetch (see instructions [here](https://stackoverflow.com/questions/7244321/how-do-i-update-or-sync-a-forked-repository-on-github)). This is to account for the case where I've made changes to the course repo while you've been making your changes.
 + When everything looks good, submit a pull request [using the instructions here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
 
-For smaller projects (like class projects), it isn't necessary to use pull requests---instead, you can [invite collaborators to a shared repository](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository), and everyone wil be able to make commits.
+For smaller projects (like class projects), it isn't necessary to use pull requests---instead, you can [invite collaborators to a shared repository](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository), and everyone will be able to make commits.
 
 Important: if you have a fork that you are updating from a main---such as a fork of a class repository that you are using to complete homeworks--make sure that you don’t use your assignment fork to submit pull requests to my main repository. Since your versions of the assignments will override mine, it could lead to weird merge conflicts. If you fork a single version of an active repo (like a class repo), periodically [`git pull`](https://git-scm.com/docs/git-pull) to get any changes. Just double check to make sure that to `git stash` any changes you've made locally (like assignments)
 
@@ -143,20 +143,28 @@ GitHub no longer supports password authentication. Instead, you can use SSH keys
 
 In terminal,
     
+```bash
     ssh-keygen -o -t rsa -C "username@email.com"
+```
 
 Press enter twice to assign to default location and have no password. Now view the SSH key by going to
 
+```bash
     cat ~/.ssh/id_rsa.pub
+```
 
 Copy and paste this into your SSH key collection on the GitHub website. To test that this is set up correction, on your local machine run
 
+```bash
     ssh -T git@github.com
+```
 
 and receive response
 
+```bash
     Hi username! You've successfully authenticated, but Github does
     not provide shell access.
+```
 
 A nice guide is [here](https://kbroman.org/github_tutorial/pages/first_time.html)
 
@@ -177,20 +185,28 @@ If this still fails, then check that you have SSH set up correctly. See the inst
 
 3. Add your fork as a remote:
 
+```bash
     git remote add myfork https://github.com/YOUR_USERNAME/repo_name.git
+```
 
 4. Create a new branch to work on:
 
+```bash
     git checkout -b newfeature
+```
 
 5. Make your changes, and commit them:
 
+```bash
     git add .
     git commit -m "Added newfeature"
+```
     
 6. Push your changes to your fork:
 
+```bash
     git push myfork newfeature
+```
 
 7. On the GitHub web interact, create a pull request from your `newfeature`` branch to the original repo's main branch.
 
@@ -198,30 +214,39 @@ If this still fails, then check that you have SSH set up correctly. See the inst
 
 9. Once approved and merged, you can delete your local branch and pull the updated main branch:
 
+```bash
     git branch -d newfeature
     git checkout main
     git pull origin main
+```
 
 ### Create a new feature
 
 On your local copy of the repo, make sure that you are updated to the latest version of the remote
 
+```bash
     git pull
+```
 
 Now create a new branch locally
 
+```bash
     git checkout -b [name_of_your_new_branch]
+```
 
 Now push to the remote
 
+```bash
     git push origin [name_of_your_new_branch]
+```
 
 Now make edits to your local version, pushing to the remote as needed. Occasionally, you may also need to pull the latest changes from the remote main.
 
 ### Editing commit history
 
 To alter or combine the last four commits, run
-```
+
+```bash
    $ git rebase -i HEAD~4
 ```
 A text editor will pop up. Replace "pick" with "squash" for the commits that you want to merge together. It will then prompt you to come up with a new commit message for all of the commits that you just squashed.
@@ -229,8 +254,10 @@ A text editor will pop up. Replace "pick" with "squash" for the commits that you
 Save and close using standard emacs commands
 
 If you've already commited, you have to force the update:
-  
+
+```bash
   $  git push origin master --force
+```
 
 ### Remove a "dirty" commit containg a large or private file
 
@@ -238,38 +265,51 @@ If you commit a large file that is rejected on push (for example, GitHub will re
 
 Install bfg
 
+```bash
     brew install bfg
+```
 
 Remove the file from the history. Don't specify the path, just the filename (e.g. `my_bad_file.zip`)
 
+```bash
     bfg --delete-files my_bad_file.zip
+```
 
 Fix the commit history to remove this bad file
 
+```bash
     git reflog expire --expire=now --all && git gc --prune=now --aggressive
+```
 
 If using `bfg` fails, try overrwriting the hashes. This can cause issues on shared repositories, and should be used as a last resort.
 
+```bash
     git filter-branch --force --index-filter "git rm --cached --ignore-unmatch <path/filename>" --prune-empty --tag-name-filter cat -- --all
     git push origin master --force
-
+```
 
 ### Examine and merge a pull request
 
 After recieving a pull request, make sure your local copy of the repository is up to date with `master` and that you've committed all changes. Now,
 
+```bash
 	git checkout -b otherusersname-master master
 	git pull https://github.com/otherusersname/pypdb.git master
+```
 
 Now run tests, make sure everything appears to be working. You can also make any edits to the documentation, etc on this branch. Once you are satisfied (and if there are no conflicts), merge this branch:
 
+```bash
 	git checkout master
 	git merge --no-ff otherusersname-master
 	git push origin master
+```
 
 If you get an error when switching branches, you might need to discard some local changes to master (do this carefully). In this case, use the force flag
   
+```bash
     git checkout -f master
+```
 
 ### Fork a repository online
 
@@ -281,26 +321,36 @@ Detailed instructions [here](https://help.github.com/articles/fork-a-repo/)
 
 ### Update local with changes to remote
 
+```bash
     git pull origin
+```
 
 This combines a `fetch` with a `merge`. If you want to do these separately, you can run
 
+```bash
     git fetch origin
     git merge origin/master
+```
 
 If you have uncommitted changes, you may need to stash them before pulling
 
+```bash
     git stash
     git pull origin
+```
 
 You can then add your changes back
 
+```bash
     git stash pop
+```
 
 ### Force overwrite local with remote
 
+```bash
 	git fetch origin
 	git reset --hard origin/master
+```
 
 ### Downloading a remote repository without forking it
 
@@ -315,35 +365,41 @@ pip install git+git://github.com/someusername/somerepo
 ### Modifying commit history
 
 To alter or combine the last four commits, run
-```
+
+```bash
 $ git rebase -i HEAD~4
 ```
+
 A text editor will pop up. Replace "pick" with "squash" for the commits that you want to merge together. It will then prompt you to come up with a new commit message for all of the commits that you just squashed.
 
 If you've already commited, you have to force the update:
-```
+
+```bash
 $ git push origin main --force
 ```
+
 ### Forking a repository summarized
 
 clone forked repo locally
-```
+
+```bash
 $ git clone "https://...MY_USERNAME...
 ```
 add upstream branch
-```
+
+```bash
 $ git remote add upstream "https://...THEIR_USERNAME...git
 ```
 make a new branch
-```
+```bash
 $ git add branch BRANCH_NAME
 ```
 switch to new branch and make edits
-```
+```bash
 $ git checkout BRANCH_NAME
 ```
 push new commits
-```
+```bash
 $ git add .
 $ git commit -m "test commit plz ignore"
 $ git push
@@ -359,9 +415,10 @@ go to github and make a pull request
 Sometimes instead of `git add .` you need to use `git add --all`
 This can be fixed by stashing and then immediately un-stashing:
 
+```bash
     git stash
     git stash apply
-
+```
 
 ## Permission issues
 
@@ -369,9 +426,11 @@ This can be fixed by stashing and then immediately un-stashing:
 
 Somehow the ownership got messed up for some files. From project base directory, try running
 
+```bash
     cd .git/objects
     ls -al
     sudo chown -R yourname:yourgroup *
+```
 
 yourname and yourgroup can be figured out by seeing what the majority of of the ls -al usernames and groups are. My "group" appeared to be staff for some reason. This answer is taken from [StackExchange](http://stackoverflow.com/questions/6448242/git-push-error-insufficient-permission-for-adding-an-object-to-repository-datab)
 
@@ -380,7 +439,7 @@ yourname and yourgroup can be figured out by seeing what the majority of of the 
 
 After using GitHub from the command line, I recieved the following email
 
-
+```bash
     Hi @williamgilpin,
 
     You recently used a password to access the repository at williamgilpin/dysts with git using git/2.24.3 (Apple Git-128).
@@ -389,7 +448,7 @@ After using GitHub from the command line, I recieved the following email
 
     Thanks,
     The GitHub Team
-
+```
 
 I followed GitHub's instructions [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) to create a PAT. 
 
@@ -410,6 +469,7 @@ Transfer as normal using the "Settings tab"
 
 My `~/.gitconfig` file is as follows
 
+```bash
     [user]
             name = myname
             email = myemail@email.com
@@ -419,6 +479,7 @@ My `~/.gitconfig` file is as follows
             helper = store
     [alias]
             acp = !git add . && git commit -m "latest" && git push
+```
 
 ### Removing git-lfs
 
@@ -437,7 +498,9 @@ You can list out all tracked files by running
 
 ## Deprecated: connecting a new computer to GitHub using password authentication
 
-(Old) To use traditional authentication, in Terminal,
+These instructions no longer work, now that GitHub dropped support for password authentication.
+
+To use traditional authentication, in Terminal,
 
     git config --global user.name github_username
     git config --global user.email my_email@email.com
@@ -451,7 +514,7 @@ If you are still repeatedly prompted for your account credentials, use
 
 Note that running the above will cause an unhashed copy of your GitHub password to be stored locally.
 
-## error: unable to read askpass response from '/usr/libexec/openssh/gnome-ssh-askpass'
+## I receive the following "error: unable to read askpass response from '/usr/libexec/openssh/gnome-ssh-askpass'"
 
 Run the following command to fix this issue
 
