@@ -360,14 +360,15 @@ Sometimes you just want to download a copy of someone's code without collaborati
 
 If there's a setup.py file in the repo, you can install using pip
 
-pip install git+git://github.com/someusername/somerepo
-
+```bash
+    pip install git+git://github.com/someusername/somerepo
+```
 ### Modifying commit history
 
 To alter or combine the last four commits, run
 
 ```bash
-$ git rebase -i HEAD~4
+    $ git rebase -i HEAD~4
 ```
 
 A text editor will pop up. Replace "pick" with "squash" for the commits that you want to merge together. It will then prompt you to come up with a new commit message for all of the commits that you just squashed.
@@ -375,7 +376,7 @@ A text editor will pop up. Replace "pick" with "squash" for the commits that you
 If you've already commited, you have to force the update:
 
 ```bash
-$ git push origin main --force
+    $ git push origin main --force
 ```
 
 ### Forking a repository summarized
@@ -383,26 +384,26 @@ $ git push origin main --force
 clone forked repo locally
 
 ```bash
-$ git clone "https://...MY_USERNAME...
+    $ git clone "https://...MY_USERNAME...
 ```
 add upstream branch
 
 ```bash
-$ git remote add upstream "https://...THEIR_USERNAME...git
+    $ git remote add upstream "https://...THEIR_USERNAME...git
 ```
 make a new branch
 ```bash
-$ git add branch BRANCH_NAME
+    $ git add branch BRANCH_NAME
 ```
 switch to new branch and make edits
 ```bash
-$ git checkout BRANCH_NAME
+    $ git checkout BRANCH_NAME
 ```
 push new commits
 ```bash
-$ git add .
-$ git commit -m "test commit plz ignore"
-$ git push
+    $ git add .
+    $ git commit -m "test commit plz ignore"
+    $ git push
 ```
 go to github and make a pull request
 
@@ -485,16 +486,21 @@ My `~/.gitconfig` file is as follows
 
 Oftentimes, you might find yourself needing to completely remove git-lfs from a respository, and then re-add the files it tracks to git. Remove all traces of git-lfs from `.gitattributes`. Then, from the command line, run
 
+```bash
     git lfs uninstall
+```
 
 You will likely still need to manually go through and untrack every file that was previously tracked by git-lfs. This can be done by running
 
+```bash
     git lfs untrack filename
+```
 
 You can list out all tracked files by running
 
+```bash
     git lfs ls-files
-  
+```
 
 ## Deprecated: connecting a new computer to GitHub using password authentication
 
@@ -502,15 +508,19 @@ These instructions no longer work, now that GitHub dropped support for password 
 
 To use traditional authentication, in Terminal,
 
+```bash
     git config --global user.name github_username
     git config --global user.email my_email@email.com
     git config --global core.editor emacs
+```
 
 The last line sets the default editor to emacs. The first time you push changes to remote, you will be prompted for your password. This will be saved for future use
 
 If you are still repeatedly prompted for your account credentials, use
 
+```bash
     git config credential.helper store
+```
 
 Note that running the above will cause an unhashed copy of your GitHub password to be stored locally.
 
@@ -518,6 +528,7 @@ Note that running the above will cause an unhashed copy of your GitHub password 
 
 Run the following command to fix this issue
 
+```bash
     unset SSH_ASKPASS
-
+```
 
