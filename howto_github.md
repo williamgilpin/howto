@@ -137,6 +137,51 @@ For smaller projects (like class projects), it isn't necessary to use pull reque
 
 Important: if you have a fork that you are updating from a main---such as a fork of a class repository that you are using to complete homeworks--make sure that you don’t use your assignment fork to submit pull requests to my main repository. Since your versions of the assignments will override mine, it could lead to weird merge conflicts. If you fork a single version of an active repo (like a class repo), periodically [`git pull`](https://git-scm.com/docs/git-pull) to get any changes. Just double check to make sure that to `git stash` any changes you've made locally (like assignments)
 
+## Step-by-step Guide to Submitting a Pull Request
+
+1. Fork the Repository
+    + Visit the respository that you want to fork. For example, the [cphy repository](https://github.com/williamgilpin/cphy)
+    + Click on the "Fork" button in the top-right corner of the page.
+
+2. Clone Your Forked Repository
+    + Open your terminal and run the following command to clone the forked repository to your local machine:
+
+```bash
+    git clone https://github.com/YOUR_GITHUB_USERNAME/cphy.git
+```
+
+3. Create a New Branch. Navigate to the repository's directory and create a new branch for your changes. A typical name for a branch might be `development` or `bugfix`
+
+```bash
+    cd cphy
+    git checkout -b NAME_OF_YOUR_BRANCH
+```
+
+4. Make Your Changes. Make and save your changes to the necessary files within the repository.
+
+5. Commit Your Changes. Add your changes to the staging area, then commit them with a descriptive message:
+
+```bash
+    git add .
+    git commit -m "Your descriptive message here"
+```
+6. Push your changes to your forked repository on GitHub:
+
+```bash
+    git push origin NAME_OF_YOUR_BRANCH
+```
+
+7. Create the Pull Request on GitHub. Navigate to your forked repository, and click on the "Compare & pull request" button. This will take you to the page where you create the pull request. After you have filled out the necessary information, click on the "Create pull request" button.
+    + Go to the 'Pull requests' tab on the original [repository to which you are submitting a PR](https://github.com/williamgilpin/cphy)
+    + Click the 'New pull request' button.
+    + Click 'compare across forks' and select your fork and the branch you created.
+    + Click 'Create pull request'.
+    + Fill out the pull request template with all the necessary details.
+    + Click 'Create pull request' to submit your pull request for review.
+
+Some repositories will include a `CONTRIBUTING.md` file that gives guidance for contributors submitting pull requests.
+
+
 ### Link your local machine to GitHub account via SSH {#ssh}
 
 GitHub no longer supports password authentication. Instead, you can use SSH keys or a personal access token (PAT). I prefer SSH keys, because they are a bit more general and can be used for other things.
