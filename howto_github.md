@@ -139,9 +139,7 @@ Important: if you have a fork that you are updating from a main---such as a fork
 
 ## Step-by-step Guide to Submitting a Pull Request
 
-1. Fork the Repository
-    + Visit the respository that you want to fork. For example, the [cphy repository](https://github.com/williamgilpin/cphy)
-    + Click on the "Fork" button in the top-right corner of the page.
+1. Fork the Repository. Visit the respository that you want to fork. For example, the [cphy repository](https://github.com/williamgilpin/cphy). Click on the "Fork" button in the top-right corner of the page and follow the on-screen instructions. This will create a copy of the repository in your own GitHub account.
 
 2. Clone Your Forked Repository
     + Open your terminal and run the following command to clone the forked repository to your local machine:
@@ -172,12 +170,12 @@ Important: if you have a fork that you are updating from a main---such as a fork
 ```
 
 7. Create the Pull Request on GitHub. Navigate to your forked repository, and click on the "Compare & pull request" button. This will take you to the page where you create the pull request. After you have filled out the necessary information, click on the "Create pull request" button.
-    + Go to the 'Pull requests' tab on the original [repository to which you are submitting a PR](https://github.com/williamgilpin/cphy)
-    + Click the 'New pull request' button.
-    + Click 'compare across forks' and select your fork and the branch you created.
-    + Click 'Create pull request'.
+    + Go to the "Pull requests" tab on the original [repository to which you are submitting a PR](https://github.com/williamgilpin/cphy)
+    + Click the "New pull request" button.
+    + Look for the link that says "compare across forks," and select your fork and the branch you created. The other drop-down menu should be the main branch of the original repository.
+    + Click "Create pull request".
     + Fill out the pull request template with all the necessary details.
-    + Click 'Create pull request' to submit your pull request for review.
+    + Click "Create pull request" to submit your pull request for review.
 
 Some repositories will include a `CONTRIBUTING.md` file that gives guidance for contributors submitting pull requests.
 
