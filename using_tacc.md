@@ -154,7 +154,7 @@ Finally, restart the shell and enjoy the features of oh-my-zsh!
 #SBATCH --job-name=myjob
 #
 # Account to charge:
-#SBATCH --account=PHY22025
+#SBATCH --account=[put lab account name here]
 #
 # Pick partition to run on:
 #SBATCH --partition=gpu-a100

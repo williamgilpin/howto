@@ -39,6 +39,8 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 ## Computer and applications
 
+[Using slurm on an HPC cluster](slurm.md)
+
 [Setting up TACC](using_tacc.md)
 
 [Our lab's protocol for managing large amounts of data](howto_bigdata.md)
@@ -71,7 +73,7 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 [Windows bugs and workarounds](windows_bugs.md)
 
-[Use Stanford's Sherlock HPP Cluster](howto_sherlock.md)
+[Use Stanford's Sherlock HPC Cluster](howto_sherlock.md)
 
 [Shortcuts for working with images and videos in FFMPEG](howto_ffmpeg.md)
 

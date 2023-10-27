@@ -324,7 +324,7 @@ Fix the commit history to remove this bad file
     git reflog expire --expire=now --all && git gc --prune=now --aggressive
 ```
 
-If using `bfg` fails, try overrwriting the hashes. This can cause issues on shared repositories, and should be used as a last resort.
+If using `bfg` fails, try overwriting the hashes. This can cause issues on shared repositories, and should be used as a last resort.
 
 ```bash
     git filter-branch --force --index-filter "git rm --cached --ignore-unmatch <path/filename>" --prune-empty --tag-name-filter cat -- --all
