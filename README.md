@@ -4,13 +4,13 @@ date: "2017-02-23T10:20:00Z"
 ---
  -->
 
-My personal notes and guides for various things.
+<!-- My personal notes and guides for various things.
 
 by [William Gilpin](http://www.wgilpin.com/)
+ -->
 
 
-
-## Programming and numerical techniques
+## Programming and code
 
 [Speed up Python using Cython/external C++ libraries](howto_cython.md)
 
@@ -37,21 +37,19 @@ by [William Gilpin](http://www.wgilpin.com/)
 [Alter Terminal settings on macOS](howto_terminal_settings.md)
 
 
-## Computer and applications
+## Computing infrastructure
 
 [Using slurm on an HPC cluster](slurm.md)
 
 [Setting up TACC](using_tacc.md)
 
-[Our lab's protocol for managing large amounts of data](howto_bigdata.md)
-
 [Host a Markdown website with Couscous](couscous.md)
-
-[Connect to local Windows servers](howto_connect_to_lab_servers.md)
 
 [Using git and GitHub](howto_github.md)
 
 [Using Google Cloud to run a Python project online](howto_google_cloud.md)
+
+[Host a simple website using GitHub pages and Jekyll](howto_website.md)
 
 [Schedule jobs using an SSH connection](howto_jobschedule.md)
 
@@ -65,8 +63,6 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 [Install Linux on an HP Stream computer](linux_hpstream.md)
 
-[Host a simple website using GitHub pages and Jekyll](howto_website.md)
-
 [Miscellaneous computer scripts and tricks](miscellaneous.md)
 
 [macOS bugs and workarounds](osx_bugs.md)
@@ -79,6 +75,10 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 [Set up remote access on a macOS computer](howto_remote_macos.md)
 
+[Our lab's old protocol for managing large amounts of data](howto_bigdata.md)
+
+[Connect to local Windows servers](howto_connect_to_lab_servers.md)
+
 
 ## Academic Job Search Resources
 
@@ -89,7 +89,7 @@ by [William Gilpin](http://www.wgilpin.com/)
 
 ## Other projects
 
-[Building a Cockroft-Walton high voltage multiplier](other/cockroft_walton.md)
+<!-- [Building a Cockroft-Walton high voltage multiplier](other/cockroft_walton.md) -->
 
 [Growing Bismuth oxide crystals](other/bismuth.md)
 
