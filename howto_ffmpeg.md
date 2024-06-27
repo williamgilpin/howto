@@ -65,7 +65,7 @@ I saved this as a bash script, so just cd into the directory containing the FLAC
 
 ### Merge three videos in xy as a mosiac using FFMPEG
 
-The height and widht parameters have to be calculated very carefully---any extra space will be filled with black thanks to the "color" option below
+The height and width parameters have to be calculated very carefully---any extra space will be filled with black thanks to the "color" option below
 
 A structured example
 

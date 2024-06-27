@@ -16,8 +16,6 @@ Now try making a new virtual environment via conda
 	$ conda activate cenv
 	(cenv) $ conda deactivate
 
-*Note: before 2018, `source activate` and `source deactivate` were used instead of `conda activate`. Some older clusters still use these commands.*
-
 Updating conda
 
 	$ conda update conda

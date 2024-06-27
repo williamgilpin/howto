@@ -65,8 +65,53 @@ As of writing, automatically loading conda environments within batch scripts can
     conda activate ~/work/mambaforge/envs/dedalus
     python kolmo.py
 
+# Using mamba on Lonestar
 
-# Using mamba on Lonestar6
+    wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+
+Run the bash script and install to `$WORK`
+
+    bash Miniforge3-Linux-x86_64.sh
+
+When prompted, the install location is
+
+    $WORK/miniforge3
+    Do you wish to update your shell profile to automatically initialize conda? [yes|no]
+    yes
+
+Update your Python path to point to the Miniforge install
+
+    export PATH="$WORK/miniforge3/bin:$PATH"
+
+Check that everything works by running it
+
+    mamba init
+
+To run `.sbatch` scripts, you should activate the environment and *then* submit the script. This appears to work more consistently than activating the environment within the script itself, as one would normally expect. 
+
+    mamba activate myenv
+    sbatch myscript.sbatch
+
+# Running jobs that temporarily require large disk space
+
+For jobs that temporary require downloading or using large files, or which perform frequent I/O to disk, you can use the `$SCRATCH` directory. This directory is frequently purged, and the outputs of the job should be frequently copied back to `$WORK` or `$HOME`. 
+
+To use the scratch directory, include a series of copy operations within your `.sbatch` script. For example, 
+
+    cd $SCRATCH
+    mkdir job_holder
+    cp $WORK/project_folder/* job_holder/
+
+    # Run job on scratch                                                                                                 
+    python job_holder/my_job.py
+
+    cd $WORK/project_folder/
+    mkdir job_holder_output
+    cp $SCRATCH/job_holder/* job_holder_output/
+
+This will copy the entire contents of `project_folder` to the scratch directory, run the job, and then copy the results back to `project_folder`.
+
+<!-- # Using mamba on Lonestar6
 
 Install from the command line. During installation, manually install mambaforge to $WORK instead of the top level
 
@@ -76,7 +121,7 @@ You will need to manually add the condaforge bin to your path
 
 Also try manually running init
 
-    ~/work/mambaforge/condabin/mamba init
+    ~/work/mambaforge/condabin/mamba init -->
 
 # Using PyTorch on Lonestar6
 
@@ -146,9 +191,10 @@ Then place the following line at the top of the `$HOME/.zshrc file`
 
 Finally, restart the shell and enjoy the features of oh-my-zsh!
 
+
 ## Template for SLURM on TACC {template}
 
-```
+```bash
 #!/bin/bash
 # Job name:
 #SBATCH --job-name=myjob

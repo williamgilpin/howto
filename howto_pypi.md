@@ -53,7 +53,7 @@ Install twine using pip if needed. Now upload the new distribution via twine
 
 	python3 -m twine upload --skip-existing -r pypi dist/* --verbose
 
-Enter PyPI credentials when prompted to do so
+Enter PyPI credentials when prompted to do so. You may need to paste in your API token, which is stored in `~/.pypirc` or your PyPI account settings.
 
 
 # Troubleshooting
