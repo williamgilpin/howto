@@ -212,7 +212,7 @@ and receive response
 A nice guide is [here](https://kbroman.org/github_tutorial/pages/first_time.html)
 
 
-### Fork a repo online and then submit a pull request {pull-request}
+### Fork a repo online and then submit a pull request {#pull-request}
 
 1. Create a local clone of the target repository
 
