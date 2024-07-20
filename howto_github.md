@@ -11,8 +11,8 @@ Getting Started with: Git, GitHub, and GitHub pages
 3. Create a local project folder on your computer containing code that you want to track. For example, you might want to create a folder for your course homeworks, or for labs, or for the final project. For now, let’s just make a test repository, to make sure that everything is working.
 
 ```bash
-$ mkdir test_repo
-$ cd test_repo
+    $ mkdir test_repo
+    $ cd test_repo
 ```
 
 4. You should now be inside your new repository. Add a README.md file to your local repository. You can use a text editor like VSCode, Jupyter Lab, or Sublime Text, or you can do this in the Terminal with your preferred editor. On macOS I normally use emacs ([information here](https://wikemacs.org/wiki/Installing_Emacs_on_OS_X)), but many may prefer nano or vim. If you want to use a different editor, replace emacs in all of the following steps with your preferred editor.
@@ -25,8 +25,8 @@ $ emacs README.md
 
 ```bash
 [user]
-        name = williamgilpin
-        email = williamgilpin@gmail.com
+        name = [your username]
+        email = [personal email]@gmail.com
 [core]
         editor = emacs
 [credential]
@@ -574,4 +574,65 @@ Run the following command to fix this issue
 ```bash
     unset SSH_ASKPASS
 ```
+
+## When I attempt to create an SSH key, I get the error `ssh-keygen: command not found`
+
+On Linux, 
+
+    apt install openssh-client
+
+On macOS,
+
+    brew install openssh
+
+On Windows, you can use the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to run the above Linux commands
+
+
+## I receive the error `fatal: remote origin already exists`
+
+Check to see if the remote already exists by running
+
+```bash
+    git remote -v
+```
+
+Look at the names of any listed remote. If the remote already exists, you can remove it by running `git remote rm [name of remote]`. For example,
+
+```bash
+    git remote rm origin
+```
+
+Common names for remotes are `origin` and `upstream` and `github`
+
+## Connecting CodeOcean to a private GitHub account
+
+Set up an SSH key using the instructions [above](#ssh). Then, in CodeOcean, open a Terminal in your codespace. You may need to install emacs and openssh-client
+
+```bash
+    apt install emacs
+    apt install openssh-client
+```
+
+Now, follow the instructions above to connect to GitHub using SSH. You can test the connection by running
+
+After everything is working, add the private repository as the remote. Make sure you use the ssh url
+
+```bash
+    git remote add github git@github.com:username/reponame.git
+```
+
+Now, pull the remote to the local Code Ocean codespace
+
+```bash
+    git pull github main
+```
+
+If you run into merge conflicts, you can overwrite the local files with the remote files by running
+
+```bash
+    git fetch github
+    git reset --hard github/main
+```
+
+Depending on what `git remote -v` shows, you may need to use `origin` instead of `github` in the above commands
 

@@ -36,6 +36,22 @@ During development, continuously update your local installation by having a Term
 
 This is much easier than trying to import locally from a path. The `no-dependencies` flag ensures that pip does not try to reinstall all of the dependencies, especially packages like numpy that may have been installed using conda.
 
+## Upload a new package to PyPI
+
+Create a distribution
+
+	python -m build
+
+Do a dry-run upload to TestPyPI
+
+	twine upload -r testpypi dist/*
+
+If the dry-run is successful, upload to PyPI
+
+	twine upload dist/*
+
+
+
 ## Updating existing package
 
 Update `setup.py` to the latest version number. Pay attention to the number of digits after the decimal: 1.3 will be counted as a lower release number than 1.299

@@ -26,6 +26,20 @@ Most of the time you want to work in the `$WORK` folder. This is also the best p
 
     cd $WORK
 
+## General maintainence and file management
+
+For maintainence and other lightweight testing, do not use the login nodes after you have logged in. Instead, start an interactive job, which uses the alias `idev`. This will give you a node to work on. 
+
+    idev
+
+Or, if you want to specify options or nodes
+
+    idev -p gpu-a100-dev -N 1 -n 1 -t 1:00:00
+
+For common configurations like GPU nodes, it may be convenient to define an alias in my `~/.bashrc` file
+
+    alias gdev='idev -p gpu-a100-dev -N 1 -n 1 -t 1:00:00'
+
 
 ## Submitting a job
 
