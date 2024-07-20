@@ -604,7 +604,7 @@ Look at the names of any listed remote. If the remote already exists, you can re
 
 Common names for remotes are `origin` and `upstream` and `github`
 
-## Connecting CodeOcean to a private GitHub account
+## Connecting Code Ocean to a private GitHub account {#codeocean}
 
 Set up an SSH key using the instructions [above](#ssh). Then, in CodeOcean, open a Terminal in your codespace. You may need to install emacs and openssh-client
 
