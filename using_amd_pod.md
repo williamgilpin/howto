@@ -51,11 +51,15 @@ test that everything is working
 
     conda info --envs
 
-You can activate, install packages, etc as you would for a local conda environment. Simply use `conda activate <YOUR_CONDA_ENV>` and then run your code as normal. It is possible that upon activating for the first time you may be asked to do `conda init`, close the shell, re-open, and log in again for the `.bashrc` file to be updated.
+You can activate, install packages, etc as you would for a local conda environment. Simply do `conda activate <YOUR_CONDA_ENV>` and then run your code as normal. It is possible that upon activating for the first time you may be asked to do `conda init`, close the shell, re-open, and log in again for the `.bashrc` file to be updated.
 
 If you'd prefer that conda's base environment not be activated on startup, run the following command when conda is activated: `conda config --set auto_activate_base false`. You can undo this by running `conda init --reverse $SHELL`
 
-Now, you can create an environment by following the conda docs https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#activating-an-environment. Specifically, you recommend you first make sure you are not in the base conda environemnt (deactivate if necessary), and then do `conda create -n <YOUR_ENV_NAME> python=3.12 pip` which sets you up with the latest stable release of Python 3 AND your a brand new pip (Python package manager). This conda environment's pip is isolated from the system-wide pip so you can do `pip install` instead of `conda install` without affecting your system or other environments. 
+Now, you can create an environment by following the conda docs https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#activating-an-environment. Specifically, you recommend you first make sure you are not in the base conda environemnt (deactivate if necessary), and then do:
+
+    conda create -n <YOUR_ENV_NAME> python=3.12 pip
+
+This sets you up with the latest stable release of Python 3 AND your a brand new pip (Python package manager). *This conda environment's pip is isolated from the system-wide pip* so you can do `pip install` instead of `conda install` without affecting your system or other environments. 
 
 NOTE: All installation should be done within a conda environment. There clear benefits from having an isolated environment and not messing with the system-wide installs.
 
@@ -64,7 +68,7 @@ AMD uses ROCm, which is their open source version of CUDA (what NVIDIA uses for 
 
 For example, say you want to install a Pytorch version "torch~=2.0". Although you could go to the pytorch page https://pytorch.org/get-started/locally/ and find the latest version, you should instead go to the previous versions https://pytorch.org/get-started/previous-versions/ and browse a version that is compatible with both my desired torch version and my rocm options. Upon searching "ROCM 5.7" you find exactly what you need:
 
-`pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/rocm5.7`
+    pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/rocm5.7
 
 You can check the installationn using `pip list` which should display:
 
@@ -76,9 +80,12 @@ torchvision              0.17.2+rocm5.7
 
 Note that PyTorch + ROCm cannot be installed with conda (it's not currently supported!), only with pip. But this shouldn't be an issue because, when you are within a conda environment with its own pip, you can/should use `pip install` for everything.
 
-Now, it is very important that you set the correct environment path variables, to be able to talk to the AMD Radeon GPU. Simply do `export ROCM_HOME=/opt/rocm-5.7.2` and `export LD_LIBRARY_PATH="/opt/rocm-5.7.2/hip/lib:$LD_LIBRARY_PATH"` making sure to use the correct ROCm that matches your PyTorch installation. 
+Now, it is very important that you set the correct environment path variables, to be able to talk to the AMD Radeon GPU. Making sure to use the correct ROCm version that matches your PyTorch installation, simply do:
 
-HIP is simply ROCm's C++ dialect that converts CUDA applications into portable C++ code. Its interface is designed to reuse the CUDA inferface (and so the syntax should be largely the same) https://pytorch.org/docs/stable/notes/hip.html
+    export ROCM_HOME=/opt/rocm-5.7.2
+    export LD_LIBRARY_PATH="/opt/rocm-5.7.2/hip/lib:$LD_LIBRARY_PATH"
+
+HIP is just ROCm's C++ dialect that converts CUDA applications into portable C++ code. Its interface is designed to reuse the CUDA inferface (and so the syntax should be largely the same) https://pytorch.org/docs/stable/notes/hip.html
 
 You can check the AMD GPUs using `rocm-smi` in an analogous fashion to NVIDIA's `nvidia-smi` command. Also `rocminfo` prints CPU information and `dpkg -l | grep rocm` gives you a list of installed packages for ROCm.
 
@@ -97,7 +104,7 @@ For jobs that temporary require downloading or using large files, or which perfo
 
 TODO: figure out scratch space
 
-## Template for SLURM on TACC {template}
+## Template for SLURM on AMD Pod {template}
 
 TODO: make slurm (or equivalent) template for AMD Pod
 
