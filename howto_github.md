@@ -10,102 +10,94 @@ Getting Started with: Git, GitHub, and GitHub pages
 
 3. Create a local project folder on your computer containing code that you want to track. For example, you might want to create a folder for your course homeworks, or for labs, or for the final project. For now, let’s just make a test repository, to make sure that everything is working.
 
-```bash
-    $ mkdir test_repo
-    $ cd test_repo
-```
+    ```bash
+        $ mkdir test_repo
+        $ cd test_repo
+    ```
 
-4. You should now be inside your new repository. Add a README.md file to your local repository. You can use a text editor like VSCode, Jupyter Lab, or Sublime Text, or you can do this in the Terminal with your preferred editor. On macOS I normally use emacs ([information here](https://wikemacs.org/wiki/Installing_Emacs_on_OS_X)), but many may prefer nano or vim. If you want to use a different editor, replace emacs in all of the following steps with your preferred editor.
+    4. You should now be inside your new repository. Add a README.md file to your local repository. You can use a text editor like VSCode, Jupyter Lab, or Sublime Text, or you can do this in the Terminal with your preferred editor. On macOS I normally use emacs ([information here](https://wikemacs.org/wiki/Installing_Emacs_on_OS_X)), but many may prefer nano or vim. If you want to use a different editor, replace emacs in all of the following steps with your preferred editor.
 
-```
-$ emacs README.md
-```
+    ```
+    $ emacs README.md
+    ```
 
 5. If this is your first time setting up GitHub and git, create a top-level file on your system called `.gitconfig`. Mine is located at the top level `~/.gitconfig` and contains the following lines
 
-```bash
-[user]
-        name = [your username]
-        email = [personal email]@gmail.com
-[core]
-        editor = emacs
-[credential]
-        helper = store
-```
-
-Of these lines, the `[user]` and `[credential]` fields are the most important fields. 
+    ```bash
+    [user]
+            name = [your github username]
+            email = [email you used to sign up for github]@gmail.com
+    [core]
+            editor = emacs
+    [credential]
+            helper = store
+    ```
+    
+    Of these lines, the `[user]` and `[credential]` fields are the most important fields. 
 
 6. We now want to create the online repo, which is known as the `remote` repository. In your web browser, log into your GitHub account, and then make a repository with the exact same name as your local project folder. When prompted, do *not* initialize your online remote repo with a README or license. When the empty repository has been created, it should be located online.
 
-	https://github.com/yourusername/test_repo
+    https://github.com/yourusername/test_repo
 
-7. If this is your first time using GitHub, you need to create Personal Access Token (PAT), which GitHub uses instead of passwords when you access a remote repo from th Terminal. Go to the GitHub website and make sure that you are logged in. As of writing, the web interface to create a PAT is as follows:
+7. If this is your first time using GitHub, you either need to create Personal Access Token (PAT) or enable SSH. This is because GitHub no longer allows passwords when you access a remote repo from th Terminal. Go to the GitHub website and make sure that you are logged in. As of writing, the web interface to create a PAT is as follows:
+    + Go to github.com
+    + Select your profile on the right side and go to: Settings > Developer Settings (bottom of left sidebar)
+    > Personal Access Tokens > Tokens (classic) > Generate New Token (classic)
+    + You will encounter a screen where you name your token and then set granular permissions for the token. I chose to use a Classic token with no expiration, and I enabled full permissions for everything on the Token.
+    + Hit “Generate Token” when you are ready.
+    + You will be taken to a landing page with a list of your tokens. Copy the one you just created, which is likely a long string of letters and numbers. This will likely be the only token on this list.
 
-+ Go to github.com
-+ Select your profile on the right side and go to: Settings > Developer Settings (bottom of left sidebar)
-> Personal Access Tokens > Tokens (classic) > Generate New Token (classic)
-+ You will encounter a screen where you name your token and then set granular permissions for the token. I chose to use a Classic token with no expiration, and I enabled full permissions for everything on the Token.
-+ Hit “Generate Token” when you are ready.
-+ You will be taken to a landing page with a list of your tokens. Copy the one you just created, which is likely a long string of letters and numbers. This will likely be the only token on this list.
+    If you run into difficulty, please follow the more detailed instructions provided by GitHub on created a PAT [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
-If you run into difficulty, please follow the more detailed instructions provided by GitHub on created a PAT [here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
-If setting up a PAT fails, then you might instead opt to authenticate with SSH. See the instructions[here](#ssh)
+    If setting up a PAT fails, then you might instead opt to authenticate with SSH. See the instructions[here](#ssh)
 
 8. Now return to your empty repo's GitHub page, https://github.com/yourusername/test_repo. There will be instructions there listing what to do in order to get everything working on your local repo, but I've summarized them here. In your Terminal, navigate to your local repo. You will run the following commands in sequence:
+    ```bash
+    $ git init
+    $ git add .
+    $ git commit -m "first commit"
+    $ git branch -M main
+    $ git remote add origin https://github.com/yourusername/test_repo.git
+    $ git push -u origin main
+    ```
 
-```bash
-$ git init
-$ git add .
-$ git commit -m "first commit"
-$ git branch -M main
-$ git remote add origin https://github.com/yourusername/test_repo.git
-$ git push -u origin main
-```
+    These commands first tell git to treat the directory as a `git` project with version tracking. The `git add .` command then adds all files or file changes. The branch command then confirms that you are on the primary project branch, and the `git remote` command actually initiates the connection to the remote repository you just made online with GitHub.
 
-These commands first tell git to treat the directory as a `git` project with version tracking. The `git add .` command then adds all files or file changes. The branch command then confirms that you are on the primary project branch, and the `git remote` command actually initiates the connection to the remote repository you just made online with GitHub.
-
-The final `git push` command sends your local changes to the remote repository. For your first push, GitHub will prompt you to provide a username, followed by a password. *Instead of your GitHub.com password, please enter the PAT that you created in the last step*.
-
-
-If everything works, your Terminal will show a message like the following
-
-```bash
-(base) william@cns-f-pmaa59131 test_repo % git push
-Enumerating objects: 7, done.
-Counting objects: 100% (7/7), done.
-Delta compression using up to 10 threads
-Compressing objects: 100% (4/4), done.
-Writing objects: 100% (4/4), 60.62 KiB | 2.53 MiB/s, done.
-Total 4 (delta 3), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
-To https://github.com/williamgilpin/test_repo
-   e049541..ee2cb7d  main -> main
-```
+    The final `git push` command sends your local changes to the remote repository. For your first push, GitHub will prompt you to provide a username, followed by a password. *Instead of your GitHub.com password, please enter the PAT that you created in the last step*.
+    
+    If everything works, your Terminal will show a message like the following
+    ```bash
+    (base) william@cns-f-pmaa59131 test_repo % git push
+    Enumerating objects: 7, done.
+    Counting objects: 100% (7/7), done.
+    Delta compression using up to 10 threads
+    Compressing objects: 100% (4/4), done.
+    Writing objects: 100% (4/4), 60.62 KiB | 2.53 MiB/s, done.
+    Total 4 (delta 3), reused 0 (delta 0), pack-reused 0
+    remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+    To https://github.com/williamgilpin/test_repo
+    e049541..ee2cb7d  main -> main
+    ```
 
 9. Now that git is working, you can modify and update your local repository, and then manually push updates to your remote. To practice these steps, make some changes to your local repository; for example, by editing into your `README.md` file. 
+    ```bash
+    $ emacs README.md
+    ```
+    Whenever you want to apply those changes to the remote (the GitHub version of your code), first add these files in the Terminal (make sure you are in your repository). Since we already made a `README.md` file, you will need to start by staging the changes in your local repository. 
+    ```bash
+    $ git add .
+    ```
+10. Commit the changes by typing a short but descriptive message
+    ```bash
+    $ git commit -m "added example changes to the README file"
+    ```
 
-```bash
-$ emacs README.md
-```
-Whenever you want to apply those changes to the remote (the GitHub version of your code), first add these files in the Terminal (make sure you are in your repository). Since we already made a `README.md` file, you will need to start by staging the changes in your local repository. 
+11. Send the update to GitHub
+    ```bash
+    $ git push
+    ```
 
-```bash
-$ git add .
-```
-
-10. Then commit the changes with a short but descriptive message
-
-```bash
-$ git commit -m "added example changes to the README file"
-```
-
-11. Then finally send the update to GitHub
-
-```bash
-$ git push
-```
-
-Both your local and the GitHub versions of your repo will keep track of the sequence of commits you've applied, making it easier to roll back your changes at any time. You'll notice that GitHub treats `README.md` as a special file---it renders it into a nice page, similar to a website's index page, that represents the first thing a user sees when they look at your repo. Usually we want to put a description of the repo, dependencies, and a minimal working example into the README.md---although sometimes the README contains full documentation, graphics, etc. The Google [Jax repository](https://github.com/google/jax) is a great example. Rather than HTML, the markup language used for README files is Markdown, which is like a blend of HTML and LaTeX with lighter syntax than either one. You can learn more from the [Markdown guide](https://www.markdownguide.org/basic-syntax/) or by looking at [the unrendered version](https://raw.githubusercontent.com/williamgilpin/cphy/main/README.md) of this course's own README file
+Both your local and the GitHub versions of your repo will keep track of the sequence of commits you've applied, making it easier to roll back your changes at any time. You'll notice that GitHub treats `README.md` as a special file---it renders it into a nice landing page, similar to a website's index page, that represents the first thing a user sees when they look at your repo. Usually we want to put a description of the repo, dependencies, and a minimal working example into the README.md---although sometimes the README contains full documentation, graphics, etc. The Google [Jax repository](https://github.com/google/jax) is a great example. Rather than HTML, the markup language used for README files is Markdown, which is like a blend of HTML and LaTeX with lighter syntax than either one. You can learn more from the [Markdown guide](https://www.markdownguide.org/basic-syntax/) or by looking at [the unrendered version](https://raw.githubusercontent.com/williamgilpin/cphy/main/README.md) of this course's own README file
 
 You might have local files that you don't want to appear in your public repo. For example, in the course repository I have solution files, as well as personal files like cached data, that I don't want to appear on GitHub. For files of this nature, it's usually a good idea to create a file called `.gitignore` in the top-level repository of your local repo. This specifies files or patterns that should be ignored. See the [gitignore documentation](https://git-scm.com/docs/gitignore) as well as [the one I'm using for the course repo](https://github.com/williamgilpin/cphy/blob/main/.gitignore)
 
@@ -116,6 +108,7 @@ We are now going to a create a basic website to accompany our repository. This i
 1. The best approach is to follow the instructions [from GitHub](https://pages.github.com/). Use the instructions for a Project Site. 
 
 + Create a new git and GitHub repository, or go to an existing repository's settings in the online GitHub GUI 
+
 + In the Settings menu, go to "Pages" in the sidebar. Enable GitHub pages and, if prompted, pick a source as your `main` or `master` branch. 
 
 After some time passes, Github will automatically convert your `README.md`` file into an index.html file and then host it at:
@@ -222,7 +215,7 @@ If you are repeatedly prompted to authenticate, but run into issues because GitH
 
     git clone git@github.com:williamgilpin/repo_name.git
 
-If this still fails, then check that you have SSH set up correctly. See the instructions[here](#ssh)
+If this still fails, then check that you have SSH set up correctly. See the instructions [here.](#ssh)
 
 2. Now fork the repository to your own GitHub account. Go to the original repository on the GitHub web interface and click the "Fork" button.
 
@@ -302,7 +295,7 @@ If you've already commited, you have to force the update:
   $  git push origin master --force
 ```
 
-### Remove a "dirty" commit containg a large or private file
+### Remove a "dirty" commit containg a large or private file {#remove}
 
 If you commit a large file that is rejected on push (for example, GitHub will reject files >100MB), you need to completely remove it from the commit history before you will be able to push again. This is a also good idea if you have committed private file that you don't want to be public.
 
@@ -422,7 +415,7 @@ If you've already commited, you have to force the update:
     $ git push origin main --force
 ```
 
-### Forking a repository summarized
+### Forking a repository summarized {#fork}
 
 clone forked repo locally
 
@@ -503,15 +496,13 @@ To store the PAT after creating it, I follwed the instructions
 + Other useful information about storing PAT [here](https://askubuntu.com/questions/773455/what-is-the-correct-way-to-use-git-with-gnome-keyring-and-https-repos/959662#959662) and [here](https://stackoverflow.com/questions/46645843/where-to-store-the-personal-access-token-from-github)
 
 
-
-
 ### Transfer repo to an organization
 
 Transfer as normal using the "Settings tab"
 
 ### Global Configurations
 
-My `~/.gitconfig` file is as follows
+My `~/.gitconfig` file reads as follows
 
 ```bash
     [user]
@@ -527,13 +518,16 @@ My `~/.gitconfig` file is as follows
 
 ### Removing git-lfs
 
-Oftentimes, you might find yourself needing to completely remove git-lfs from a respository, and then re-add the files it tracks to git. Remove all traces of git-lfs from `.gitattributes`. Then, from the command line, run
+You may need to fully remove git-lfs from a respository, and then re-add the files it tracks to git. 
+
+Firstemove all traces of git-lfs from `.gitattributes`. 
+Then, from the command line, run
 
 ```bash
     git lfs uninstall
 ```
 
-You will likely still need to manually go through and untrack every file that was previously tracked by git-lfs. This can be done by running
+Next, untrack every file that was previously tracked by git-lfs. This can be done by running
 
 ```bash
     git lfs untrack filename
@@ -596,7 +590,7 @@ Check to see if the remote already exists by running
     git remote -v
 ```
 
-Look at the names of any listed remote. If the remote already exists, you can remove it by running `git remote rm [name of remote]`. For example,
+Look at the names of any listed remote. The name will be the word that appears in parenthesis before the url. If the remote already exists, you can remove it by running `git remote rm [name of remote]`. For example,
 
 ```bash
     git remote rm origin
@@ -606,10 +600,9 @@ Common names for remotes are `origin` and `upstream` and `github`
 
 ## Connecting Code Ocean to a private GitHub account {#codeocean}
 
-Set up an SSH key using the instructions [above](#ssh). Then, in CodeOcean, open a Terminal in your codespace. You may need to install emacs and openssh-client
+Set up an SSH key using the instructions [above](#ssh). Then, in CodeOcean, open a Terminal in your codespace. You may need to install openssh-client
 
 ```bash
-    apt install emacs
     apt install openssh-client
 ```
 
