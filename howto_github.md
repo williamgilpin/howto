@@ -1,5 +1,8 @@
 
 Getting Started with: Git, GitHub, and GitHub pages
+
+*Instructions by William Gilpin for the [Computational Physics course at UT Austin](https://www.wgilpin.com/cphy/)*
+
 ==============
 
 ## Setting up git and GitHub for the first time {#first}
