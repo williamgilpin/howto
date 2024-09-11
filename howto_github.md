@@ -3,6 +3,7 @@ Getting Started with: Git, GitHub, and GitHub pages
 
 *Instructions by William Gilpin for the [Computational Physics course at UT Austin](https://www.wgilpin.com/cphy/)*
 
+
 ==============
 
 ## Setting up git and GitHub for the first time {#first}
@@ -18,24 +19,51 @@ Getting Started with: Git, GitHub, and GitHub pages
         $ cd test_repo
     ```
 
-    4. You should now be inside your new repository. Add a README.md file to your local repository. You can use a text editor like VSCode, Jupyter Lab, or Sublime Text, or you can do this in the Terminal with your preferred editor. On macOS I normally use emacs ([information here](https://wikemacs.org/wiki/Installing_Emacs_on_OS_X)), but many may prefer nano or vim. If you want to use a different editor, replace emacs in all of the following steps with your preferred editor.
+4. You should now be inside your new repository within the Terminal. We will now add a `README.md` file to your local repository. You can use a GUI-based text editor like VSCode, Jupyter Lab, or Sublime Text, or you can do this in the Terminal with your preferred editor. By default, your Terminal likely uses `nano`. On macOS I normally use emacs ([information here](https://wikemacs.org/wiki/Installing_Emacs_on_OS_X)), but many may prefer nano or vim. If you want to use a different editor, replace `nano` in all of the following steps with your preferred editor. On Windows systems, the default text editor is nano
 
     ```
-    $ emacs README.md
+    $ nano README.md
     ```
 
-5. If this is your first time setting up GitHub and git, create a top-level file on your system called `.gitconfig`. Mine is located at the top level `~/.gitconfig` and contains the following lines
+    You will enter a text editor window. Go ahead and make some changes to the file, and then save and exit. For example, you might write
 
+    ```markdown
+    # Test Repository
+
+    This is a test
+    ```
+
+    Now save and exit the file. If you are using `nano`, you can do this by pressing `CTRL` + `X`, then `Y` to save changes, and then `Enter`. You can confirm that this worked by running `ls` in the Terminal. You should see `README.md` listed as a file in the directory.
+
+    ```bash
+    $ ls
+    README.md
+    ```
+
+    You can also confirm that the edits were saved by running `cat README.md` in the Terminal. This will print the contents of the file to the Terminal.
+
+    ```bash
+    $ cat README.md
+    # Test Repository
+
+    This is a test
+    ```
+    
+5. We now want to set up some git settings, by locally specifying our preferences. We will do this by creating a local file on our computer, which contains a list of our git settings. If this is your first time setting up GitHub and git, create a top-level file on your system called `.gitconfig`. I put mine at the top level `~/.gitconfig`
+    ```bash
+    $ nano ~/.gitconfig
+    ```
+
+    This will open a text editor window. You can now add your git settings to this file. For example, my `.gitconfig` file is located at `~/.gitconfig` and contains the following lines
     ```bash
     [user]
             name = [your github username]
             email = [email you used to sign up for github]@gmail.com
     [core]
-            editor = emacs
+            editor = nano
     [credential]
             helper = store
     ```
-    
     Of these lines, the `[user]` and `[credential]` fields are the most important fields. 
 
 6. We now want to create the online repo, which is known as the `remote` repository. In your web browser, log into your GitHub account, and then make a repository with the exact same name as your local project folder. When prompted, do *not* initialize your online remote repo with a README or license. When the empty repository has been created, it should be located online.
@@ -82,10 +110,11 @@ Getting Started with: Git, GitHub, and GitHub pages
     e049541..ee2cb7d  main -> main
     ```
 
-9. Now that git is working, you can modify and update your local repository, and then manually push updates to your remote. To practice these steps, make some changes to your local repository; for example, by editing into your `README.md` file. 
+9. Now that git is working, you can modify and update your local repository, and then manually push updates to your remote. To practice these steps, make some changes to your local repository; for example, by editing into your `README.md` file. If you prefer a different text editor than `nano`, replace it with your preferred editor
     ```bash
-    $ emacs README.md
+    $ nano README.md
     ```
+    You will enter a text editor window. Go ahead and make some changes to the file, and then save and exit.
     Whenever you want to apply those changes to the remote (the GitHub version of your code), first add these files in the Terminal (make sure you are in your repository). Since we already made a `README.md` file, you will need to start by staging the changes in your local repository. 
     ```bash
     $ git add .
@@ -290,7 +319,7 @@ To alter or combine the last four commits, run
 ```
 A text editor will pop up. Replace "pick" with "squash" for the commits that you want to merge together. It will then prompt you to come up with a new commit message for all of the commits that you just squashed.
 
-Save and close using standard emacs commands
+Save and close using standard emacs/nano commands
 
 If you've already commited, you have to force the update:
 
@@ -505,7 +534,7 @@ Transfer as normal using the "Settings tab"
 
 ### Global Configurations
 
-My `~/.gitconfig` file reads as follows
+My `~/.gitconfig` file reads as follows. Notice that I use `emacs` instead of `nano`
 
 ```bash
     [user]
