@@ -51,8 +51,24 @@ If the dry-run is successful, upload to PyPI
 	twine upload dist/*
 
 
+## Updating existing package using pyproject.toml
 
-## Updating existing package
+Update `pyproject.toml` to the latest version number. Pay attention to the number of digits after the decimal: 1.3 will be counted as a lower release number than 1.299
+
+Update and push the new version number to GitHub
+
+    $ git tag 0.5 -m "latest version"
+    $ git push --tags origin master
+
+In your current environment, install the buildtools if neededed via `pip install buildtools`. Now build the package
+
+	$ python -m build
+
+Install twine using pip if needed via `pip install twine`. Now upload the new distribution via twine
+
+	$ python3 -m twine upload --skip-existing -r pypi dist/* --verbose
+
+## Updating existing package using setup.py (not recommended)
 
 Update `setup.py` to the latest version number. Pay attention to the number of digits after the decimal: 1.3 will be counted as a lower release number than 1.299
 

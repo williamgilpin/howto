@@ -2,7 +2,7 @@ Various commands and shortcuts for working with ffmpeg
 
 ### Turn folder of frames into a timelapse video
 
-	ffmpeg -r 20 -i pic%03d.png -vcodec libx264 -pix_fmt yuv420p -crf 25 my_video.mov
+	ffmpeg -r 20 -i frame%03d.png -vcodec libx264 -pix_fmt yuv420p -crf 25 my_video.mov
 
 `-r` specifies the frame rate
 `%03d` says that the images have three digits
