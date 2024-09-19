@@ -87,3 +87,38 @@ The basic idea behind unit testing is to write short commands that check that ev
 ```
 
 If the tests fail, they will usually specify which test function. Otherwise, the tests will report "OK." If your tests depend on an imported package like numpy, then they will fail unless you run the tests in an environment in which the packages are installed.
+
+
+## Continuous integration
+
+Continuous integration (CI) is the practice of automatically running your tests every time you push a commit to your repository. This ensures that your tests are always up-to-date and passing.
+
+In order to perform CI, you need to have a CI service set up. This will automatically take your repository every time you push a commit, spin up a new virtual machine, and run your tests. If the tests pass, the CI service will report "OK." If the tests fail, the CI service will report the error.
+
+GitHub now has CI built-in, called GitHub Actions. You can set up GitHub Actions by creating a `.github/workflows` directory in your repository. In this directory, you can create a `.yml` file that specifies the CI workflow. Here is an example `.yml` file that runs the tests in the `tests` directory every time you push a commit to the `master` branch:
+
+```yaml
+    name: Run tests
+
+    on:
+      push:
+        branches:
+          - master
+
+    jobs:
+      test:
+        runs-on: ubuntu-latest
+
+        steps:
+        - uses: actions/checkout@v2
+        - name: Set up Python
+          uses: actions/setup-python@v2
+          with:
+            python-version: '3.x'
+        - name: Install dependencies
+          run: |
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt
+        - name: Run tests
+          run: python -m unittest
+```
