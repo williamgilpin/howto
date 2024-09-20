@@ -12,11 +12,11 @@
 
 2. Make a GitHub account. You might consider applying to link your account to your school email via [GitHub for Education](https://education.github.com/). This comes with a lot of perks, like private repositories and free access to the [GitHub Copilot](https://github.com/features/copilot) plugin for VSCode and PyCharm.
 
-3. Create a local project folder on your computer containing code that you want to track. For example, you might want to create a folder for your course homeworks, or for labs, or for the final project. For now, let’s just make a test repository, to make sure that everything is working.
+3. Create a local project folder on your computer containing code that you want to track. For example, you might want to create a folder for your course homeworks, or for labs, or for the final project. For now, let’s just make a test repository, to make sure that everything is working. I called mine `exrepo`. You can create a new folder in the Terminal by running the following commands:
 
     ```bash
-        $ mkdir test_repo
-        $ cd test_repo
+        $ mkdir exrepo
+        $ cd exrepo
     ```
 
 4. You should now be inside your new repository within the Terminal. We will now add a `README.md` file to your local repository. You can use a GUI-based text editor like VSCode, Jupyter Lab, or Sublime Text, or you can do this in the Terminal with your preferred editor. By default, your Terminal likely uses `nano`. On macOS I normally use emacs ([information here](https://wikemacs.org/wiki/Installing_Emacs_on_OS_X)), but many may prefer nano or vim. If you want to use a different editor, replace `nano` in all of the following steps with your preferred editor. On Windows systems, the default text editor is nano
@@ -68,7 +68,7 @@
 
 6. We now want to create the online repo, which is known as the `remote` repository. In your web browser, log into your GitHub account, and then make a repository with the exact same name as your local project folder. When prompted, do *not* initialize your online remote repo with a README or license. When the empty repository has been created, it should be located online.
 
-    https://github.com/yourusername/test_repo
+    https://github.com/yourusername/exrepo
 
 7. If this is your first time using GitHub, you either need to create Personal Access Token (PAT) or enable SSH. This is because GitHub no longer allows passwords when you access a remote repo from th Terminal. Go to the GitHub website and make sure that you are logged in. As of writing, the web interface to create a PAT is as follows:
     + Go to github.com
@@ -82,13 +82,13 @@
 
     If setting up a PAT fails, then you might instead opt to authenticate with SSH. See the instructions[here](#ssh)
 
-8. Now return to your empty repo's GitHub page, https://github.com/yourusername/test_repo. There will be instructions there listing what to do in order to get everything working on your local repo, but I've summarized them here. In your Terminal, navigate to your local repo. You will run the following commands in sequence:
+8. Now return to your empty repo's GitHub page, https://github.com/yourusername/exrepo. There will be instructions there listing what to do in order to get everything working on your local repo, but I've summarized them here. In your Terminal, navigate to your local repo. You will run the following commands in sequence:
     ```bash
     $ git init
     $ git add .
     $ git commit -m "first commit"
     $ git branch -M main
-    $ git remote add origin https://github.com/yourusername/test_repo.git
+    $ git remote add origin https://github.com/yourusername/exrepo.git
     $ git push -u origin main
     ```
 
@@ -98,7 +98,7 @@
     
     If everything works, your Terminal will show a message like the following
     ```bash
-    (base) william@cns-f-pmaa59131 test_repo % git push
+    (base) william@cns-f-pmaa59131 exrepo % git push
     Enumerating objects: 7, done.
     Counting objects: 100% (7/7), done.
     Delta compression using up to 10 threads
@@ -106,7 +106,7 @@
     Writing objects: 100% (4/4), 60.62 KiB | 2.53 MiB/s, done.
     Total 4 (delta 3), reused 0 (delta 0), pack-reused 0
     remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
-    To https://github.com/williamgilpin/test_repo
+    To https://github.com/williamgilpin/exrepo
     e049541..ee2cb7d  main -> main
     ```
 
