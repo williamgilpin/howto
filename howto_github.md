@@ -1,12 +1,12 @@
 
-Getting Started with: Git, GitHub, and GitHub pages
+# Getting Started with: Git, GitHub, and GitHub pages
 
 *Instructions by William Gilpin for the [Computational Physics course at UT Austin](https://www.wgilpin.com/cphy/)*
 
 
-==============
-
 ## Setting up git and GitHub for the first time {#first}
+
+0. If you are a Windows user, make sure that you have activated Windows Subsystem for Linux (WSL). Instructions for doing this can be found [here](https://www.wgilpin.com/howto/howto_pythononwindows.html). For all of the Terminal/bash commands that we will use in this tutorial, it is recommended that you use the WSL Terminal. If you are a macOS or Linux user, you can use the default Terminal application that comes with your computer.
 
 1. Install git on your local computer by following the instructions [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git). Git is a code project management tool that is used primarily for version control and collaboration. The [documentation](https://git-scm.com/doc) is excellent.
 
