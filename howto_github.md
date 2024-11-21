@@ -162,7 +162,7 @@ For smaller projects (like class projects), it isn't necessary to use pull reque
 
 Important: if you have a fork that you are updating from a main---such as a fork of a class repository that you are using to complete homeworks--make sure that you don’t use your assignment fork to submit pull requests to my main repository. Since your versions of the assignments will override mine, it could lead to weird merge conflicts. If you fork a single version of an active repo (like a class repo), periodically [`git pull`](https://git-scm.com/docs/git-pull) to get any changes. Just double check to make sure that to `git stash` any changes you've made locally (like assignments)
 
-## Step-by-step Guide to Submitting a Pull Request
+## Step-by-step Guide to Submitting a Pull Request {#pull-request}
 
 1. Fork the Repository. Visit the respository that you want to fork. For example, the [cphy repository](https://github.com/williamgilpin/cphy). Click on the "Fork" button in the top-right corner of the page and follow the on-screen instructions. This will create a copy of the repository in your own GitHub account.
 
@@ -237,11 +237,11 @@ and receive response
 A nice guide is [here](https://kbroman.org/github_tutorial/pages/first_time.html)
 
 
-### Fork a repo online and then submit a pull request {#pull-request}
+### Fork a repo online and then submit a pull request
 
 1. Create a local clone of the target repository
 
-    git clone http://github.com/williamgilpin/repo_name
+    git clone https://github.com/YOUR_GITHUB_USERNAME/cphy.git
 
 If you are repeatedly prompted to authenticate, but run into issues because GitHub no longer accepts passwords, you can use the git protocol instead of https. This requires that you have an SSH key set up (see above). To do this, run
 
