@@ -241,11 +241,15 @@ A nice guide is [here](https://kbroman.org/github_tutorial/pages/first_time.html
 
 1. Create a local clone of the target repository
 
+```bash
     git clone https://github.com/YOUR_GITHUB_USERNAME/cphy.git
+```
 
 If you are repeatedly prompted to authenticate, but run into issues because GitHub no longer accepts passwords, you can use the git protocol instead of https. This requires that you have an SSH key set up (see above). To do this, run
 
+```bash
     git clone git@github.com:williamgilpin/repo_name.git
+```
 
 If this still fails, then check that you have SSH set up correctly. See the instructions [here.](#ssh)
 
