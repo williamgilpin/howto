@@ -205,6 +205,37 @@ Then place the following line at the top of the `$HOME/.zshrc file`
 
 Finally, restart the shell and enjoy the features of oh-my-zsh!
 
+## Avoid entering password every login
+
+On your local machine, generate an SSH key. I store mine in the default location when prompted, and I do not add an additional passphrase (I hit enter through all prompts)
+    
+```bash
+    ssh-keygen -t ed25519 -a 100
+```
+
+Now copy your public key to the HPC cluster
+    
+```bash
+    ssh-copy-id username@ls6.tacc.utexas.edu
+```
+
+Now start the SSH agent and add your key to cache it
+
+```bash
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_ed25519
+```
+
+# Start the SSH agent and add your key to cache it
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+# Copy your public key to the HPC cluster
+ssh-copy-id user@hpc-cluster.example.edu
+
+# Start the SSH agent and add your key to cache it
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
 
 ## Template for SLURM on TACC {template}
 
